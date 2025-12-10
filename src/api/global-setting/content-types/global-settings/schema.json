@@ -2,7 +2,7 @@
   "kind": "singleType",
   "collectionName": "global_settings",
   "info": {
-    "singularName": "global-settings",
+    "singularName": "global-setting",
     "pluralName": "global-settings",
     "displayName": "Global Settings",
     "description": "Site-wide settings and social links"
