@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_image_pairs",
+  "info": {
+    "displayName": "Image pair",
+    "description": "Side-by-side images with optional caption",
+    "icon": "images"
+  },
+  "options": {},
+  "attributes": {
+    "left_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "right_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "caption": {
+      "type": "string"
+    }
+  }
+}
+

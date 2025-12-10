@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_external_links",
+  "info": {
+    "displayName": "External link",
+    "description": "Reusable external link with optional new tab",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "open_in_new_tab": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}
+

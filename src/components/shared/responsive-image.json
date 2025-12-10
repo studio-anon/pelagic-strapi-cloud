@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_responsive_images",
+  "info": {
+    "displayName": "Responsive image",
+    "description": "Desktop and mobile image variants",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "desktop_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "mobile_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}
+

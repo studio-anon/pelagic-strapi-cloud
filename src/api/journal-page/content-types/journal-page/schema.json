@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "journal_pages",
+  "info": {
+    "singularName": "journal-page",
+    "pluralName": "journal-pages",
+    "displayName": "Journal Page",
+    "description": "Journal landing page content"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "intro_text": {
+      "type": "richtext"
+    },
+    "show_local_time": {
+      "type": "boolean"
+    }
+  }
+}
+

@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_sections_products",
+  "info": {
+    "displayName": "Product CTA",
+    "description": "Product call-to-action block",
+    "icon": "cart"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "button_label": {
+      "type": "string",
+      "required": true
+    },
+    "button_action": {
+      "type": "enumeration",
+      "enum": ["openModal", "internalLink", "externalLink"],
+      "required": true
+    },
+    "internal_link": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::journal-article.journal-article"
+    },
+    "external_url": {
+      "type": "string"
+    }
+  }
+}
+

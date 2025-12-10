@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_sections_heros",
+  "info": {
+    "displayName": "Hero",
+    "description": "Homepage hero section",
+    "icon": "sun"
+  },
+  "options": {},
+  "attributes": {
+    "hero_copy": {
+      "type": "text",
+      "required": true
+    },
+    "desktop_hero_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "required": true
+    },
+    "desktop_support_images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images"]
+    },
+    "mobile_hero_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "mobile_support_images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images"]
+    }
+  }
+}
+

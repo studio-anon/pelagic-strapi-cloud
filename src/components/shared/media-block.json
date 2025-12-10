@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_media_blocks",
+  "info": {
+    "displayName": "Media block",
+    "description": "Full-width image with caption",
+    "icon": "image"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "caption": {
+      "type": "string"
+    }
+  }
+}
+

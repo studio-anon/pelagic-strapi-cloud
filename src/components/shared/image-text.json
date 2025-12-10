@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_image_texts",
+  "info": {
+    "displayName": "Image + text",
+    "description": "Image with aligned text",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "alignment": {
+      "type": "enumeration",
+      "enum": ["imageLeft", "imageRight"],
+      "default": "imageLeft"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    }
+  }
+}
+

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_contact_blocks",
+  "info": {
+    "displayName": "Contact block",
+    "description": "Contact entry with description and optional link",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "email": {
+      "type": "email"
+    },
+    "external_link": {
+      "type": "component",
+      "component": "shared.external-link",
+      "repeatable": false
+    }
+  }
+}
+

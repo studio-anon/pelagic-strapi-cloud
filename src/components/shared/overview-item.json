@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_overview_items",
+  "info": {
+    "displayName": "Overview item",
+    "description": "Title + description item for overview sections",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}
+

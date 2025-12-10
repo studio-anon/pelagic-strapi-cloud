@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sections_missions",
+  "info": {
+    "displayName": "Mission",
+    "description": "Mission statement section",
+    "icon": "compass"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "richtext"
+    }
+  }
+}
+

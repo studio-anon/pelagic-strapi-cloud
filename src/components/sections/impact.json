@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_sections_impacts",
+  "info": {
+    "displayName": "Impact",
+    "description": "Impact callout and testimonial",
+    "icon": "chart"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "callout_number": {
+      "type": "string"
+    },
+    "callout_label": {
+      "type": "string"
+    },
+    "testimonial_quote": {
+      "type": "richtext"
+    },
+    "testimonial_name": {
+      "type": "string"
+    }
+  }
+}
+

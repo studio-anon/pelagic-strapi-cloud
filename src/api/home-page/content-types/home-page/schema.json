@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Home Page",
+    "description": "Homepage content with dynamic sections"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "sections.hero",
+        "sections.mission",
+        "sections.overview",
+        "sections.applications",
+        "sections.product",
+        "sections.impact",
+        "sections.milan-design-week",
+        "sections.faqs",
+        "sections.contact",
+        "sections.small-gallery"
+      ]
+    }
+  }
+}
+

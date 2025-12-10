@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_video_blocks",
+  "info": {
+    "displayName": "Video block",
+    "description": "Video with optional thumbnail and caption",
+    "icon": "video"
+  },
+  "options": {},
+  "attributes": {
+    "video_media": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["videos"]
+    },
+    "video_url": {
+      "type": "string"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "caption": {
+      "type": "string"
+    }
+  }
+}
+

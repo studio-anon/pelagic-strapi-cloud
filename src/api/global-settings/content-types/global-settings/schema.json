@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "global_settings",
+  "info": {
+    "singularName": "global-settings",
+    "pluralName": "global-settings",
+    "displayName": "Global Settings",
+    "description": "Site-wide settings and social links"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "site_name": {
+      "type": "string",
+      "required": true
+    },
+    "footer_tagline": {
+      "type": "string"
+    },
+    "social_links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.external-link"
+    },
+    "privacy_slug": {
+      "type": "uid"
+    },
+    "terms_slug": {
+      "type": "uid"
+    },
+    "main_navigation": {
+      "type": "json"
+    }
+  }
+}
+

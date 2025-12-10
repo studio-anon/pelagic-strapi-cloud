@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_sections_applications",
+  "info": {
+    "displayName": "Applications",
+    "description": "Applications grid",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "applications": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.application-card"
+    }
+  }
+}
+

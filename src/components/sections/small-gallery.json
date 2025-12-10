@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_sections_small_galleries",
+  "info": {
+    "displayName": "Small gallery",
+    "description": "Small gallery with responsive images",
+    "icon": "images"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.responsive-image"
+    }
+  }
+}
+

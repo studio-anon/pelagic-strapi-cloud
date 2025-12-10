@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_contacts",
+  "info": {
+    "displayName": "Contact",
+    "description": "Contact section with blocks",
+    "icon": "envelope"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "blocks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.contact-block"
+    }
+  }
+}
+
