@@ -12,25 +12,25 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "site_name": {
+    "siteName": {
       "type": "string",
       "required": true
     },
-    "footer_tagline": {
+    "footerTagline": {
       "type": "string"
     },
-    "social_links": {
+    "socialLinks": {
       "type": "component",
       "repeatable": true,
       "component": "shared.external-link"
     },
-    "privacy_slug": {
+    "privacySlug": {
       "type": "uid"
     },
-    "terms_slug": {
+    "termsSlug": {
       "type": "uid"
     },
-    "main_navigation": {
+    "mainNavigation": {
       "type": "json"
     }
   }

@@ -14,21 +14,21 @@
     "description": {
       "type": "richtext"
     },
-    "button_label": {
+    "buttonLabel": {
       "type": "string",
       "required": true
     },
-    "button_action": {
+    "buttonAction": {
       "type": "enumeration",
       "enum": ["openModal", "internalLink", "externalLink"],
       "required": true
     },
-    "internal_link": {
+    "internalLink": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::journal-article.journal-article"
     },
-    "external_url": {
+    "externalUrl": {
       "type": "string"
     }
   }

@@ -20,9 +20,7 @@
     "title": {
       "type": "string"
     },
-    "body": {
-      "type": "richtext"
-    }
+    "body": { "type": "richtext" }
   }
 }
 

@@ -7,15 +7,15 @@
   },
   "options": {},
   "attributes": {
-    "meta_title": {
+    "metaTitle": {
       "type": "string",
       "required": true
     },
-    "meta_description": {
+    "metaDescription": {
       "type": "text",
       "required": true
     },
-    "share_image": {
+    "shareImage": {
       "type": "media",
       "multiple": false,
       "allowedTypes": ["images"]

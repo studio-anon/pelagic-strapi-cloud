@@ -7,12 +7,12 @@
   },
   "options": {},
   "attributes": {
-    "video_media": {
+    "videoMedia": {
       "type": "media",
       "multiple": false,
       "allowedTypes": ["videos"]
     },
-    "video_url": {
+    "videoUrl": {
       "type": "string"
     },
     "thumbnail": {
@@ -20,9 +20,7 @@
       "multiple": false,
       "allowedTypes": ["images"]
     },
-    "caption": {
-      "type": "string"
-    }
+    "caption": { "type": "string" }
   }
 }
 

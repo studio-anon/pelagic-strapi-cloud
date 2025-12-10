@@ -14,40 +14,25 @@
   "attributes": {
     "slug": {
       "type": "uid",
-      "targetField": "article_title",
+      "targetField": "articleTitle",
       "required": true
     },
-    "listing_date": {
-      "type": "date"
-    },
-    "listing_title": {
-      "type": "string"
-    },
-    "listing_short_description": {
-      "type": "text"
-    },
-    "listing_thumbnail": {
+    "listingDate": { "type": "date" },
+    "listingTitle": { "type": "string" },
+    "listingShortDescription": { "type": "text" },
+    "listingThumbnail": {
       "type": "media",
       "multiple": false,
       "allowedTypes": ["images"]
     },
-    "article_title": {
+    "articleTitle": {
       "type": "string",
       "required": true
     },
-    "article_introduction": {
-      "type": "text"
-    },
-    "reading_time_minutes": {
-      "type": "integer"
-    },
-    "is_external": {
-      "type": "boolean",
-      "default": false
-    },
-    "external_url": {
-      "type": "string"
-    },
+    "articleIntroduction": { "type": "text" },
+    "readingTimeMinutes": { "type": "integer" },
+    "isExternal": { "type": "boolean", "default": false },
+    "externalUrl": { "type": "string" },
     "body": {
       "type": "dynamiczone",
       "components": [

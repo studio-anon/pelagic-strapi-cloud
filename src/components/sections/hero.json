@@ -7,27 +7,27 @@
   },
   "options": {},
   "attributes": {
-    "hero_copy": {
+    "heroCopy": {
       "type": "text",
       "required": true
     },
-    "desktop_hero_image": {
+    "desktopHeroImage": {
       "type": "media",
       "multiple": false,
       "allowedTypes": ["images"],
       "required": true
     },
-    "desktop_support_images": {
+    "desktopSupportImages": {
       "type": "media",
       "multiple": true,
       "allowedTypes": ["images"]
     },
-    "mobile_hero_image": {
+    "mobileHeroImage": {
       "type": "media",
       "multiple": false,
       "allowedTypes": ["images"]
     },
-    "mobile_support_images": {
+    "mobileSupportImages": {
       "type": "media",
       "multiple": true,
       "allowedTypes": ["images"]

@@ -12,9 +12,7 @@
       "multiple": false,
       "allowedTypes": ["images"]
     },
-    "caption": {
-      "type": "string"
-    }
+    "caption": { "type": "string" }
   }
 }
 

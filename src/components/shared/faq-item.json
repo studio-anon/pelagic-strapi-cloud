@@ -11,9 +11,7 @@
       "type": "string",
       "required": true
     },
-    "answer": {
-      "type": "richtext"
-    }
+    "answer": { "type": "richtext" }
   }
 }
 

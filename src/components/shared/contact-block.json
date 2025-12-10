@@ -17,7 +17,7 @@
     "email": {
       "type": "email"
     },
-    "external_link": {
+    "externalLink": {
       "type": "component",
       "component": "shared.external-link",
       "repeatable": false

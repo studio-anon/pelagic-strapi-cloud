@@ -7,12 +7,12 @@
   },
   "options": {},
   "attributes": {
-    "desktop_image": {
+    "desktopImage": {
       "type": "media",
       "multiple": false,
       "allowedTypes": ["images"]
     },
-    "mobile_image": {
+    "mobileImage": {
       "type": "media",
       "multiple": false,
       "allowedTypes": ["images"]

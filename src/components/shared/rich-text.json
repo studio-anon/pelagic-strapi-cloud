@@ -7,9 +7,7 @@
   },
   "options": {},
   "attributes": {
-    "content": {
-      "type": "richtext"
-    }
+    "content": { "type": "richtext" }
   }
 }
 

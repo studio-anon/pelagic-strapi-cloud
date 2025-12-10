@@ -14,11 +14,11 @@
     "description": {
       "type": "richtext"
     },
-    "button_label": {
+    "buttonLabel": {
       "type": "string",
       "required": true
     },
-    "button_url": {
+    "buttonUrl": {
       "type": "string",
       "required": true
     },
