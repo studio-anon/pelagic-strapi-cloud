@@ -1,0 +1,7 @@
+# Ignore OS files but keep seed data
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db

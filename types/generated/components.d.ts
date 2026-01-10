@@ -204,6 +204,7 @@ export interface SharedFaqItem extends Struct.ComponentSchema {
   };
   attributes: {
     answer: Schema.Attribute.RichText;
+    email: Schema.Attribute.String;
     question: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }

@@ -1,0 +1,89 @@
+{
+  "homePage": {
+    "seo": {
+      "metaTitle": "Pelagic Earth | Transforming Ocean Waste",
+      "metaDescription": "Pelagic Earth's mission: transforming ocean pollution into sustainable solutions through research and innovation.",
+      "shareImage": null
+    },
+    "sections": [
+      {
+        "__component": "sections.hero",
+        "heroCopy": "What we discard holds the power to endure.",
+        "desktopHeroImage": "hero/hero-01.jpg",
+        "desktopSupportImages": [
+          "hero/hero-02.jpg",
+          "hero/hero-03.jpg",
+          "hero/hero-04.jpg",
+          "hero/hero-05.jpg"
+        ],
+        "mobileHeroImage": "hero/hero-01.jpg",
+        "mobileSupportImages": [
+          "hero/hero-02.jpg",
+          "hero/hero-03.jpg",
+          "hero/hero-04.jpg",
+          "hero/hero-05.jpg"
+        ]
+      },
+      {
+        "__component": "sections.mission",
+        "title": "Waste is in the eye of the beholder.",
+        "body": "Pelagic exists to reframe waste as a resource. What others discard, we turn into premium construction products that shape sustainable communities and build closed loop partnerships."
+      },
+      {
+        "__component": "sections.impact",
+        "title": "Act locally, impact globally",
+        "description": "From our first installations in 2025 to more than 20 mod.factories worldwide by 2029, Pelagic is on track to upcycle thousands of tons of plastic waste into building products scaling local impact into a global circular system.",
+        "calloutNumber": "30+",
+        "calloutLabel": "kilograms of plastic is intercepted each time we deploy a single m2 of product.",
+        "testimonialQuote": "Waste is a cultural proposition, industrial byproduct, an ecosystem out of balance, and misalignment",
+        "testimonialName": "Philippa Abbott, Founder"
+      },
+      {
+        "__component": "sections.milan-design-week",
+        "title": "Milan Design Week 2025",
+        "description": "In 2025 we exhibited at Milan Design Week. Alongside our physical exhibition we launched a digital companion—conceived as both exhibit and experiment, the platform invites visitors to reframe discarded plastics as a potential vast commodity; a story of hope and growth.",
+        "buttonLabel": "Launch the MDW experience",
+        "buttonUrl": "https://explore.pelagic.earth",
+        "video": "milan-design-week/video.mp4",
+        "thumbnail": null
+      },
+      {
+        "__component": "sections.faqs",
+        "title": "Frequently Asked Questions",
+        "items": [
+          {
+            "question": "What makes Pelagic pavers different from traditional materials?",
+            "answer": "Pelagic pavers bricks represent a transformative approach to building materials, turning ocean plastic waste into high-performance structural pavers.\n\nKey differentiators:\n\n• Circular material: Each square meter of removes 30kg of plastic from the environment, creating value from waste.\n• Performance standards: Engineered to meet or exceed traditional building material standards for durability and strength.\n• Local production: Our portable mod.factories enable on-site manufacturing, reducing transportation and carbon footprint.\n• Certified quality: Rigorous testing ensures compliance with building codes and industry certifications.\n\nUnlike traditional bricks or concrete, our pavers create a closed-loop system where waste becomes a resource.",
+            "email": "products@pelagic.earth"
+          },
+          {
+            "question": "How can architects, developers, or councils partner with Pelagic?",
+            "answer": "Pelagic partners with architects, developers, and councils to turn local plastic waste into certified building materials.\n\nWe offer collaboration opportunities across three areas:\n\n• Design integration: specify Pelagic pavers or systems in sustainable building projects.\n• Circular manufacturing: establish on-site or regional micro-factories to process local waste streams.\n• Policy and education: work with councils to pilot closed-loop infrastructure and community recycling programs.",
+            "email": "partnerships@pelagic.earth"
+          },
+          {
+            "question": "When will Pelagic pavers and mod.factories be available for preorder or purchase?",
+            "answer": "Pelagic is actively scaling production with installations planned globally.\n\nAvailability:\n\n• Preorders now open: Secure your place in our production queue for 2025-2026 deployments.\n• Early access programs: Partner with us for pilot projects and receive priority access.\n• Custom deployments: Work with our team to deploy a mod.factory tailored to your region's waste stream.\n• Commercial scale: Enterprises and municipalities can arrange bulk orders for infrastructure projects.\n\nConnect with us to discuss timelines, pricing, and capacity planning for your specific project needs.",
+            "email": "sales@pelagic.earth"
+          },
+          {
+            "question": "Can Pelagic pavers be certified and do they meet building codes?",
+            "answer": "products undergoe comprehensive testing to meet international building standards and certifications.\n\nCertifications and compliance:\n\n• Structural performance: Engineered to meet or exceed ASTM standards for load-bearing applications.\n• Durability testing: Accelerated aging tests confirm long-term performance and weather resistance.\n• Material safety: Non-toxic composition tested through third-party laboratory testing.\n• Building codes: Compliant with national and international construction standards.\n\nOur quality assurance team works continuously with certification bodies to ensure materials meet or exceed all applicable building codes.",
+            "email": "quality@pelagic.earth"
+          },
+          {
+            "question": "What is the environmental impact of producing Pelagic pavers? ",
+            "answer": "Pelagic pavers create a net positive environmental impact by transforming ocean plastic waste into durable building materials.\n\nEnvironmental benefits:\n\n• Waste diversion: Each square meter removes 30kg of plastic from marine environments.\n• Carbon reduction: Our production process uses less energy than traditional brick manufacturing.\n• Water conservation: Minimal water usage compared to conventional concrete production.\n• Circular economy: Creates value from waste, reducing reliance on virgin materials.\n• Local production: Portable mod.factories minimize transportation emissions.\n\nLife cycle assessment shows Pelagic pavers have lower embodied carbon and environmental impact compared to traditional building materials.",
+            "email": "impact@pelagic.earth"
+          },
+          {
+            "question": "How do the costs of Pelagic pavers compare to traditional building materials?",
+            "answer": "Pelagic offers competitive pricing with additional value through sustainability and performance.\n\nPricing considerations:\n\n• Material costs: Comparable to premium traditional materials, with long-term value benefits.\n• Installation: Similar installation processes reduce labor costs compared to specialized systems.\n• Durability: Longer lifespan reduces replacement and maintenance costs over time.\n• Sustainability credits: Potential LEED credits and environmental certifications may offset costs.\n• Brand value: Demonstrate commitment to circular economy and environmental responsibility.\n\nContact our sales team for detailed pricing, volume discounts, and project-specific quotes.",
+            "email": "pricing@pelagic.earth"
+          }
+        ]
+      }
+    ]
+  },
+  "globalSetting": {}
+}
