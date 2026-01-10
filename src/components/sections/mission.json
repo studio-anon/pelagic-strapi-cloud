@@ -7,7 +7,7 @@
   },
   "options": {},
   "attributes": {
-    "title": {
+    "taglineText": {
       "type": "string",
       "required": true
     },

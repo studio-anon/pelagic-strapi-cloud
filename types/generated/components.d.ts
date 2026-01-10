@@ -99,7 +99,7 @@ export interface SectionsMission extends Struct.ComponentSchema {
   };
   attributes: {
     body: Schema.Attribute.RichText;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    taglineText: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 

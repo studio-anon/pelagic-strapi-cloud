@@ -26,8 +26,27 @@
       },
       {
         "__component": "sections.mission",
-        "title": "Waste is in the eye of the beholder.",
+        "taglineText": "Waste is in the eye of the beholder.",
         "body": "Pelagic exists to reframe waste as a resource. What others discard, we turn into premium construction products that shape sustainable communities and build closed loop partnerships."
+      },
+      {
+        "__component": "sections.overview",
+        "title": "Our unique solution",
+        "description": "Pelagic.Earth deploys Manufacturing as a Service (MaaS) designed from the systems level down to transform discarded plastic into product.",
+        "items": [
+          {
+            "title": "Infrastructure",
+            "description": "Pelagic create decentralised infrastructure - production hubs colocated with soft plastic processing and modular deployable factories. Portable Pelagic mod.factories, each in a 40-foot container, can be air-lifted, trucked, or transported directly to plastic waste, whether a remote beach or a building site."
+          },
+          {
+            "title": "Scaled",
+            "description": "This forms a decentralised and independent network of production, connected and dynamic; to elastically meet demand and supply with real-time carbon reporting and impact measurement"
+          },
+          {
+            "title": "Product",
+            "description": "The output—a contemporary, functional product for sale or immediate use, even on the site it is produced."
+          }
+        ]
       },
       {
         "__component": "sections.impact",
