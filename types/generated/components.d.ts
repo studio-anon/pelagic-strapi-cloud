@@ -160,8 +160,10 @@ export interface SharedApplicationCard extends Struct.ComponentSchema {
     icon: 'grid';
   };
   attributes: {
-    description: Schema.Attribute.RichText;
-    image: Schema.Attribute.Media<'images'>;
+    alt: Schema.Attribute.String;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    imageDesktop: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    imageMobile: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }

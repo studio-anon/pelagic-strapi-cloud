@@ -246,6 +246,29 @@ async function processSection(section) {
     }
   }
   
+  // Applications section - handle nested items with images
+  else if (section.__component === 'sections.applications') {
+    console.log('   Processing Applications section...');
+    
+    if (section.applications && Array.isArray(section.applications) && section.applications.length > 0) {
+      sectionCopy.applications = [];
+      for (let i = 0; i < section.applications.length; i++) {
+        const application = section.applications[i];
+        const processedApplication = { ...application };
+        
+        if (application.imageMobile) {
+          processedApplication.imageMobile = await checkFileExistsBeforeUpload(application.imageMobile);
+        }
+        
+        if (application.imageDesktop) {
+          processedApplication.imageDesktop = await checkFileExistsBeforeUpload(application.imageDesktop);
+        }
+        
+        sectionCopy.applications.push(processedApplication);
+      }
+    }
+  }
+  
   // FAQs section - no media, but items are already in correct format
   else if (section.__component === 'sections.faqs') {
     console.log('   Processing FAQs section...');

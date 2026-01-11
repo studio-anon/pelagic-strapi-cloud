@@ -11,11 +11,24 @@
       "type": "string",
       "required": true
     },
-    "description": { "type": "richtext" },
-    "image": {
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "imageMobile": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": ["images"],
+      "required": true
+    },
+    "imageDesktop": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "required": true
+    },
+    "alt": {
+      "type": "string"
     }
   }
 }

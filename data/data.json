@@ -58,6 +58,40 @@
         "externalUrl": null
       },
       {
+        "__component": "sections.applications",
+        "title": "Built for every vision",
+        "applications": [
+          {
+            "title": "Public space",
+            "description": "Commercial projects from buildings to large scale civil engineering.",
+            "imageMobile": "applications/mobile-01.jpg",
+            "imageDesktop": "applications/desktop-01.jpg",
+            "alt": "Commercial building with sustainable materials"
+          },
+          {
+            "title": "Remote & regional",
+            "description": "Local partnerships, generating regional resilience economies through capability building and purpose.",
+            "imageMobile": "applications/mobile-02.jpg",
+            "imageDesktop": "applications/desktop-02.jpg",
+            "alt": "Community engagement and local partnerships"
+          },
+          {
+            "title": "Residential",
+            "description": "Durable, modular bricks for homes, landscaping and considered projects.",
+            "imageMobile": "applications/mobile-03.jpg",
+            "imageDesktop": "applications/desktop-03.jpg",
+            "alt": "Modern residential space with pool and arched openings"
+          },
+          {
+            "title": "Construction",
+            "description": "On-site conversion transforms waste streams into usable materials, cutting logistics and landfill cost and emissions.",
+            "imageMobile": "applications/mobile-04.jpg",
+            "imageDesktop": "applications/desktop-04.jpg",
+            "alt": "Modern public building facade with blue panels"
+          }
+        ]
+      },
+      {
         "__component": "sections.impact",
         "title": "Act locally, impact globally",
         "description": "From our first installations in 2025 to more than 20 mod.factories worldwide by 2029, Pelagic is on track to upcycle thousands of tons of plastic waste into building products scaling local impact into a global circular system.",
