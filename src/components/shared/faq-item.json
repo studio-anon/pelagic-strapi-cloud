@@ -11,7 +11,14 @@
       "type": "string",
       "required": true
     },
-    "answer": { "type": "richtext" },
+    "shortAnswer": {
+      "type": "text",
+      "required": false
+    },
+    "answer": {
+      "type": "richtext",
+      "required": false
+    },
     "email": {
       "type": "string",
       "required": false
