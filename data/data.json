@@ -106,8 +106,7 @@
         "description": "In 2025 we exhibited at Milan Design Week. Alongside our physical exhibition we launched a digital companion—conceived as both exhibit and experiment, the platform invites visitors to reframe discarded plastics as a potential vast commodity; a story of hope and growth.",
         "buttonLabel": "Launch the MDW experience",
         "buttonUrl": "https://explore.pelagic.earth",
-        "video": "milan-design-week/video.mp4",
-        "thumbnail": null
+        "video": "milan-design-week/video.mp4"
       },
       {
         "__component": "sections.faqs",

@@ -26,11 +26,6 @@
       "type": "media",
       "multiple": false,
       "allowedTypes": ["videos"]
-    },
-    "thumbnail": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": ["images"]
     }
   }
 }
