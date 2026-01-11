@@ -49,6 +49,15 @@
         ]
       },
       {
+        "__component": "sections.product",
+        "title": "Pelagic Pave",
+        "description": "The first in Australia. Higher compression strength and flexural strength, designed to the highest quality and standard. 100% recycled content. Each metre of product removes over 30kgs of plastic from the environment",
+        "buttonLabel": "Enquire about preorder",
+        "buttonAction": "openModal",
+        "internalLink": null,
+        "externalUrl": null
+      },
+      {
         "__component": "sections.impact",
         "title": "Act locally, impact globally",
         "description": "From our first installations in 2025 to more than 20 mod.factories worldwide by 2029, Pelagic is on track to upcycle thousands of tons of plastic waste into building products scaling local impact into a global circular system.",
