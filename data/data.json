@@ -185,5 +185,23 @@
       }
     ]
   },
-  "globalSetting": {}
+  "globalSetting": {
+    "siteName": "Pelagic Earth",
+    "footerTagline": "Waste is in the eye of the beholder.",
+    "socialLinks": [
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/company/pelagic.earth/",
+        "openInNewTab": true
+      },
+      {
+        "label": "Instagram",
+        "url": "https://www.instagram.com/pelagic.earth/",
+        "openInNewTab": true
+      }
+    ],
+    "copyrightText": "© 2025 Pelagic Oceania Pty Ltd",
+    "privacySlug": "privacy",
+    "termsSlug": "terms"
+  }
 }

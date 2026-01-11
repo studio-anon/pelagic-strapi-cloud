@@ -3,7 +3,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 const mime = require('mime-types');
-const { homePage } = require('../data/data.json');
+const { homePage, globalSetting } = require('../data/data.json');
 
 /**
  * Bootstrap function to seed initial content into Strapi
@@ -378,6 +378,51 @@ async function importHomePage() {
 }
 
 /**
+ * Import Global Settings content
+ * Processes site-wide settings including footer data
+ */
+async function importGlobalSetting() {
+  console.log('⚙️  Importing Global Settings...');
+
+  try {
+    if (!globalSetting) {
+      console.log('   No global settings data found, skipping...');
+      return;
+    }
+
+    // Prepare global setting entry data
+    const globalSettingData = {
+      siteName: globalSetting.siteName || 'Pelagic Earth',
+      footerTagline: globalSetting.footerTagline || null,
+      copyrightText: globalSetting.copyrightText || null,
+      privacySlug: globalSetting.privacySlug || null,
+      termsSlug: globalSetting.termsSlug || null,
+      socialLinks: globalSetting.socialLinks || [],
+    };
+
+    // Create global-setting entry (single type)
+    console.log('   Creating global-setting entry...');
+    try {
+      await strapi.documents('api::global-setting.global-setting').create({
+        data: globalSettingData,
+      });
+      console.log('   ✓ Global Settings created successfully!');
+    } catch (error) {
+      // If entry already exists (unlikely on first run, but handle gracefully)
+      if (error.message && error.message.includes('already exists')) {
+        console.log('   Global settings already exists, updating...');
+        console.warn('   ⚠️  Global settings entry already exists. Clear database to reimport.');
+      } else {
+        throw error;
+      }
+    }
+  } catch (error) {
+    console.error('   ✗ Failed to import Global Settings:', error);
+    throw error;
+  }
+}
+
+/**
  * Main import function
  */
 async function importSeedData() {
@@ -394,8 +439,8 @@ async function importSeedData() {
   // Import homepage content
   await importHomePage();
 
-  // TODO: Import global settings if needed
-  // await importGlobalSetting();
+  // Import global settings
+  await importGlobalSetting();
 
   console.log('✅ Seed data import complete');
 }

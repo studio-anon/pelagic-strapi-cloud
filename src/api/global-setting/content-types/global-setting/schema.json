@@ -30,6 +30,9 @@
     "termsSlug": {
       "type": "uid"
     },
+    "copyrightText": {
+      "type": "string"
+    },
     "mainNavigation": {
       "type": "json"
     }
