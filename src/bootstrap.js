@@ -281,6 +281,29 @@ async function processSection(section) {
     // Contact blocks are already correctly formatted, no media to process
   }
   
+  // Small Gallery section - handle nested items with responsive images
+  else if (section.__component === 'sections.small-gallery') {
+    console.log('   Processing Small Gallery section...');
+    
+    if (section.items && Array.isArray(section.items) && section.items.length > 0) {
+      sectionCopy.items = [];
+      for (let i = 0; i < section.items.length; i++) {
+        const item = section.items[i];
+        const processedItem = { ...item };
+        
+        if (item.desktopImage) {
+          processedItem.desktopImage = await checkFileExistsBeforeUpload(item.desktopImage);
+        }
+        
+        if (item.mobileImage) {
+          processedItem.mobileImage = await checkFileExistsBeforeUpload(item.mobileImage);
+        }
+        
+        sectionCopy.items.push(processedItem);
+      }
+    }
+  }
+  
   // Mission, Impact sections - no media fields
   else {
     console.log(`   Processing ${section.__component} section...`);

@@ -165,6 +165,23 @@
             "email": "media@pelagic.earth"
           }
         ]
+      },
+      {
+        "__component": "sections.small-gallery",
+        "items": [
+          {
+            "desktopImage": "gallery/img_01.jpg",
+            "mobileImage": "gallery/img_01.jpg"
+          },
+          {
+            "desktopImage": "gallery/img_02.jpg",
+            "mobileImage": "gallery/img_02.jpg"
+          },
+          {
+            "desktopImage": "gallery/img_03.jpg",
+            "mobileImage": "gallery/img_03.jpg"
+          }
+        ]
       }
     ]
   },
