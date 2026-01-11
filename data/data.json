@@ -149,6 +149,22 @@
             "contactText": "To discuss a project or pilot, reach out via"
           }
         ]
+      },
+      {
+        "__component": "sections.contact",
+        "title": "Bring Pelagic to your city",
+        "blocks": [
+          {
+            "label": "Partnerships",
+            "description": "Each partnership is unique. Reach out to discuss how we can tailor to your circumstance at",
+            "email": "partner@pelagic.earth"
+          },
+          {
+            "label": "Activations, exhibitions and media",
+            "description": "We are always looking for opportunities to showcase our model and impact. Reach us at",
+            "email": "media@pelagic.earth"
+          }
+        ]
       }
     ]
   },

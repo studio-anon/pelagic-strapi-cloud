@@ -275,6 +275,12 @@ async function processSection(section) {
     // FAQ items are already correctly formatted, no media to process
   }
   
+  // Contact section - no media fields, blocks are already in correct format
+  else if (section.__component === 'sections.contact') {
+    console.log('   Processing Contact section...');
+    // Contact blocks are already correctly formatted, no media to process
+  }
+  
   // Mission, Impact sections - no media fields
   else {
     console.log(`   Processing ${section.__component} section...`);
