@@ -5,7 +5,7 @@
     "singularName": "journal-page",
     "pluralName": "journal-pages",
     "displayName": "Journal Page",
-    "description": "Journal landing page content"
+    "description": "Journal landing page content and listing presentation"
   },
   "options": {
     "draftAndPublish": false
@@ -17,7 +17,29 @@
       "required": true
     },
     "introText": { "type": "richtext" },
-    "showLocalTime": { "type": "boolean" }
+    "showLocalTime": { "type": "boolean", "default": true },
+    "clockTimezone": {
+      "type": "string",
+      "default": "Australia/Brisbane"
+    },
+    "clockLocale": {
+      "type": "string",
+      "default": "en-AU"
+    },
+    "showMoreLabel": {
+      "type": "string",
+      "default": "Show more articles"
+    },
+    "defaultArticlesPerPage": {
+      "type": "integer",
+      "default": 7,
+      "min": 1,
+      "max": 24
+    },
+    "cardPatterns": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.journal-card-pattern"
+    }
   }
 }
-

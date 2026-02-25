@@ -3,18 +3,27 @@
 const fs = require('fs-extra');
 const path = require('path');
 const mime = require('mime-types');
-const { homePage, globalSetting } = require('../data/data.json');
+const {
+  homePage,
+  globalSetting,
+  journalPage,
+  journalArticles,
+} = require('../data/data.json');
 
 /**
  * Bootstrap function to seed initial content into Strapi
  * Runs once on first startup after database initialization
  */
 async function seedPelagicApp() {
-  const shouldImportSeedData = await isFirstRun();
+  const forceSeed = process.env.FORCE_SEED === 'true';
+  const shouldImportSeedData = forceSeed || (await isFirstRun());
 
   if (shouldImportSeedData) {
     try {
       console.log('🌊 Setting up Pelagic Earth CMS...');
+      if (forceSeed) {
+        console.log('ℹ️  FORCE_SEED enabled: running idempotent seed import');
+      }
       await importSeedData();
       console.log('✅ Pelagic CMS bootstrap complete!');
     } catch (error) {
@@ -23,7 +32,7 @@ async function seedPelagicApp() {
     }
   } else {
     console.log(
-      'ℹ️  Seed data has already been imported. Clear database to reimport.'
+      'ℹ️  Seed data has already been imported. Clear database or run with FORCE_SEED=true to reimport idempotently.'
     );
   }
 }
@@ -314,6 +323,79 @@ async function processSection(section) {
 }
 
 /**
+ * Process a journal content block and upload any media it references
+ */
+async function processJournalContentBlock(block) {
+  const blockCopy = { ...block };
+  const componentType = block?.__component;
+
+  if (!componentType) {
+    return blockCopy;
+  }
+
+  if (componentType === 'journal.full-width-image') {
+    if (block.desktopImage) {
+      blockCopy.desktopImage = await checkFileExistsBeforeUpload(
+        block.desktopImage
+      );
+    }
+    if (block.mobileImage) {
+      blockCopy.mobileImage = await checkFileExistsBeforeUpload(block.mobileImage);
+    }
+    return blockCopy;
+  }
+
+  if (componentType === 'journal.two-images') {
+    if (block.desktopImage01) {
+      blockCopy.desktopImage01 = await checkFileExistsBeforeUpload(
+        block.desktopImage01
+      );
+    }
+    if (block.mobileImage01) {
+      blockCopy.mobileImage01 = await checkFileExistsBeforeUpload(
+        block.mobileImage01
+      );
+    }
+    if (block.desktopImage02) {
+      blockCopy.desktopImage02 = await checkFileExistsBeforeUpload(
+        block.desktopImage02
+      );
+    }
+    if (block.mobileImage02) {
+      blockCopy.mobileImage02 = await checkFileExistsBeforeUpload(
+        block.mobileImage02
+      );
+    }
+    return blockCopy;
+  }
+
+  if (
+    componentType === 'journal.text-image-pair-left' ||
+    componentType === 'journal.text-image-pair-right'
+  ) {
+    if (block.image) {
+      blockCopy.image = await checkFileExistsBeforeUpload(block.image);
+    }
+    return blockCopy;
+  }
+
+  if (componentType === 'journal.video-embed') {
+    if (block.desktopImage) {
+      blockCopy.desktopImage = await checkFileExistsBeforeUpload(
+        block.desktopImage
+      );
+    }
+    if (block.mobileImage) {
+      blockCopy.mobileImage = await checkFileExistsBeforeUpload(block.mobileImage);
+    }
+    return blockCopy;
+  }
+
+  // journal.breakout-text, journal.single-column, journal.two-column
+  return blockCopy;
+}
+
+/**
  * Import Home Page content
  * Processes SEO, sections, and creates the home-page entry
  */
@@ -321,6 +403,14 @@ async function importHomePage() {
   console.log('📄 Importing Home Page...');
 
   try {
+    const existingHomePage = await strapi.db
+      .query('api::home-page.home-page')
+      .findOne({ where: {} });
+    if (existingHomePage) {
+      console.log('   Home page already exists, skipping create...');
+      return;
+    }
+
     // Process SEO component
     let seoData = null;
     if (homePage.seo) {
@@ -390,6 +480,14 @@ async function importGlobalSetting() {
       return;
     }
 
+    const existingGlobalSetting = await strapi.db
+      .query('api::global-setting.global-setting')
+      .findOne({ where: {} });
+    if (existingGlobalSetting) {
+      console.log('   Global settings already exists, skipping create...');
+      return;
+    }
+
     // Prepare global setting entry data
     const globalSettingData = {
       siteName: globalSetting.siteName || 'Pelagic Earth',
@@ -423,6 +521,251 @@ async function importGlobalSetting() {
 }
 
 /**
+ * Convert a title to a URL-safe slug
+ */
+function toSlug(value) {
+  return String(value || '')
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+/**
+ * Import Journal Page content
+ * Processes card patterns and upserts the journal-page entry
+ */
+async function importJournalPage() {
+  console.log('📰 Importing Journal Page...');
+
+  try {
+    if (!journalPage) {
+      console.log('   No journal page data found, skipping...');
+      return;
+    }
+
+    const existingJournalPage = await strapi.db
+      .query('api::journal-page.journal-page')
+      .findOne({ where: {} });
+
+    const patterns = Array.isArray(journalPage.cardPatterns)
+      ? journalPage.cardPatterns
+      : Array.isArray(journalPage.listingPatterns)
+        ? journalPage.listingPatterns
+      : [];
+
+    const processedPatterns = [];
+    for (let i = 0; i < patterns.length; i++) {
+      const pattern = patterns[i];
+      const processedPattern = {
+        label: pattern.label || `Pattern ${i + 1}`,
+      };
+
+      if (!pattern.desktopImage) {
+        console.warn(`   ⚠️  Pattern ${i + 1} missing desktopImage, skipping...`);
+        continue;
+      }
+
+      processedPattern.desktopImage = await checkFileExistsBeforeUpload(
+        pattern.desktopImage
+      );
+
+      if (pattern.mobileImage) {
+        processedPattern.mobileImage = await checkFileExistsBeforeUpload(
+          pattern.mobileImage
+        );
+      } else {
+        // Fallback to desktop image if no dedicated mobile image is provided
+        processedPattern.mobileImage = processedPattern.desktopImage;
+      }
+
+      processedPatterns.push(processedPattern);
+    }
+
+    const journalPageData = {
+      title: journalPage.title || 'Journal',
+      introText: journalPage.introText || null,
+      showLocalTime:
+        typeof journalPage.showLocalTime === 'boolean'
+          ? journalPage.showLocalTime
+          : true,
+      clockTimezone: journalPage.clockTimezone || 'Australia/Brisbane',
+      clockLocale: journalPage.clockLocale || 'en-AU',
+      showMoreLabel: journalPage.showMoreLabel || 'Show more articles',
+      defaultArticlesPerPage: journalPage.defaultArticlesPerPage || 7,
+      cardPatterns: processedPatterns,
+    };
+
+    const existingDocumentId =
+      existingJournalPage?.documentId || existingJournalPage?.document_id;
+
+    try {
+      if (existingDocumentId) {
+        console.log('   Updating journal-page entry...');
+        await strapi.documents('api::journal-page.journal-page').update({
+          documentId: existingDocumentId,
+          data: journalPageData,
+        });
+        console.log('   ✓ Journal Page updated successfully!');
+        return;
+      }
+
+      console.log('   Creating journal-page entry...');
+      await strapi.documents('api::journal-page.journal-page').create({
+        data: journalPageData,
+      });
+      console.log('   ✓ Journal Page created successfully!');
+    } catch (error) {
+      throw error;
+    }
+  } catch (error) {
+    console.error('   ✗ Failed to import Journal Page:', error);
+    throw error;
+  }
+}
+
+/**
+ * Import Journal Articles content
+ * Upserts article entries for listing and detail pages
+ */
+async function importJournalArticles() {
+  console.log('📝 Importing Journal Articles...');
+
+  try {
+    if (!Array.isArray(journalArticles) || journalArticles.length === 0) {
+      console.log('   No journal articles data found, skipping...');
+      return;
+    }
+
+    for (let i = 0; i < journalArticles.length; i++) {
+      const seedArticle = journalArticles[i];
+      const title = seedArticle.title?.trim();
+
+      if (!title) {
+        console.warn(`   ⚠️  Article ${i + 1} missing title, skipping...`);
+        continue;
+      }
+
+      const slug = seedArticle.slug || toSlug(title);
+      const heroImageDesktopPath =
+        seedArticle.heroImageDesktop || seedArticle.listingThumbnailDesktop;
+      const listingThumbnailDesktopPath =
+        seedArticle.listingThumbnailDesktop ||
+        seedArticle.heroImageDesktop ||
+        null;
+
+      if (!heroImageDesktopPath) {
+        console.warn(
+          `   ⚠️  Article "${title}" missing heroImageDesktop, skipping...`
+        );
+        continue;
+      }
+
+      if (!listingThumbnailDesktopPath) {
+        console.warn(
+          `   ⚠️  Article "${title}" missing listingThumbnailDesktop, skipping...`
+        );
+        continue;
+      }
+
+      const listingThumbnailMobilePath =
+        seedArticle.listingThumbnailMobile ||
+        seedArticle.heroImageMobile ||
+        listingThumbnailDesktopPath;
+      const heroImageMobilePath =
+        seedArticle.heroImageMobile || listingThumbnailMobilePath;
+
+      const contentBlocks = [];
+      if (Array.isArray(seedArticle.contentBlocks)) {
+        for (let blockIndex = 0; blockIndex < seedArticle.contentBlocks.length; blockIndex++) {
+          const processedBlock = await processJournalContentBlock(
+            seedArticle.contentBlocks[blockIndex]
+          );
+          contentBlocks.push(processedBlock);
+        }
+      }
+
+      const articleData = {
+        title,
+        slug,
+        fullIntroduction: seedArticle.fullIntroduction || null,
+        listingIntroduction:
+          seedArticle.listingIntroduction || seedArticle.excerpt || null,
+        publishDate: seedArticle.publishDate || seedArticle.listingDate || null,
+        readingTimeMinutes: seedArticle.readingTimeMinutes || null,
+        isExternal: Boolean(seedArticle.isExternal),
+        externalUrl: seedArticle.externalUrl || null,
+        listingThumbnailDesktop: await checkFileExistsBeforeUpload(
+          listingThumbnailDesktopPath
+        ),
+        heroImageDesktop: await checkFileExistsBeforeUpload(
+          heroImageDesktopPath
+        ),
+        contentBlocks,
+      };
+
+      if (listingThumbnailMobilePath) {
+        articleData.listingThumbnailMobile = await checkFileExistsBeforeUpload(
+          listingThumbnailMobilePath
+        );
+      }
+
+      if (heroImageMobilePath) {
+        articleData.heroImageMobile = await checkFileExistsBeforeUpload(
+          heroImageMobilePath
+        );
+      }
+
+      const existing = await strapi.db
+        .query('api::journal-article.journal-article')
+        .findOne({
+          where: { slug },
+        });
+      const existingDocumentId = existing?.documentId || existing?.document_id;
+
+      try {
+        if (existingDocumentId) {
+          await strapi.documents('api::journal-article.journal-article').update({
+            documentId: existingDocumentId,
+            data: articleData,
+            status: 'published',
+          });
+          console.log(`   ✓ Updated journal article: ${title}`);
+        } else {
+          await strapi.documents('api::journal-article.journal-article').create({
+            data: articleData,
+            status: 'published',
+          });
+          console.log(`   ✓ Created journal article: ${title}`);
+        }
+      } catch (error) {
+        if (existingDocumentId) {
+          console.warn(
+            `   ⚠️  Could not publish update for "${title}", saving draft update...`
+          );
+          await strapi.documents('api::journal-article.journal-article').update({
+            documentId: existingDocumentId,
+            data: articleData,
+          });
+          console.log(`   ✓ Updated journal article draft: ${title}`);
+        } else {
+          console.warn(
+            `   ⚠️  Could not create "${title}" as published, creating draft instead...`
+          );
+          await strapi.documents('api::journal-article.journal-article').create({
+            data: articleData,
+          });
+          console.log(`   ✓ Created journal article draft: ${title}`);
+        }
+      }
+    }
+  } catch (error) {
+    console.error('   ✗ Failed to import Journal Articles:', error);
+    throw error;
+  }
+}
+
+/**
  * Main import function
  */
 async function importSeedData() {
@@ -441,6 +784,10 @@ async function importSeedData() {
 
   // Import global settings
   await importGlobalSetting();
+
+  // Import journal page and articles
+  await importJournalPage();
+  await importJournalArticles();
 
   console.log('✅ Seed data import complete');
 }

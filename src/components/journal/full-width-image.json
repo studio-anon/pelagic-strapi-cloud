@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_journal_full_width_images",
+  "info": {
+    "displayName": "Full width image",
+    "description": "Responsive full-width article image",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "desktopImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "required": true
+    },
+    "mobileImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

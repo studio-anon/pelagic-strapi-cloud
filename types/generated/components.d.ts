@@ -1,5 +1,112 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface JournalBreakoutText extends Struct.ComponentSchema {
+  collectionName: 'components_journal_breakout_texts';
+  info: {
+    description: 'Highlighted standalone copy block';
+    displayName: 'Breakout text';
+    icon: 'quote';
+  };
+  attributes: {
+    copy: Schema.Attribute.RichText & Schema.Attribute.Required;
+  };
+}
+
+export interface JournalFullWidthImage extends Struct.ComponentSchema {
+  collectionName: 'components_journal_full_width_images';
+  info: {
+    description: 'Responsive full-width article image';
+    displayName: 'Full width image';
+    icon: 'landscape';
+  };
+  attributes: {
+    desktopImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    mobileImage: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface JournalSingleColumn extends Struct.ComponentSchema {
+  collectionName: 'components_journal_single_columns';
+  info: {
+    description: 'Single-column article copy';
+    displayName: 'Single column';
+    icon: 'alignLeft';
+  };
+  attributes: {
+    copy: Schema.Attribute.RichText & Schema.Attribute.Required;
+  };
+}
+
+export interface JournalTextImagePairLeft extends Struct.ComponentSchema {
+  collectionName: 'components_journal_text_image_pair_lefts';
+  info: {
+    description: 'Copy with accompanying image, left-aligned layout';
+    displayName: 'Text image pair left';
+    icon: 'picture';
+  };
+  attributes: {
+    copy: Schema.Attribute.RichText & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+  };
+}
+
+export interface JournalTextImagePairRight extends Struct.ComponentSchema {
+  collectionName: 'components_journal_text_image_pair_rights';
+  info: {
+    description: 'Copy with accompanying image, right-aligned layout';
+    displayName: 'Text image pair right';
+    icon: 'picture';
+  };
+  attributes: {
+    copy: Schema.Attribute.RichText & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+  };
+}
+
+export interface JournalTwoColumn extends Struct.ComponentSchema {
+  collectionName: 'components_journal_two_columns';
+  info: {
+    description: 'Two-column article copy';
+    displayName: 'Two column';
+    icon: 'layout';
+  };
+  attributes: {
+    copy01: Schema.Attribute.RichText & Schema.Attribute.Required;
+    copy02: Schema.Attribute.RichText & Schema.Attribute.Required;
+  };
+}
+
+export interface JournalTwoImages extends Struct.ComponentSchema {
+  collectionName: 'components_journal_two_images';
+  info: {
+    description: 'Two-image block with desktop and mobile variants';
+    displayName: 'Two images';
+    icon: 'apps';
+  };
+  attributes: {
+    desktopImage01: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    desktopImage02: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    mobileImage01: Schema.Attribute.Media<'images'>;
+    mobileImage02: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface JournalVideoEmbed extends Struct.ComponentSchema {
+  collectionName: 'components_journal_video_embeds';
+  info: {
+    description: 'Embedded video URL with desktop/mobile poster images';
+    displayName: 'Video embed';
+    icon: 'play';
+  };
+  attributes: {
+    desktopImage: Schema.Attribute.Media<'images'>;
+    mobileImage: Schema.Attribute.Media<'images'>;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SectionsApplications extends Struct.ComponentSchema {
   collectionName: 'components_sections_applications';
   info: {
@@ -241,6 +348,20 @@ export interface SharedImageText extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedJournalCardPattern extends Struct.ComponentSchema {
+  collectionName: 'components_shared_journal_card_patterns';
+  info: {
+    description: 'Background pattern image pair for journal cards';
+    displayName: 'Journal card pattern';
+    icon: 'brush';
+  };
+  attributes: {
+    desktopImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    label: Schema.Attribute.String;
+    mobileImage: Schema.Attribute.Media<'images'>;
+  };
+}
+
 export interface SharedMediaBlock extends Struct.ComponentSchema {
   collectionName: 'components_shared_media_blocks';
   info: {
@@ -324,6 +445,14 @@ export interface SharedVideoBlock extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'journal.breakout-text': JournalBreakoutText;
+      'journal.full-width-image': JournalFullWidthImage;
+      'journal.single-column': JournalSingleColumn;
+      'journal.text-image-pair-left': JournalTextImagePairLeft;
+      'journal.text-image-pair-right': JournalTextImagePairRight;
+      'journal.two-column': JournalTwoColumn;
+      'journal.two-images': JournalTwoImages;
+      'journal.video-embed': JournalVideoEmbed;
       'sections.applications': SectionsApplications;
       'sections.contact': SectionsContact;
       'sections.faqs': SectionsFaqs;
@@ -340,6 +469,7 @@ declare module '@strapi/strapi' {
       'shared.faq-item': SharedFaqItem;
       'shared.image-pair': SharedImagePair;
       'shared.image-text': SharedImageText;
+      'shared.journal-card-pattern': SharedJournalCardPattern;
       'shared.media-block': SharedMediaBlock;
       'shared.overview-item': SharedOverviewItem;
       'shared.responsive-image': SharedResponsiveImage;

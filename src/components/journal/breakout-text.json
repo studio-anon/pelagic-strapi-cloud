@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_journal_breakout_texts",
+  "info": {
+    "displayName": "Breakout text",
+    "description": "Highlighted standalone copy block",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "copy": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

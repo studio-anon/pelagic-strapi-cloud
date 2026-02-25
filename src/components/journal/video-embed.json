@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_journal_video_embeds",
+  "info": {
+    "displayName": "Video embed",
+    "description": "Embedded video URL with desktop/mobile poster images",
+    "icon": "play"
+  },
+  "options": {},
+  "attributes": {
+    "desktopImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "mobileImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

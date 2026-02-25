@@ -512,7 +512,7 @@ export interface ApiJournalArticleJournalArticle
   extends Struct.CollectionTypeSchema {
   collectionName: 'journal_articles';
   info: {
-    description: 'Journal articles with rich body blocks';
+    description: 'Journal article content for listing and detail pages';
     displayName: 'Journal Article';
     pluralName: 'journal-articles';
     singularName: 'journal-article';
@@ -521,35 +521,48 @@ export interface ApiJournalArticleJournalArticle
     draftAndPublish: true;
   };
   attributes: {
-    articleIntroduction: Schema.Attribute.Text;
-    articleTitle: Schema.Attribute.String & Schema.Attribute.Required;
-    body: Schema.Attribute.DynamicZone<
+    contentBlocks: Schema.Attribute.DynamicZone<
       [
-        'shared.media-block',
-        'shared.rich-text',
-        'shared.image-text',
-        'shared.image-pair',
-        'shared.video-block',
+        'journal.breakout-text',
+        'journal.full-width-image',
+        'journal.two-images',
+        'journal.single-column',
+        'journal.two-column',
+        'journal.text-image-pair-left',
+        'journal.text-image-pair-right',
+        'journal.video-embed',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     externalUrl: Schema.Attribute.String;
+    fullIntroduction: Schema.Attribute.RichText;
+    heroImageDesktop: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    heroImageMobile: Schema.Attribute.Media<'images'>;
     isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    listingDate: Schema.Attribute.Date;
-    listingShortDescription: Schema.Attribute.Text;
-    listingThumbnail: Schema.Attribute.Media<'images'>;
-    listingTitle: Schema.Attribute.String;
+    listingIntroduction: Schema.Attribute.Text;
+    listingThumbnailDesktop: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    listingThumbnailMobile: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::journal-article.journal-article'
     > &
       Schema.Attribute.Private;
+    publishDate: Schema.Attribute.Date;
     publishedAt: Schema.Attribute.DateTime;
-    readingTimeMinutes: Schema.Attribute.Integer;
-    slug: Schema.Attribute.UID<'articleTitle'> & Schema.Attribute.Required;
+    readingTimeMinutes: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -559,7 +572,7 @@ export interface ApiJournalArticleJournalArticle
 export interface ApiJournalPageJournalPage extends Struct.SingleTypeSchema {
   collectionName: 'journal_pages';
   info: {
-    description: 'Journal landing page content';
+    description: 'Journal landing page content and listing presentation';
     displayName: 'Journal Page';
     pluralName: 'journal-pages';
     singularName: 'journal-page';
@@ -568,9 +581,25 @@ export interface ApiJournalPageJournalPage extends Struct.SingleTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    cardPatterns: Schema.Attribute.Component<
+      'shared.journal-card-pattern',
+      true
+    >;
+    clockLocale: Schema.Attribute.String & Schema.Attribute.DefaultTo<'en-AU'>;
+    clockTimezone: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Australia/Brisbane'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    defaultArticlesPerPage: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 24;
+          min: 1;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<7>;
     introText: Schema.Attribute.RichText;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -579,7 +608,9 @@ export interface ApiJournalPageJournalPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    showLocalTime: Schema.Attribute.Boolean;
+    showLocalTime: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    showMoreLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Show more articles'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -844,12 +875,13 @@ export interface PluginUploadFile extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    alternativeText: Schema.Attribute.String;
-    caption: Schema.Attribute.String;
+    alternativeText: Schema.Attribute.Text;
+    caption: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     ext: Schema.Attribute.String;
+    focalPoint: Schema.Attribute.JSON;
     folder: Schema.Attribute.Relation<'manyToOne', 'plugin::upload.folder'> &
       Schema.Attribute.Private;
     folderPath: Schema.Attribute.String &
@@ -869,7 +901,7 @@ export interface PluginUploadFile extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     mime: Schema.Attribute.String & Schema.Attribute.Required;
     name: Schema.Attribute.String & Schema.Attribute.Required;
-    previewUrl: Schema.Attribute.String;
+    previewUrl: Schema.Attribute.Text;
     provider: Schema.Attribute.String & Schema.Attribute.Required;
     provider_metadata: Schema.Attribute.JSON;
     publishedAt: Schema.Attribute.DateTime;
@@ -878,7 +910,7 @@ export interface PluginUploadFile extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    url: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.Text & Schema.Attribute.Required;
     width: Schema.Attribute.Integer;
   };
 }

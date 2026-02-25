@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_journal_single_columns",
+  "info": {
+    "displayName": "Single column",
+    "description": "Single-column article copy",
+    "icon": "alignLeft"
+  },
+  "options": {},
+  "attributes": {
+    "copy": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

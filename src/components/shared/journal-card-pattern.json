@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_journal_card_patterns",
+  "info": {
+    "displayName": "Journal card pattern",
+    "description": "Background pattern image pair for journal cards",
+    "icon": "brush"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "desktopImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "required": true
+    },
+    "mobileImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

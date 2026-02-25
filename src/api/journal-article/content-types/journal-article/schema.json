@@ -5,7 +5,7 @@
     "singularName": "journal-article",
     "pluralName": "journal-articles",
     "displayName": "Journal Article",
-    "description": "Journal articles with rich body blocks"
+    "description": "Journal article content for listing and detail pages"
   },
   "options": {
     "draftAndPublish": true
@@ -14,35 +14,56 @@
   "attributes": {
     "slug": {
       "type": "uid",
-      "targetField": "articleTitle",
+      "targetField": "title",
       "required": true
     },
-    "listingDate": { "type": "date" },
-    "listingTitle": { "type": "string" },
-    "listingShortDescription": { "type": "text" },
-    "listingThumbnail": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "fullIntroduction": { "type": "richtext" },
+    "listingIntroduction": { "type": "text" },
+    "listingThumbnailDesktop": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "required": true
+    },
+    "listingThumbnailMobile": {
       "type": "media",
       "multiple": false,
       "allowedTypes": ["images"]
     },
-    "articleTitle": {
-      "type": "string",
+    "heroImageDesktop": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
       "required": true
     },
-    "articleIntroduction": { "type": "text" },
-    "readingTimeMinutes": { "type": "integer" },
+    "heroImageMobile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "publishDate": { "type": "date" },
+    "readingTimeMinutes": {
+      "type": "integer",
+      "min": 1
+    },
     "isExternal": { "type": "boolean", "default": false },
     "externalUrl": { "type": "string" },
-    "body": {
+    "contentBlocks": {
       "type": "dynamiczone",
       "components": [
-        "shared.media-block",
-        "shared.rich-text",
-        "shared.image-text",
-        "shared.image-pair",
-        "shared.video-block"
+        "journal.breakout-text",
+        "journal.full-width-image",
+        "journal.two-images",
+        "journal.single-column",
+        "journal.two-column",
+        "journal.text-image-pair-left",
+        "journal.text-image-pair-right",
+        "journal.video-embed"
       ]
     }
   }
 }
-

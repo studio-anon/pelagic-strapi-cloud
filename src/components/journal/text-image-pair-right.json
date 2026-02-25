@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_journal_text_image_pair_rights",
+  "info": {
+    "displayName": "Text image pair right",
+    "description": "Copy with accompanying image, right-aligned layout",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "copy": {
+      "type": "richtext",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "required": true
+    }
+  }
+}

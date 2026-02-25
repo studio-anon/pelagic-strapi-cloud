@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_journal_two_images",
+  "info": {
+    "displayName": "Two images",
+    "description": "Two-image block with desktop and mobile variants",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "desktopImage01": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "required": true
+    },
+    "mobileImage01": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "desktopImage02": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "required": true
+    },
+    "mobileImage02": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

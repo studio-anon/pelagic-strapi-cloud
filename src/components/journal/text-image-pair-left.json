@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_journal_text_image_pair_lefts",
+  "info": {
+    "displayName": "Text image pair left",
+    "description": "Copy with accompanying image, left-aligned layout",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "copy": {
+      "type": "richtext",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "required": true
+    }
+  }
+}

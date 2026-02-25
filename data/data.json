@@ -97,7 +97,7 @@
         "description": "From our first installations in 2025 to more than 20 mod.factories worldwide by 2029, Pelagic is on track to upcycle thousands of tons of plastic waste into building products scaling local impact into a global circular system.",
         "calloutNumber": "30+",
         "calloutLabel": "kilograms of plastic is intercepted each time we deploy a single m2 of product.",
-        "testimonialQuote": "Waste is a cultural proposition, industrial byproduct, an ecosystem out of balance, and misalignment",
+        "testimonialQuote": "\"Waste is a cultural proposition, industrial byproduct, an ecosystem out of balance, and misalignment of design.\"",
         "testimonialName": "Philippa Abbott, Founder"
       },
       {
@@ -185,6 +185,159 @@
       }
     ]
   },
+  "journalPage": {
+    "title": "Journal",
+    "introText": "",
+    "showLocalTime": true,
+    "clockTimezone": "Australia/Brisbane",
+    "clockLocale": "en-AU",
+    "showMoreLabel": "Show more articles",
+    "defaultArticlesPerPage": 7,
+    "cardPatterns": [
+      {
+        "label": "Pattern 1",
+        "desktopImage": "journal-listing/1.png",
+        "mobileImage": "journal-listing/1.png"
+      },
+      {
+        "label": "Pattern 2",
+        "desktopImage": "journal-listing/2.png",
+        "mobileImage": "journal-listing/2.png"
+      },
+      {
+        "label": "Pattern 3",
+        "desktopImage": "journal-listing/3.png",
+        "mobileImage": "journal-listing/3.png"
+      },
+      {
+        "label": "Pattern 4",
+        "desktopImage": "journal-listing/4.png",
+        "mobileImage": "journal-listing/4.png"
+      }
+    ]
+  },
+  "journalArticles": [
+    {
+      "title": "Pelagic.Earth x Parley",
+      "fullIntroduction": "We partnered with Parley to take bold steps toward building a better future for the ocean. This collaboration explores how material innovation can support coastal communities and circular construction.",
+      "listingIntroduction": "We partnered with Parley to take bold steps towards building a better future for the ocean.",
+      "publishDate": "2026-02-01",
+      "readingTimeMinutes": 6,
+      "listingThumbnailDesktop": "hero/hero-01.jpg",
+      "listingThumbnailMobile": "hero/hero-01.jpg",
+      "heroImageDesktop": "hero/hero-01.jpg",
+      "heroImageMobile": "hero/hero-01.jpg",
+      "contentBlocks": [
+        {
+          "__component": "journal.breakout-text",
+          "copy": "Waste is not an endpoint. It is a design material waiting for a new system."
+        },
+        {
+          "__component": "journal.full-width-image",
+          "desktopImage": "hero/hero-02.jpg",
+          "mobileImage": "hero/hero-02.jpg"
+        },
+        {
+          "__component": "journal.two-images",
+          "desktopImage01": "gallery/img_01.jpg",
+          "mobileImage01": "gallery/img_01.jpg",
+          "desktopImage02": "gallery/img_02.jpg",
+          "mobileImage02": "gallery/img_02.jpg"
+        },
+        {
+          "__component": "journal.single-column",
+          "copy": "Our model links local waste streams to local manufacturing capacity so material can stay in circulation where it is needed most."
+        },
+        {
+          "__component": "journal.two-column",
+          "copy01": "We design for deployment, from dense urban projects to remote regions.",
+          "copy02": "Each deployment turns plastic waste into durable product with traceable impact."
+        },
+        {
+          "__component": "journal.text-image-pair-left",
+          "copy": "A modular production system allows us to bring manufacturing closer to the waste source.",
+          "image": "applications/desktop-01.jpg"
+        },
+        {
+          "__component": "journal.text-image-pair-right",
+          "copy": "Partnerships across design, logistics, and policy are what make circular systems practical at scale.",
+          "image": "applications/desktop-02.jpg"
+        },
+        {
+          "__component": "journal.video-embed",
+          "desktopImage": "applications/desktop-04.jpg",
+          "mobileImage": "applications/mobile-04.jpg",
+          "url": "https://explore.pelagic.earth"
+        }
+      ]
+    },
+    {
+      "title": "Hands on the future - Landscape Australia",
+      "fullIntroduction": "Inside the modular factories where recycled plastic becomes building materials both beautiful and useful.",
+      "listingIntroduction": "Inside the modular factories where recycled plastic becomes building materials both beautiful and useful.",
+      "publishDate": "2026-01-01",
+      "readingTimeMinutes": 5,
+      "listingThumbnailDesktop": "applications/desktop-01.jpg",
+      "listingThumbnailMobile": "applications/mobile-01.jpg",
+      "heroImageDesktop": "applications/desktop-01.jpg",
+      "heroImageMobile": "applications/mobile-01.jpg"
+    },
+    {
+      "title": "Mod.factory in the Kimberly",
+      "fullIntroduction": "Our latest deployment is in the outback of Australia, taking the solution right to the problem.",
+      "listingIntroduction": "Our latest deployment is in the outback of Australia taking the solution right to the problem.",
+      "publishDate": "2025-12-01",
+      "readingTimeMinutes": 4,
+      "listingThumbnailDesktop": "applications/desktop-02.jpg",
+      "listingThumbnailMobile": "applications/mobile-02.jpg",
+      "heroImageDesktop": "applications/desktop-02.jpg",
+      "heroImageMobile": "applications/mobile-02.jpg"
+    },
+    {
+      "title": "Our founder speaks at NGV Making Good",
+      "fullIntroduction": "A conversation on culture, systems design, and why reframing waste unlocks entirely new industries.",
+      "listingIntroduction": "Watch the video.",
+      "publishDate": "2025-10-01",
+      "readingTimeMinutes": 3,
+      "listingThumbnailDesktop": "applications/desktop-03.jpg",
+      "listingThumbnailMobile": "applications/mobile-03.jpg",
+      "heroImageDesktop": "applications/desktop-03.jpg",
+      "heroImageMobile": "applications/mobile-03.jpg"
+    },
+    {
+      "title": "Milan Design Week digital companion",
+      "fullIntroduction": "Alongside our physical exhibition, we launched a digital companion that reframes discarded plastics as an opportunity for value creation.",
+      "listingIntroduction": "Check out the digital companion we launched alongside our physical exhibition at Milan Design Week.",
+      "publishDate": "2025-09-01",
+      "readingTimeMinutes": 5,
+      "listingThumbnailDesktop": "applications/desktop-04.jpg",
+      "listingThumbnailMobile": "applications/mobile-04.jpg",
+      "heroImageDesktop": "applications/desktop-04.jpg",
+      "heroImageMobile": "applications/mobile-04.jpg"
+    },
+    {
+      "title": "The quiet weight of plastic",
+      "fullIntroduction": "How invisible waste is reshaping the oceans we still think of as pristine.",
+      "listingIntroduction": "How invisible waste is reshaping the oceans we still think of as pristine.",
+      "publishDate": "2025-06-01",
+      "readingTimeMinutes": 4,
+      "listingThumbnailDesktop": "gallery/img_01.jpg",
+      "listingThumbnailMobile": "gallery/img_01.jpg",
+      "heroImageDesktop": "gallery/img_01.jpg",
+      "heroImageMobile": "gallery/img_01.jpg"
+    },
+    {
+      "title": "Why go modular?",
+      "fullIntroduction": "Systems design has directed the Pelagic strategy from the very beginning.",
+      "listingIntroduction": "Systems design has directed the Pelagic strategy from the very beginning.",
+      "publishDate": "2025-03-01",
+      "readingTimeMinutes": 4,
+      "listingThumbnailDesktop": "gallery/img_02.jpg",
+      "listingThumbnailMobile": "gallery/img_02.jpg",
+      "heroImageDesktop": "gallery/img_02.jpg",
+      "heroImageMobile": "gallery/img_02.jpg"
+    }
+  ],
   "globalSetting": {
     "siteName": "Pelagic Earth",
     "footerTagline": "Waste is in the eye of the beholder.",

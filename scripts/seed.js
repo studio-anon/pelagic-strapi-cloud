@@ -17,7 +17,6 @@
  */
 
 const { createStrapi, compileStrapi } = require('@strapi/strapi');
-const bootstrap = require('../src/bootstrap');
 
 async function main() {
   try {
@@ -34,10 +33,7 @@ async function main() {
     // Set log level to reduce noise (only errors)
     app.log.level = 'error';
 
-    console.log('🌱 Running seed function...');
-    // Run the bootstrap seed function
-    // This will check isFirstRun and import seed data
-    await bootstrap();
+    console.log('🌱 Bootstrap seed ran during Strapi load.');
 
     console.log('✅ Seed script completed successfully!');
     console.log('🔌 Destroying Strapi instance...');

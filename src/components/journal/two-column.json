@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_journal_two_columns",
+  "info": {
+    "displayName": "Two column",
+    "description": "Two-column article copy",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "copy01": {
+      "type": "richtext",
+      "required": true
+    },
+    "copy02": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
