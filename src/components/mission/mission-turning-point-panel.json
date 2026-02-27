@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_mission_mission_turning_point_panels",
+  "info": {
+    "displayName": "Mission Turning Point Panel",
+    "description": "Turning point panel with copy and layered imagery",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "copy": {
+      "type": "richtext",
+      "required": true
+    },
+    "largeImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "smallImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    }
+  }
+}

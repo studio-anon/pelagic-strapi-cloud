@@ -107,6 +107,197 @@ export interface JournalVideoEmbed extends Struct.ComponentSchema {
   };
 }
 
+export interface MissionMissionClosePanel extends Struct.ComponentSchema {
+  collectionName: 'components_mission_mission_close_panels';
+  info: {
+    description: 'Mission close statement panel';
+    displayName: 'Mission Close Panel';
+    icon: 'discuss';
+  };
+  attributes: {
+    copy: Schema.Attribute.RichText & Schema.Attribute.Required;
+    logo: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface MissionMissionDirectionPanel extends Struct.ComponentSchema {
+  collectionName: 'components_mission_mission_direction_panels';
+  info: {
+    description: 'Additional mission direction panel with paired imagery';
+    displayName: 'Mission Direction Panel';
+    icon: 'landscape';
+  };
+  attributes: {
+    emphasisCopy: Schema.Attribute.Text & Schema.Attribute.Required;
+    largeImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    leadCopy: Schema.Attribute.Text & Schema.Attribute.Required;
+    smallImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+  };
+}
+
+export interface MissionMissionDiscardedItemPanel
+  extends Struct.ComponentSchema {
+  collectionName: 'components_mission_mission_discarded_item_panels';
+  info: {
+    description: 'Full-bleed discarded item title panel';
+    displayName: 'Mission Discarded Item Panel';
+    icon: 'picture';
+  };
+  attributes: {
+    backgroundImage: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface MissionMissionFinalQuotePanel extends Struct.ComponentSchema {
+  collectionName: 'components_mission_mission_final_quote_panels';
+  info: {
+    description: 'Founder quote closing panel';
+    displayName: 'Mission Final Quote Panel';
+    icon: 'quote';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    quote: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
+export interface MissionMissionIntroPanel extends Struct.ComponentSchema {
+  collectionName: 'components_mission_mission_intro_panels';
+  info: {
+    description: 'Mission intro block with hero title and copy';
+    displayName: 'Mission Intro Panel';
+    icon: 'heading';
+  };
+  attributes: {
+    copy: Schema.Attribute.Text & Schema.Attribute.Required;
+    scrollHint: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'[Scroll to begin]'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface MissionMissionPaverPanel extends Struct.ComponentSchema {
+  collectionName: 'components_mission_mission_paver_panels';
+  info: {
+    description: 'Full-bleed paver image panel';
+    displayName: 'Mission Paver Panel';
+    icon: 'picture';
+  };
+  attributes: {
+    backgroundImage: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface MissionMissionProcessPanel extends Struct.ComponentSchema {
+  collectionName: 'components_mission_mission_process_panels';
+  info: {
+    description: 'Mission process panel with copy and three images';
+    displayName: 'Mission Process Panel';
+    icon: 'apps';
+  };
+  attributes: {
+    copy: Schema.Attribute.RichText & Schema.Attribute.Required;
+    image01: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    image02: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    image03: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+  };
+}
+
+export interface MissionMissionStatPanel extends Struct.ComponentSchema {
+  collectionName: 'components_mission_mission_stat_panels';
+  info: {
+    description: 'Mission large statistic panel';
+    displayName: 'Mission Stat Panel';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    copy: Schema.Attribute.Text & Schema.Attribute.Required;
+    largeNumber: Schema.Attribute.String & Schema.Attribute.Required;
+    source: Schema.Attribute.String;
+    sourceUrl: Schema.Attribute.String;
+  };
+}
+
+export interface MissionMissionTeamPanel extends Struct.ComponentSchema {
+  collectionName: 'components_mission_mission_team_panels';
+  info: {
+    description: 'Team panel with two repeatable profile groups';
+    displayName: 'Mission Team Panel';
+    icon: 'users';
+  };
+  attributes: {
+    backgroundImage: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    copy01: Schema.Attribute.Text;
+    copy02: Schema.Attribute.Text;
+    profiles01: Schema.Attribute.Component<'mission.profile-card', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    profiles02: Schema.Attribute.Component<'mission.profile-card', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    title01: Schema.Attribute.String & Schema.Attribute.Required;
+    title02: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface MissionMissionTurningPointPanel
+  extends Struct.ComponentSchema {
+  collectionName: 'components_mission_mission_turning_point_panels';
+  info: {
+    description: 'Turning point panel with copy and layered imagery';
+    displayName: 'Mission Turning Point Panel';
+    icon: 'landscape';
+  };
+  attributes: {
+    backgroundImage: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    copy: Schema.Attribute.RichText & Schema.Attribute.Required;
+    largeImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    smallImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+  };
+}
+
+export interface MissionMissionVisionPanel extends Struct.ComponentSchema {
+  collectionName: 'components_mission_mission_vision_panels';
+  info: {
+    description: 'Mission vision copy panel';
+    displayName: 'Mission Vision Panel';
+    icon: 'discuss';
+  };
+  attributes: {
+    copy: Schema.Attribute.RichText & Schema.Attribute.Required;
+  };
+}
+
+export interface MissionProfileCard extends Struct.ComponentSchema {
+  collectionName: 'components_mission_profile_cards';
+  info: {
+    description: 'Team profile card';
+    displayName: 'Profile card';
+    icon: 'user';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ProductsCalculatorConfig extends Struct.ComponentSchema {
   collectionName: 'components_products_calculator_configs';
   info: {
@@ -1243,6 +1434,18 @@ declare module '@strapi/strapi' {
       'journal.two-column': JournalTwoColumn;
       'journal.two-images': JournalTwoImages;
       'journal.video-embed': JournalVideoEmbed;
+      'mission.mission-close-panel': MissionMissionClosePanel;
+      'mission.mission-direction-panel': MissionMissionDirectionPanel;
+      'mission.mission-discarded-item-panel': MissionMissionDiscardedItemPanel;
+      'mission.mission-final-quote-panel': MissionMissionFinalQuotePanel;
+      'mission.mission-intro-panel': MissionMissionIntroPanel;
+      'mission.mission-paver-panel': MissionMissionPaverPanel;
+      'mission.mission-process-panel': MissionMissionProcessPanel;
+      'mission.mission-stat-panel': MissionMissionStatPanel;
+      'mission.mission-team-panel': MissionMissionTeamPanel;
+      'mission.mission-turning-point-panel': MissionMissionTurningPointPanel;
+      'mission.mission-vision-panel': MissionMissionVisionPanel;
+      'mission.profile-card': MissionProfileCard;
       'products.calculator-config': ProductsCalculatorConfig;
       'products.closing-quote-impact-cta': ProductsClosingQuoteImpactCta;
       'products.closing-quote-simple': ProductsClosingQuoteSimple;

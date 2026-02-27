@@ -618,6 +618,52 @@ export interface ApiJournalPageJournalPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiMissionPageMissionPage extends Struct.SingleTypeSchema {
+  collectionName: 'mission_pages';
+  info: {
+    description: 'Content model for /mission';
+    displayName: 'Mission Page';
+    pluralName: 'mission-pages';
+    singularName: 'mission-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mission-page.mission-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'mission.mission-intro-panel',
+        'mission.mission-stat-panel',
+        'mission.mission-direction-panel',
+        'mission.mission-turning-point-panel',
+        'mission.mission-vision-panel',
+        'mission.mission-discarded-item-panel',
+        'mission.mission-paver-panel',
+        'mission.mission-process-panel',
+        'mission.mission-close-panel',
+        'mission.mission-team-panel',
+        'mission.mission-final-quote-panel',
+      ]
+    > &
+      Schema.Attribute.Required;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiModFactoryPageModFactoryPage
   extends Struct.SingleTypeSchema {
   collectionName: 'mod_factory_pages';
@@ -1224,6 +1270,7 @@ declare module '@strapi/strapi' {
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::journal-article.journal-article': ApiJournalArticleJournalArticle;
       'api::journal-page.journal-page': ApiJournalPageJournalPage;
+      'api::mission-page.mission-page': ApiMissionPageMissionPage;
       'api::mod-factory-page.mod-factory-page': ApiModFactoryPageModFactoryPage;
       'api::pave-page.pave-page': ApiPavePagePavePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;

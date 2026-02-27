@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_mission_mission_paver_panels",
+  "info": {
+    "displayName": "Mission Paver Panel",
+    "description": "Full-bleed paver image panel",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    }
+  }
+}

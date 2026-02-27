@@ -8,6 +8,7 @@ const {
   globalSetting,
   journalPage,
   journalArticles,
+  missionPage,
 } = require('../data/data.json');
 
 /**
@@ -323,6 +324,115 @@ async function processSection(section) {
 }
 
 /**
+ * Process a mission section and upload any media files it references
+ */
+async function processMissionSection(section) {
+  const sectionCopy = { ...section };
+  const component = section?.__component;
+
+  if (!component) {
+    return sectionCopy;
+  }
+
+  if (component === 'mission.mission-direction-panel') {
+    if (section.largeImage) {
+      sectionCopy.largeImage = await checkFileExistsBeforeUpload(section.largeImage);
+    }
+    if (section.smallImage) {
+      sectionCopy.smallImage = await checkFileExistsBeforeUpload(section.smallImage);
+    }
+    return sectionCopy;
+  }
+
+  if (component === 'mission.mission-turning-point-panel') {
+    if (section.largeImage) {
+      sectionCopy.largeImage = await checkFileExistsBeforeUpload(section.largeImage);
+    }
+    if (section.smallImage) {
+      sectionCopy.smallImage = await checkFileExistsBeforeUpload(section.smallImage);
+    }
+    if (section.backgroundImage) {
+      sectionCopy.backgroundImage = await checkFileExistsBeforeUpload(section.backgroundImage);
+    }
+    return sectionCopy;
+  }
+
+  if (component === 'mission.mission-discarded-item-panel') {
+    if (section.backgroundImage) {
+      sectionCopy.backgroundImage = await checkFileExistsBeforeUpload(section.backgroundImage);
+    }
+    return sectionCopy;
+  }
+
+  if (component === 'mission.mission-paver-panel') {
+    if (section.backgroundImage) {
+      sectionCopy.backgroundImage = await checkFileExistsBeforeUpload(section.backgroundImage);
+    }
+    return sectionCopy;
+  }
+
+  if (component === 'mission.mission-process-panel') {
+    if (section.image01) {
+      sectionCopy.image01 = await checkFileExistsBeforeUpload(section.image01);
+    }
+    if (section.image02) {
+      sectionCopy.image02 = await checkFileExistsBeforeUpload(section.image02);
+    }
+    if (section.image03) {
+      sectionCopy.image03 = await checkFileExistsBeforeUpload(section.image03);
+    }
+    return sectionCopy;
+  }
+
+  if (component === 'mission.mission-close-panel') {
+    if (section.logo) {
+      sectionCopy.logo = await checkFileExistsBeforeUpload(section.logo);
+    }
+    return sectionCopy;
+  }
+
+  if (component === 'mission.mission-team-panel') {
+    if (section.backgroundImage) {
+      sectionCopy.backgroundImage = await checkFileExistsBeforeUpload(section.backgroundImage);
+    }
+
+    if (Array.isArray(section.profiles01)) {
+      sectionCopy.profiles01 = [];
+      for (const profile of section.profiles01) {
+        const profileCopy = { ...profile };
+        if (profile.image) {
+          profileCopy.image = await checkFileExistsBeforeUpload(profile.image);
+        }
+        sectionCopy.profiles01.push(profileCopy);
+      }
+    }
+
+    if (Array.isArray(section.profiles02)) {
+      sectionCopy.profiles02 = [];
+      for (const profile of section.profiles02) {
+        const profileCopy = { ...profile };
+        if (profile.image) {
+          profileCopy.image = await checkFileExistsBeforeUpload(profile.image);
+        }
+        sectionCopy.profiles02.push(profileCopy);
+      }
+    }
+
+    return sectionCopy;
+  }
+
+  if (component === 'mission.mission-final-quote-panel') {
+    if (section.image) {
+      sectionCopy.image = await checkFileExistsBeforeUpload(section.image);
+    }
+    return sectionCopy;
+  }
+
+  // intro/stat/vision panels do not include media fields
+  return sectionCopy;
+}
+
+/**
  * Process a journal content block and upload any media it references
  */
 async function processJournalContentBlock(block) {
@@ -516,6 +626,72 @@ async function importGlobalSetting() {
     }
   } catch (error) {
     console.error('   ✗ Failed to import Global Settings:', error);
+    throw error;
+  }
+}
+
+/**
+ * Import Mission Page content
+ * Processes mission sections and upserts the mission-page entry
+ */
+async function importMissionPage() {
+  console.log('🧭 Importing Mission Page...');
+
+  try {
+    if (!missionPage) {
+      console.log('   No mission page data found, skipping...');
+      return;
+    }
+
+    const existingMissionPage = await strapi.db
+      .query('api::mission-page.mission-page')
+      .findOne({ where: {} });
+    const existingDocumentId =
+      existingMissionPage?.documentId || existingMissionPage?.document_id;
+
+    let seoData = null;
+    if (missionPage.seo) {
+      seoData = { ...missionPage.seo };
+      if (missionPage.seo.shareImage) {
+        seoData.shareImage = await checkFileExistsBeforeUpload(missionPage.seo.shareImage);
+      } else {
+        delete seoData.shareImage;
+      }
+    }
+
+    const missionSections = Array.isArray(missionPage.sections) ? missionPage.sections : [];
+    const processedSections = [];
+    for (let i = 0; i < missionSections.length; i++) {
+      const section = missionSections[i];
+      console.log(`   [${i + 1}/${missionSections.length}] Processing ${section.__component}...`);
+      processedSections.push(await processMissionSection(section));
+    }
+
+    const missionPageData = {
+      title: missionPage.title || 'Mission',
+      seo: seoData,
+      sections: processedSections,
+    };
+
+    if (existingDocumentId) {
+      console.log('   Updating mission-page entry...');
+      await strapi.documents('api::mission-page.mission-page').update({
+        documentId: existingDocumentId,
+        data: missionPageData,
+        status: 'published',
+      });
+      console.log('   ✓ Mission Page updated successfully!');
+      return;
+    }
+
+    console.log('   Creating mission-page entry...');
+    await strapi.documents('api::mission-page.mission-page').create({
+      data: missionPageData,
+      status: 'published',
+    });
+    console.log('   ✓ Mission Page created successfully!');
+  } catch (error) {
+    console.error('   ✗ Failed to import Mission Page:', error);
     throw error;
   }
 }
@@ -775,6 +951,7 @@ async function importSeedData() {
   await setPublicPermissions({
     'home-page': ['find', 'findOne'],
     'global-setting': ['find', 'findOne'],
+    'mission-page': ['find', 'findOne'],
     'journal-article': ['find', 'findOne'],
     'journal-page': ['find', 'findOne'],
     'pave-page': ['find', 'findOne'],
@@ -786,6 +963,9 @@ async function importSeedData() {
 
   // Import global settings
   await importGlobalSetting();
+
+  // Import mission page
+  await importMissionPage();
 
   // Import journal page and articles
   await importJournalPage();

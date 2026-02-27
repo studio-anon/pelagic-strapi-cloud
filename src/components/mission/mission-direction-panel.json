@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_mission_mission_direction_panels",
+  "info": {
+    "displayName": "Mission Direction Panel",
+    "description": "Additional mission direction panel with paired imagery",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "leadCopy": {
+      "type": "text",
+      "required": true
+    },
+    "emphasisCopy": {
+      "type": "text",
+      "required": true
+    },
+    "largeImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "smallImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    }
+  }
+}

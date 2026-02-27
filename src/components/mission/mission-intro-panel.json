@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_mission_mission_intro_panels",
+  "info": {
+    "displayName": "Mission Intro Panel",
+    "description": "Mission intro block with hero title and copy",
+    "icon": "heading"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "copy": {
+      "type": "text",
+      "required": true
+    },
+    "scrollHint": {
+      "type": "string",
+      "default": "[Scroll to begin]"
+    }
+  }
+}

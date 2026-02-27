@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_mission_profile_cards",
+  "info": {
+    "displayName": "Profile card",
+    "description": "Team profile card",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

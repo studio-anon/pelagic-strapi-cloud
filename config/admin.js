@@ -38,6 +38,11 @@ module.exports = ({ env }) => {
   return {
     auth: {
       secret: env('ADMIN_JWT_SECRET'),
+      sessions: {
+        // Strapi 5+ session config (replaces deprecated admin.auth.options.expiresIn)
+        maxRefreshTokenLifespan: env.int('ADMIN_SESSION_MAX_REFRESH_TOKEN_LIFESPAN', 30 * 24 * 60 * 60),
+        maxSessionLifespan: env.int('ADMIN_SESSION_MAX_LIFESPAN', 7 * 24 * 60 * 60),
+      },
     },
     apiToken: {
       salt: env('API_TOKEN_SALT'),

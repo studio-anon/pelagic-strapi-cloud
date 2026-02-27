@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_mission_mission_process_panels",
+  "info": {
+    "displayName": "Mission Process Panel",
+    "description": "Mission process panel with copy and three images",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "copy": {
+      "type": "richtext",
+      "required": true
+    },
+    "image01": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "image02": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "image03": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    }
+  }
+}

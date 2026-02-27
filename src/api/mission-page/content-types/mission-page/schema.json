@@ -1,0 +1,42 @@
+{
+  "kind": "singleType",
+  "collectionName": "mission_pages",
+  "info": {
+    "singularName": "mission-page",
+    "pluralName": "mission-pages",
+    "displayName": "Mission Page",
+    "description": "Content model for /mission"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "required": true,
+      "components": [
+        "mission.mission-intro-panel",
+        "mission.mission-stat-panel",
+        "mission.mission-direction-panel",
+        "mission.mission-turning-point-panel",
+        "mission.mission-vision-panel",
+        "mission.mission-discarded-item-panel",
+        "mission.mission-paver-panel",
+        "mission.mission-process-panel",
+        "mission.mission-close-panel",
+        "mission.mission-team-panel",
+        "mission.mission-final-quote-panel"
+      ]
+    }
+  }
+}

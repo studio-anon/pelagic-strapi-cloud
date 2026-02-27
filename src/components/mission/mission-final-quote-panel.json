@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_mission_mission_final_quote_panels",
+  "info": {
+    "displayName": "Mission Final Quote Panel",
+    "description": "Founder quote closing panel",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "quote": {
+      "type": "text",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_mission_mission_close_panels",
+  "info": {
+    "displayName": "Mission Close Panel",
+    "description": "Mission close statement panel",
+    "icon": "discuss"
+  },
+  "options": {},
+  "attributes": {
+    "copy": {
+      "type": "richtext",
+      "required": true
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

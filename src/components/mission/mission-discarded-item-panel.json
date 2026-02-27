@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_mission_mission_discarded_item_panels",
+  "info": {
+    "displayName": "Mission Discarded Item Panel",
+    "description": "Full-bleed discarded item title panel",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    }
+  }
+}

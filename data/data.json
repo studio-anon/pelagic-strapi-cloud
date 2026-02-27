@@ -356,5 +356,150 @@
     "copyrightText": "© 2025 Pelagic Oceania Pty Ltd",
     "privacySlug": "privacy",
     "termsSlug": "terms"
+  },
+  "missionPage": {
+    "title": "Mission",
+    "seo": {
+      "metaTitle": "Mission | Pelagic Earth",
+      "metaDescription": "Pelagic Earth's mission: turning ocean-bound plastic into design-forward construction materials through circular systems.",
+      "shareImage": null
+    },
+    "sections": [
+      {
+        "__component": "mission.mission-intro-panel",
+        "title": "Mission",
+        "copy": "Pelagic is built on a core belief that waste isn't just a liability, it's a resource waiting to be unlocked.",
+        "scrollHint": "[Scroll to begin]"
+      },
+      {
+        "__component": "mission.mission-stat-panel",
+        "largeNumber": "22,000,000",
+        "copy": "That's the number of tons of plastic waste the UNEP estimates escapes into the environment each year.",
+        "source": "UNEP",
+        "sourceUrl": "https://www.unep.org/plastic-pollution"
+      },
+      {
+        "__component": "mission.mission-direction-panel",
+        "leadCopy": "That's enough to create a 1 meter wide plastic belt wrapped around the entire planet, fifty eight times.",
+        "emphasisCopy": "58 times. Every year.",
+        "largeImage": "mission/landfill.webp",
+        "smallImage": "mission/underwater.webp"
+      },
+      {
+        "__component": "mission.mission-turning-point-panel",
+        "copy": "This is systemic.\n\nCommunities are overwhelmed, ecosystems are polluted.\n\nTogether we pay a collective price for a linear model that treats 'away' like a real place.",
+        "largeImage": "mission/waste-choked-river.webp",
+        "smallImage": "mission/distant-city-consumption-hub.webp",
+        "backgroundImage": "mission/watershed-system-map-bg.png"
+      },
+      {
+        "__component": "mission.mission-vision-panel",
+        "copy": "But waste doesn't have to be the end of the story. Perhaps instead, a beginning.\n\nEach discarded item has the potential to be something more valuable, more hopeful, than before."
+      },
+      {
+        "__component": "mission.mission-discarded-item-panel",
+        "title": "Can you see it?",
+        "backgroundImage": "mission/beneath-the-surface-bg.webp"
+      },
+      {
+        "__component": "mission.mission-paver-panel",
+        "backgroundImage": "mission/brick-bg.png"
+      },
+      {
+        "__component": "mission.mission-process-panel",
+        "copy": "We've built a process and technology, driven by this vision, transforming waste into a valuable commodity.",
+        "image01": "mission/drone-image.webp",
+        "image02": "mission/factory.webp",
+        "image03": "mission/pavers.webp"
+      },
+      {
+        "__component": "mission.mission-close-panel",
+        "copy": "By 2029, Pelagic aims to be converting 100,000 tons of discarded soft plastics into premium structural products that create profit, employment and relief for our environment.\n\nThat's our why.",
+        "logo": null
+      },
+      {
+        "__component": "mission.mission-team-panel",
+        "title01": "Pelagians",
+        "copy01": "The Pelagic team is a group of passionate, creative people united by a simple belief - waste does not have to be the end of the story. We can make a difference.",
+        "profiles01": [
+          {
+            "image": "mission/profile1.webp",
+            "name": "Philippa Abbott",
+            "title": "Founder"
+          },
+          {
+            "image": "mission/profile1.webp",
+            "name": "Maxwell Carter",
+            "title": "Strategic Advisor"
+          },
+          {
+            "image": "mission/profile1.webp",
+            "name": "Clara Winslow",
+            "title": "Materials Scientist"
+          },
+          {
+            "image": "mission/profile1.webp",
+            "name": "Sophie Langley",
+            "title": "Operations Specialist"
+          },
+          {
+            "image": "mission/profile1.webp",
+            "name": "Oliver Bennett",
+            "title": "Growth APAC"
+          },
+          {
+            "image": "mission/profile1.webp",
+            "name": "Ella Thompson",
+            "title": "Strategic Consultant"
+          },
+          {
+            "image": "mission/profile1.webp",
+            "name": "Liam Carter",
+            "title": "Materials Scientist"
+          },
+          {
+            "image": "mission/profile1.webp",
+            "name": "Mia Reynolds",
+            "title": "Logistics Analyst"
+          },
+          {
+            "image": "mission/profile1.webp",
+            "name": "Oliver Bennett II",
+            "title": "Growth APAC"
+          }
+        ],
+        "title02": "Strategic advisors",
+        "copy02": "",
+        "profiles02": [
+          {
+            "image": "mission/profile1.webp",
+            "name": "Oliver Bennett",
+            "title": "Growth APAC"
+          },
+          {
+            "image": "mission/profile1.webp",
+            "name": "Ella Thompson",
+            "title": "Strategic Consultant"
+          },
+          {
+            "image": "mission/profile1.webp",
+            "name": "Liam Carter",
+            "title": "Materials Scientist"
+          },
+          {
+            "image": "mission/profile1.webp",
+            "name": "Mia Reynolds",
+            "title": "Logistics Analyst"
+          }
+        ],
+        "backgroundImage": "mission/team-background.jpg"
+      },
+      {
+        "__component": "mission.mission-final-quote-panel",
+        "quote": "I've always believed a systems view of culture, society, economics and ecology can help discover novel ideas to bring change. Pelagic is built on that notion.",
+        "name": "Philippa Abbott, Founder",
+        "image": "mission/pelagic-texture.webp"
+      }
+    ]
   }
 }

@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_mission_mission_team_panels",
+  "info": {
+    "displayName": "Mission Team Panel",
+    "description": "Team panel with two repeatable profile groups",
+    "icon": "users"
+  },
+  "options": {},
+  "attributes": {
+    "title01": {
+      "type": "string",
+      "required": true
+    },
+    "copy01": {
+      "type": "text"
+    },
+    "profiles01": {
+      "type": "component",
+      "repeatable": true,
+      "component": "mission.profile-card",
+      "required": true,
+      "min": 1
+    },
+    "title02": {
+      "type": "string",
+      "required": true
+    },
+    "copy02": {
+      "type": "text"
+    },
+    "profiles02": {
+      "type": "component",
+      "repeatable": true,
+      "component": "mission.profile-card",
+      "required": true,
+      "min": 1
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    }
+  }
+}

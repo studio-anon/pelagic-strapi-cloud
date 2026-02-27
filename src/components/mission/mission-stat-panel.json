@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_mission_mission_stat_panels",
+  "info": {
+    "displayName": "Mission Stat Panel",
+    "description": "Mission large statistic panel",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "largeNumber": {
+      "type": "string",
+      "required": true
+    },
+    "copy": {
+      "type": "text",
+      "required": true
+    },
+    "source": {
+      "type": "string"
+    },
+    "sourceUrl": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_mission_mission_vision_panels",
+  "info": {
+    "displayName": "Mission Vision Panel",
+    "description": "Mission vision copy panel",
+    "icon": "discuss"
+  },
+  "options": {},
+  "attributes": {
+    "copy": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
