@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_products_technical_showcases",
+  "info": {
+    "displayName": "Technical showcase",
+    "description": "Pave technical showcase section",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "text",
+      "required": true
+    },
+    "metrics": {
+      "type": "component",
+      "repeatable": true,
+      "component": "products.technical-showcase-metric",
+      "required": true,
+      "min": 1,
+      "max": 6
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "textureImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "bgType": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_products_container_statements",
+  "info": {
+    "displayName": "Container statement",
+    "description": "Mod.factory container statement section",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "desktopMainImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "mobileMainImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "desktopSideImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "mobileSideImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

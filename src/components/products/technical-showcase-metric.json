@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_products_technical_showcase_metrics",
+  "info": {
+    "displayName": "Technical showcase metric",
+    "description": "Value and description for technical showcase",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

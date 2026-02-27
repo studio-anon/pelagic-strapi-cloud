@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_products_voice_testimonials",
+  "info": {
+    "displayName": "Voice testimonial",
+    "description": "Pave voice testimonial section",
+    "icon": "microphone"
+  },
+  "options": {},
+  "attributes": {
+    "quote": {
+      "type": "richtext",
+      "required": true
+    },
+    "personName": {
+      "type": "string",
+      "required": true
+    },
+    "personRole": {
+      "type": "string"
+    },
+    "portraitImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "supportImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "bgType": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "required": true
+    }
+  }
+}

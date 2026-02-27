@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "mod_factory_pages",
+  "info": {
+    "singularName": "mod-factory-page",
+    "pluralName": "mod-factory-pages",
+    "displayName": "Mod.factory Page",
+    "description": "Content model for /products/mod-factory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "required": true,
+      "components": [
+        "products.mod-factory-hero",
+        "products.container-statement",
+        "products.impact-grid",
+        "products.deploy-steps",
+        "products.technical-specs",
+        "products.global-scale",
+        "products.factory-target",
+        "products.featured-in",
+        "products.closing-quote-simple",
+        "products.metrics-basic"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_products_use_cases",
+  "info": {
+    "displayName": "Use cases",
+    "description": "Product use cases section",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "intro": {
+      "type": "text",
+      "required": true
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "products.use-case-card",
+      "required": true,
+      "min": 1,
+      "max": 6
+    },
+    "bgType": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "required": true
+    }
+  }
+}

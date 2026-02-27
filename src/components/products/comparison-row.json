@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_products_comparison_rows",
+  "info": {
+    "displayName": "Comparison row",
+    "description": "Single row in ProductComparison table",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "leftValue": {
+      "type": "string",
+      "required": true
+    },
+    "rightValue": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

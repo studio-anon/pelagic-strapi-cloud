@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_products_calculator_configs",
+  "info": {
+    "displayName": "Calculator config",
+    "description": "Calculator labels and numeric constants",
+    "icon": "calculator"
+  },
+  "options": {},
+  "attributes": {
+    "modeLabel": {
+      "type": "string"
+    },
+    "inputLabel": {
+      "type": "string"
+    },
+    "outputLabel": {
+      "type": "string"
+    },
+    "unitLabel": {
+      "type": "string"
+    },
+    "minimumValue": {
+      "type": "decimal"
+    },
+    "maximumValue": {
+      "type": "decimal"
+    },
+    "stepValue": {
+      "type": "decimal"
+    },
+    "defaultValue": {
+      "type": "decimal"
+    },
+    "multiplier": {
+      "type": "decimal"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_products_product_tech_specs",
+  "info": {
+    "displayName": "ProductTechSpec",
+    "description": "Top technical block with dropdown variants",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "downloadCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.cta"
+    },
+    "dropdownLabel": {
+      "type": "string",
+      "required": true
+    },
+    "dropdownPlaceholder": {
+      "type": "string"
+    },
+    "variants": {
+      "type": "component",
+      "repeatable": true,
+      "component": "products.tech-spec-variant",
+      "required": true,
+      "min": 1
+    },
+    "defaultVariantKey": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_products_option_sizes",
+  "info": {
+    "displayName": "Option size",
+    "description": "Configurator size option",
+    "icon": "resize"
+  },
+  "options": {},
+  "attributes": {
+    "sizeId": {
+      "type": "string",
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "dimensionsText": {
+      "type": "string"
+    },
+    "helperText": {
+      "type": "string"
+    }
+  }
+}

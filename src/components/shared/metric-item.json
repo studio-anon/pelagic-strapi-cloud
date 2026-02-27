@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_metric_items",
+  "info": {
+    "displayName": "Metric item",
+    "description": "Reusable metric value + label",
+    "icon": "chartBar"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "helper": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_products_configurator_defaults",
+  "info": {
+    "displayName": "Configurator defaults",
+    "description": "Default option IDs for configurator",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "designId": {
+      "type": "string",
+      "required": true
+    },
+    "colourId": {
+      "type": "string",
+      "required": true
+    },
+    "sizeId": {
+      "type": "string",
+      "required": true
+    },
+    "calculatorMode": {
+      "type": "string"
+    }
+  }
+}

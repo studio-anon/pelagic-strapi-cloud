@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_products_closing_quote_impact_ctas",
+  "info": {
+    "displayName": "Closing quote impact CTA",
+    "description": "Closing quote section with CTA and paired imagery",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "text",
+      "required": true
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.cta",
+      "required": true
+    },
+    "primaryImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "secondaryImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "bgType": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "required": true
+    }
+  }
+}

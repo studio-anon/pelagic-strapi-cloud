@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_products_option_designs",
+  "info": {
+    "displayName": "Option design",
+    "description": "Configurator design option",
+    "icon": "paint"
+  },
+  "options": {},
+  "attributes": {
+    "designId": {
+      "type": "string",
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "kind": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

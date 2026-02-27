@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_products_gallery_sets",
+  "info": {
+    "displayName": "Gallery set",
+    "description": "Gallery media mapped by design + colour",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "designId": {
+      "type": "string",
+      "required": true
+    },
+    "colourId": {
+      "type": "string",
+      "required": true
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": ["images"]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_products_impact_cards",
+  "info": {
+    "displayName": "Impact card",
+    "description": "Impact grid item",
+    "icon": "chartPie"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_products_deploy_steps_sections",
+  "info": {
+    "displayName": "Deploy steps",
+    "description": "Mod.factory deploy steps section",
+    "icon": "walk"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "intro": {
+      "type": "text"
+    },
+    "steps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "products.deploy-step",
+      "required": true,
+      "min": 1,
+      "max": 6
+    },
+    "bottomCopyBlocks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "products.rich-copy-block",
+      "min": 0,
+      "max": 3
+    },
+    "bottomCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.cta"
+    },
+    "bgType": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "required": true
+    }
+  }
+}

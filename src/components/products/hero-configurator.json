@@ -1,0 +1,105 @@
+{
+  "collectionName": "components_products_hero_configurators",
+  "info": {
+    "displayName": "Hero configurator",
+    "description": "Pave configurator hero",
+    "icon": "feather"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "learnMore": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.cta",
+      "required": true
+    },
+    "primaryCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.cta",
+      "required": true
+    },
+    "designHeading": {
+      "type": "string",
+      "required": true
+    },
+    "designContextLabel": {
+      "type": "string",
+      "required": true
+    },
+    "colourHeading": {
+      "type": "string",
+      "required": true
+    },
+    "colourHelper": {
+      "type": "string"
+    },
+    "sizesHeading": {
+      "type": "string",
+      "required": true
+    },
+    "designs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "products.option-design",
+      "required": true,
+      "min": 1
+    },
+    "colours": {
+      "type": "component",
+      "repeatable": true,
+      "component": "products.option-colour",
+      "required": true,
+      "min": 1
+    },
+    "sizes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "products.option-size",
+      "required": true,
+      "min": 1
+    },
+    "gallerySets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "products.gallery-set",
+      "required": true,
+      "min": 1
+    },
+    "gridImages": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "calculator": {
+      "type": "component",
+      "repeatable": false,
+      "component": "products.calculator-config",
+      "required": true
+    },
+    "defaults": {
+      "type": "component",
+      "repeatable": false,
+      "component": "products.configurator-defaults",
+      "required": true
+    },
+    "bgType": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "required": true
+    }
+  }
+}

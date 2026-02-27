@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_products_impact_grids",
+  "info": {
+    "displayName": "Impact grid",
+    "description": "Product impact cards grid",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "intro": {
+      "type": "text",
+      "required": true
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "products.impact-card",
+      "required": true,
+      "min": 1,
+      "max": 8
+    },
+    "bgType": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "required": true
+    }
+  }
+}

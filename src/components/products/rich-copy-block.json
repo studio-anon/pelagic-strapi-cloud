@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_products_rich_copy_blocks",
+  "info": {
+    "displayName": "Rich copy block",
+    "description": "Bottom copy content block",
+    "icon": "pencil"
+  },
+  "options": {},
+  "attributes": {
+    "copy": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

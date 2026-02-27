@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_products_closing_quote_simples",
+  "info": {
+    "displayName": "Closing quote simple",
+    "description": "Simple closing quote section",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "quote": {
+      "type": "text",
+      "required": true
+    },
+    "subcopy": {
+      "type": "text"
+    },
+    "bgType": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "required": true
+    }
+  }
+}

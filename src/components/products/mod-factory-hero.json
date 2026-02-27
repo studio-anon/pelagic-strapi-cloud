@@ -1,0 +1,58 @@
+{
+  "collectionName": "components_products_mod_factory_heroes",
+  "info": {
+    "displayName": "Mod.factory hero",
+    "description": "Bespoke Mod.factory hero section",
+    "icon": "feather"
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "text",
+      "required": true
+    },
+    "subheadline": {
+      "type": "text",
+      "required": true
+    },
+    "desktopHeroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "mobileHeroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "locationTabs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "products.location-tab",
+      "required": true,
+      "min": 1
+    },
+    "defaultTabKey": {
+      "type": "string",
+      "required": true
+    },
+    "metrics": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.metric-item",
+      "required": true,
+      "min": 1,
+      "max": 4
+    },
+    "bgColorHex": {
+      "type": "string",
+      "default": "#050720"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_products_factory_targets",
+  "info": {
+    "displayName": "Factory target",
+    "description": "Factory target statement section",
+    "icon": "target"
+  },
+  "options": {},
+  "attributes": {
+    "statement": {
+      "type": "text",
+      "required": true
+    },
+    "desktopImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "mobileImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "bgType": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "required": true
+    }
+  }
+}

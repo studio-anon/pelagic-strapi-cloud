@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_products_use_case_cards",
+  "info": {
+    "displayName": "Use case card",
+    "description": "Product use case item",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    }
+  }
+}

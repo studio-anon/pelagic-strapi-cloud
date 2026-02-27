@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_products_outlet_text_items",
+  "info": {
+    "displayName": "Outlet text item",
+    "description": "Featured-in text outlet row",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

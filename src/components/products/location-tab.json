@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_products_location_tabs",
+  "info": {
+    "displayName": "Location tab",
+    "description": "Location selector item for Mod.factory hero",
+    "icon": "pinMap"
+  },
+  "options": {},
+  "attributes": {
+    "tabKey": {
+      "type": "string",
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "shortLabel": {
+      "type": "string"
+    }
+  }
+}

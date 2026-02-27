@@ -777,6 +777,8 @@ async function importSeedData() {
     'global-setting': ['find', 'findOne'],
     'journal-article': ['find', 'findOne'],
     'journal-page': ['find', 'findOne'],
+    'pave-page': ['find', 'findOne'],
+    'mod-factory-page': ['find', 'findOne'],
   });
 
   // Import homepage content

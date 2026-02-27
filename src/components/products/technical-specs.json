@@ -1,0 +1,72 @@
+{
+  "collectionName": "components_products_technical_specs",
+  "info": {
+    "displayName": "Technical specs",
+    "description": "Mod.factory technical specs section",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "default": "Technical brief"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "intro": {
+      "type": "text"
+    },
+    "specs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.spec-item",
+      "required": true,
+      "min": 1
+    },
+    "diagramMode": {
+      "type": "enumeration",
+      "enum": [
+        "lottie",
+        "image",
+        "none"
+      ],
+      "required": true
+    },
+    "diagramLottie": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "diagramImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "downloadCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.cta"
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "bgType": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_products_outlet_logos",
+  "info": {
+    "displayName": "Outlet logo",
+    "description": "Featured-in outlet logo row",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "darkImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "lightImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "website": {
+      "type": "string"
+    }
+  }
+}

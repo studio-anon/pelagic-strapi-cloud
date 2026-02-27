@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "pave_pages",
+  "info": {
+    "singularName": "pave-page",
+    "pluralName": "pave-pages",
+    "displayName": "Pave Page",
+    "description": "Content model for /products/pave"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "required": true,
+      "components": [
+        "products.hero-configurator",
+        "products.hero-standard",
+        "products.technical-showcase",
+        "products.use-cases",
+        "products.closing-quote-impact-cta",
+        "products.closing-quote-simple",
+        "products.voice-testimonial",
+        "products.featured-in",
+        "products.metrics-basic",
+        "products.metrics-suite"
+      ]
+    }
+  }
+}

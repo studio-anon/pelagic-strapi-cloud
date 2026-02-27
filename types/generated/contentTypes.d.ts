@@ -618,6 +618,97 @@ export interface ApiJournalPageJournalPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiModFactoryPageModFactoryPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'mod_factory_pages';
+  info: {
+    description: 'Content model for /products/mod-factory';
+    displayName: 'Mod.factory Page';
+    pluralName: 'mod-factory-pages';
+    singularName: 'mod-factory-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mod-factory-page.mod-factory-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'products.mod-factory-hero',
+        'products.container-statement',
+        'products.impact-grid',
+        'products.deploy-steps',
+        'products.technical-specs',
+        'products.global-scale',
+        'products.factory-target',
+        'products.featured-in',
+        'products.closing-quote-simple',
+        'products.metrics-basic',
+      ]
+    > &
+      Schema.Attribute.Required;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPavePagePavePage extends Struct.SingleTypeSchema {
+  collectionName: 'pave_pages';
+  info: {
+    description: 'Content model for /products/pave';
+    displayName: 'Pave Page';
+    pluralName: 'pave-pages';
+    singularName: 'pave-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pave-page.pave-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'products.hero-configurator',
+        'products.hero-standard',
+        'products.technical-showcase',
+        'products.use-cases',
+        'products.closing-quote-impact-cta',
+        'products.closing-quote-simple',
+        'products.voice-testimonial',
+        'products.featured-in',
+        'products.metrics-basic',
+        'products.metrics-suite',
+      ]
+    > &
+      Schema.Attribute.Required;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1133,6 +1224,8 @@ declare module '@strapi/strapi' {
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::journal-article.journal-article': ApiJournalArticleJournalArticle;
       'api::journal-page.journal-page': ApiJournalPageJournalPage;
+      'api::mod-factory-page.mod-factory-page': ApiModFactoryPageModFactoryPage;
+      'api::pave-page.pave-page': ApiPavePagePavePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_products_featured_ins",
+  "info": {
+    "displayName": "Featured in",
+    "description": "Featured outlets section",
+    "icon": "star"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "mode": {
+      "type": "enumeration",
+      "enum": [
+        "logos",
+        "text"
+      ],
+      "required": true
+    },
+    "outletTextItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "products.outlet-text-item"
+    },
+    "outlets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "products.outlet-logo"
+    },
+    "bgType": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "required": true
+    }
+  }
+}

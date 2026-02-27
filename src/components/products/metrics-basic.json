@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_products_metrics_basics",
+  "info": {
+    "displayName": "Metrics basic",
+    "description": "Generic simple metrics section",
+    "icon": "chartBar"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "Key metrics"
+    },
+    "heading": {
+      "type": "string",
+      "default": "Built for measurable impact."
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.metric-item",
+      "required": true,
+      "min": 1,
+      "max": 8
+    },
+    "bgType": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "required": true
+    }
+  }
+}

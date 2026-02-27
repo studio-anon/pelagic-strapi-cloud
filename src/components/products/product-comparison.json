@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_products_product_comparisons",
+  "info": {
+    "displayName": "ProductComparison",
+    "description": "Bottom comparison block",
+    "icon": "collapse"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "leftColumnLabel": {
+      "type": "string",
+      "required": true
+    },
+    "rightColumnLabel": {
+      "type": "string",
+      "required": true
+    },
+    "rows": {
+      "type": "component",
+      "repeatable": true,
+      "component": "products.comparison-row",
+      "required": true,
+      "min": 1,
+      "max": 12
+    }
+  }
+}

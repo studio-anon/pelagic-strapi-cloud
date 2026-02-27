@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_products_deploy_steps",
+  "info": {
+    "displayName": "Deploy step",
+    "description": "Deployment step item",
+    "icon": "walk"
+  },
+  "options": {},
+  "attributes": {
+    "number": {
+      "type": "integer",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

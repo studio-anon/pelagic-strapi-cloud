@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_products_tech_spec_items",
+  "info": {
+    "displayName": "Tech spec item",
+    "description": "Technical spec item for selected variant",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

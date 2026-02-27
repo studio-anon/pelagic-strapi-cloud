@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_products_metrics_suites",
+  "info": {
+    "displayName": "Metrics suite",
+    "description": "Pave art-directed technical + comparison wrapper",
+    "icon": "stack"
+  },
+  "options": {},
+  "attributes": {
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "bgType": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "required": true
+    },
+    "techSpec": {
+      "type": "component",
+      "repeatable": false,
+      "component": "products.product-tech-spec",
+      "required": true
+    },
+    "comparison": {
+      "type": "component",
+      "repeatable": false,
+      "component": "products.product-comparison",
+      "required": true
+    }
+  }
+}
