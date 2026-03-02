@@ -501,5 +501,680 @@
         "image": "mission/pelagic-texture.webp"
       }
     ]
+  },
+  "pavePage": {
+    "title": "Pave",
+    "seo": {
+      "metaTitle": "Pave | Pelagic Earth",
+      "metaDescription": "Pelagic Pave turns ocean-bound plastic into high-performance structural pavers for public, commercial, and residential spaces.",
+      "shareImage": null
+    },
+    "sections": [
+      {
+        "__component": "products.hero-configurator",
+        "title": "Pave",
+        "description": "Pelagic structural pavers are engineered from upcycled plastics. Contemporary designed, extremely durable, unique textures, built for demanding public and commercial environments.",
+        "learnMore": {
+          "label": "Find out more",
+          "href": "#products-pave-technical"
+        },
+        "primaryCta": {
+          "label": "Enquire now",
+          "href": "/preorders"
+        },
+        "designHeading": "Design",
+        "designContextLabel": "Pattern paver",
+        "colourHeading": "Colour & texture",
+        "colourHelper": "*Custom textures and colours available on request",
+        "sizesHeading": "Sizes",
+        "designs": [
+          {
+            "designId": "textured",
+            "label": "Textured",
+            "kind": "textured",
+            "icon": "products/paver/icons/textured-icon.jpg"
+          },
+          {
+            "designId": "smooth",
+            "label": "Smooth",
+            "kind": "smooth",
+            "icon": "products/paver/icons/smooth-icon.jpg"
+          },
+          {
+            "designId": "grid",
+            "label": "Grid",
+            "kind": "grid",
+            "icon": "products/paver/icons/grid-icon.jpg"
+          }
+        ],
+        "colours": [
+          {
+            "colourId": "dark-marble",
+            "label": "Dark marble",
+            "slug": "darkmarble",
+            "imageSlugPart": "dark-marble",
+            "swatchImage": "products/paver/icons/colour-var-darkmarble.jpg"
+          },
+          {
+            "colourId": "light-marble",
+            "label": "Light marble",
+            "slug": "lightmarble",
+            "imageSlugPart": "light-marble",
+            "swatchImage": "products/paver/icons/colour-var-lightmarble.jpg"
+          },
+          {
+            "colourId": "terracotta",
+            "label": "Terracotta",
+            "slug": "terracotta",
+            "imageSlugPart": "terracotta",
+            "swatchImage": "products/paver/icons/colour-var-terracotta.jpg"
+          },
+          {
+            "colourId": "calcium",
+            "label": "Calcium",
+            "slug": "calcium",
+            "imageSlugPart": "calcium",
+            "swatchImage": "products/paver/icons/colour-var-calcium.jpg"
+          },
+          {
+            "colourId": "sandstone",
+            "label": "Sandstone",
+            "slug": "sandstone",
+            "imageSlugPart": "sandstone",
+            "swatchImage": "products/paver/icons/colour-var-sandstone.jpg"
+          }
+        ],
+        "sizes": [
+          {
+            "sizeId": "standard",
+            "label": "Standard",
+            "dimensionsText": "230 x 114 x 50mm",
+            "helperText": "For pedestrian and light traffic"
+          },
+          {
+            "sizeId": "thinline",
+            "label": "Thinline",
+            "dimensionsText": "230 x 114 x 25mm",
+            "helperText": "Aesthetic, light or surface use"
+          },
+          {
+            "sizeId": "deep",
+            "label": "Deep",
+            "dimensionsText": "230 x 114 x 65mm",
+            "helperText": "Heavy vehicles and traffic"
+          },
+          {
+            "sizeId": "grid",
+            "label": "Grid",
+            "dimensionsText": "230 x 114 x 65mm",
+            "helperText": "Permeable and drainage-friendly layouts"
+          }
+        ],
+        "gallerySets": [
+          {
+            "designId": "textured",
+            "colourId": "dark-marble",
+            "images": [
+              "products/paver/pavers/textured-dark-marble-01.jpg",
+              "products/paver/pavers/textured-dark-marble-02.jpg",
+              "products/paver/pavers/textured-dark-marble-03.jpg"
+            ]
+          },
+          {
+            "designId": "textured",
+            "colourId": "light-marble",
+            "images": [
+              "products/paver/pavers/textured-light-marble-01.jpg",
+              "products/paver/pavers/textured-light-marble-02.jpg",
+              "products/paver/pavers/textured-light-marble-03.jpg"
+            ]
+          },
+          {
+            "designId": "smooth",
+            "colourId": "sandstone",
+            "images": [
+              "products/paver/pavers/smooth-sandstone-01.jpg",
+              "products/paver/pavers/smooth-sandstone-02.jpg",
+              "products/paver/pavers/smooth-sandstone-03.jpg"
+            ]
+          },
+          {
+            "designId": "smooth",
+            "colourId": "terracotta",
+            "images": [
+              "products/paver/pavers/smooth-terracotta-01.jpg",
+              "products/paver/pavers/smooth-terracotta-02.jpg",
+              "products/paver/pavers/smooth-terracotta-03.jpg"
+            ]
+          },
+          {
+            "designId": "grid",
+            "colourId": "calcium",
+            "images": [
+              "products/paver/pavers/grid-paver-01.jpg"
+            ]
+          }
+        ],
+        "gridImages": [
+          "products/paver/pavers/grid-paver-01.jpg"
+        ],
+        "calculator": {
+          "modeLabel": "Paver type",
+          "inputLabel": "Total area (m2)",
+          "outputLabel": "Estimated pavers",
+          "unitLabel": "pavers",
+          "minimumValue": 1,
+          "maximumValue": 10000,
+          "stepValue": 1,
+          "defaultValue": 60,
+          "multiplier": 42
+        },
+        "defaults": {
+          "designId": "textured",
+          "colourId": "dark-marble",
+          "sizeId": "standard",
+          "calculatorMode": "pave"
+        },
+        "bgType": "light"
+      },
+      {
+        "__component": "products.technical-showcase",
+        "heading": "Engineered for large construction projects. Packaged to meet your carbon goals.",
+        "metrics": [
+          {
+            "value": "50+ kgs",
+            "description": "Plastic sequestered every sqm of pavers installed."
+          },
+          {
+            "value": "1000hr",
+            "description": "UV weathering test. Extremely high rating."
+          },
+          {
+            "value": "0.1% gls",
+            "description": "Exceptional performance and high durability."
+          },
+          {
+            "value": "30 MPa",
+            "description": "Compressive strength comparable to concrete."
+          }
+        ],
+        "image": "products/paver/technical/paver.png",
+        "textureImage": "products/paver/technical/bg.png",
+        "bgType": "light"
+      },
+      {
+        "__component": "products.use-cases",
+        "title": "Designed to live in the world",
+        "intro": "Designed to perform across everyday and demanding settings, from residential outdoor living to large scale commercial and civic projects.",
+        "cards": [
+          {
+            "title": "Public space",
+            "description": "Commercial projects from buildings to large scale civil engineering.",
+            "image": "products/paver/use-cases/public-space.png"
+          },
+          {
+            "title": "Architectural",
+            "description": "Durable, modular pavers for homes, landscaping and considered projects.",
+            "image": "products/paver/use-cases/architecture.png"
+          }
+        ],
+        "bgType": "light"
+      },
+      {
+        "__component": "products.closing-quote-impact-cta",
+        "headline": "Every 1000m2 of pavers diverts 70+ tons of CO2 and 40+ tons of plastic waste out of the environment.",
+        "cta": {
+          "label": "Enquire today",
+          "href": "/preorders"
+        },
+        "primaryImage": "products/paver/closing-qoute/under-water.png",
+        "secondaryImage": "products/paver/closing-qoute/paver.png",
+        "bgType": "light"
+      },
+      {
+        "__component": "products.voice-testimonial",
+        "quote": "If there was a comparable structural product to concrete made from ocean plastics, would you use it? Hell yes!",
+        "personName": "Simone Bliss",
+        "personRole": "SBLA Studio",
+        "portraitImage": "products/paver/closing-qoute/founder.png",
+        "supportImage": "products/paver/closing-qoute/brick.png",
+        "bgType": "light"
+      },
+      {
+        "__component": "products.featured-in",
+        "label": "As featured in",
+        "description": "Don't just take our word for it, read what others are saying about our approach and products.",
+        "mode": "logos",
+        "outlets": [
+          {
+            "name": "NGV",
+            "darkImage": "products/featured-in/ngv-dark.png",
+            "lightImage": "products/featured-in/ngv-light.png"
+          },
+          {
+            "name": "Landscape Australia",
+            "darkImage": "products/featured-in/landscape-dark.png",
+            "lightImage": "products/featured-in/landscape-light.png"
+          },
+          {
+            "name": "Milano Design Week",
+            "darkImage": "products/featured-in/milano-design-week-dark.png",
+            "lightImage": "products/featured-in/milano-design-week-light.png"
+          },
+          {
+            "name": "Radio National",
+            "darkImage": "products/featured-in/radio-national-dark.png",
+            "lightImage": "products/featured-in/radio-national-light.png"
+          },
+          {
+            "name": "10",
+            "darkImage": "products/featured-in/ten-dark.png",
+            "lightImage": "products/featured-in/ten-light.png"
+          },
+          {
+            "name": "Regional Development Australia",
+            "darkImage": "products/featured-in/regional-development-dark.png",
+            "lightImage": "products/featured-in/regional-development-light.png"
+          }
+        ],
+        "bgType": "light"
+      },
+      {
+        "__component": "products.metrics-suite",
+        "backgroundImage": "products/paver/metrics/bg.png",
+        "bgType": "dark",
+        "techSpec": {
+          "title": "Let's get technical.",
+          "dropdownLabel": "Paver variant",
+          "downloadCta": {
+            "label": "Download the product sheet",
+            "href": "/preorders"
+          },
+          "variants": [
+            {
+              "variantKey": "standard",
+              "label": "Standard Paver",
+              "productImageDesktop": "products/paver/metrics/Standard.png",
+              "specItems": [
+                {
+                  "title": "Weight & size",
+                  "description": "1.9kg  230mm x 114mm x 50mm"
+                },
+                {
+                  "title": "Easy install",
+                  "description": "Installs using standard paving and landscaping methods."
+                },
+                {
+                  "title": "Durable",
+                  "description": "Suitable for public spaces, pedestrian pathways and both light and heavy vehicle traffic options."
+                },
+                {
+                  "title": "Standards",
+                  "description": "Designed to Australian Standards AS/NZS 4455.1) Masonry units, pavers, flags and segmental retaining wall units."
+                }
+              ]
+            },
+            {
+              "variantKey": "thinline",
+              "label": "Thinline Paver",
+              "productImageDesktop": "products/paver/metrics/Thinline.png",
+              "specItems": [
+                {
+                  "title": "Weight & size",
+                  "description": "1.1kg  230mm x 114mm x 25mm"
+                },
+                {
+                  "title": "Easy install",
+                  "description": "Installs using standard paving and landscaping methods."
+                },
+                {
+                  "title": "Durable",
+                  "description": "Suitable for pedestrian pathways and light traffic applications."
+                },
+                {
+                  "title": "Standards",
+                  "description": "Designed to Australian Standards AS/NZS 4455.1) Masonry units, pavers, flags and segmental retaining wall units."
+                }
+              ]
+            },
+            {
+              "variantKey": "deep",
+              "label": "Deep Paver",
+              "productImageDesktop": "products/paver/metrics/Heavy.png",
+              "specItems": [
+                {
+                  "title": "Weight & size",
+                  "description": "2.4kg  230mm x 114mm x 65mm"
+                },
+                {
+                  "title": "Easy install",
+                  "description": "Installs using standard paving and landscaping methods."
+                },
+                {
+                  "title": "Durable",
+                  "description": "Suitable for public spaces and heavy traffic options."
+                },
+                {
+                  "title": "Standards",
+                  "description": "Designed to Australian Standards AS/NZS 4455.1) Masonry units, pavers, flags and segmental retaining wall units."
+                }
+              ]
+            },
+            {
+              "variantKey": "grid",
+              "label": "Grid Paver",
+              "productImageDesktop": "products/paver/metrics/Grid.png",
+              "specItems": [
+                {
+                  "title": "Weight & size",
+                  "description": "2.4kg  230mm x 114mm x 65mm"
+                },
+                {
+                  "title": "Easy install",
+                  "description": "Installs using standard paving and landscaping methods."
+                },
+                {
+                  "title": "Durable",
+                  "description": "Suitable for public spaces and heavy traffic options."
+                },
+                {
+                  "title": "Standards",
+                  "description": "Designed to Australian Standards AS/NZS 4455.1) Masonry units, pavers, flags and segmental retaining wall units."
+                }
+              ]
+            }
+          ],
+          "defaultVariantKey": "standard"
+        },
+        "comparison": {
+          "title": "Leaving concrete for dust",
+          "description": "We rigorously tested our pavers against today's standard building materials.",
+          "leftColumnLabel": "Concrete",
+          "rightColumnLabel": "Pelagic",
+          "rows": [
+            {
+              "label": "Hydrophobic",
+              "leftValue": "cross",
+              "rightValue": "check"
+            },
+            {
+              "label": "Not brittle under load",
+              "leftValue": "cross",
+              "rightValue": "check"
+            },
+            {
+              "label": "Sequesters local plastic feedstock",
+              "leftValue": "cross",
+              "rightValue": "check"
+            },
+            {
+              "label": "50 year material warranty",
+              "leftValue": "cross",
+              "rightValue": "check"
+            },
+            {
+              "label": "Zero water required",
+              "leftValue": "cross",
+              "rightValue": "check"
+            },
+            {
+              "label": "Designed and made in Australia",
+              "leftValue": "cross",
+              "rightValue": "check"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "modFactoryPage": {
+    "title": "Mod.factory",
+    "seo": {
+      "metaTitle": "Mod.factory | Pelagic Earth",
+      "metaDescription": "Pelagic Mod.factory is a mobile micro-factory that converts ocean-bound plastic into build-ready material systems at source.",
+      "shareImage": null
+    },
+    "sections": [
+      {
+        "__component": "products.mod-factory-hero",
+        "headline": "Mod.factory is production capability within a 40ft shipping container.",
+        "subheadline": "Designed to drop into any location from a remote beach to a construction site. Mod.factory makes pavers at the plastic waste source.",
+        "desktopHeroImage": "products/mod-factory/hero/factory-coastal.jpg",
+        "mobileHeroImage": "products/mod-factory/hero/factory-coastal-mobile.jpg",
+        "locationTabs": [
+          {
+            "tabKey": "coastal",
+            "label": "Coastal deployment",
+            "shortLabel": "Coastal"
+          },
+          {
+            "tabKey": "regional",
+            "label": "Regional",
+            "shortLabel": "Regional"
+          },
+          {
+            "tabKey": "urban",
+            "label": "Urban",
+            "shortLabel": "Urban"
+          }
+        ],
+        "defaultTabKey": "coastal",
+        "metrics": [
+          {
+            "value": "7,500+",
+            "label": "pavers per month"
+          },
+          {
+            "value": "20+",
+            "label": "tons plastic consumed per month"
+          },
+          {
+            "value": "5+",
+            "label": "local jobs created"
+          },
+          {
+            "value": "5+",
+            "label": "services contracted"
+          }
+        ],
+        "bgColorHex": "#050720"
+      },
+      {
+        "__component": "products.container-statement",
+        "desktopMainImage": "products/mod-factory/container-statement/container-statement-main-image.png",
+        "mobileMainImage": "products/mod-factory/container-statement/container-statement-main-image-mobile.png",
+        "desktopSideImage": "products/mod-factory/container-statement/container-statement-side-image.png",
+        "mobileSideImage": "products/mod-factory/container-statement/container-statement-side-image-mobile.png"
+      },
+      {
+        "__component": "products.impact-grid",
+        "title": "Bringing production to the source of the plastic waste.",
+        "intro": "Resulting from an extensive systems design process, Mod.factory offers flexibility, localised efficiencies and modularity for distributed manufacturing.",
+        "cards": [
+          {
+            "title": "Waste diversion",
+            "description": "Create solutions for increasing soft plastic waste and a lack of appropriate infrastructure.",
+            "image": "products/mod-factory/impact-grid/impact-waste-diversion.png"
+          },
+          {
+            "title": "Construction",
+            "description": "Convert plastic waste into high demand construction products on location, condensing supply chains and timelines.",
+            "image": "products/mod-factory/impact-grid/impact-construction.png"
+          },
+          {
+            "title": "Community",
+            "description": "Create local business partnerships, generating livelihoods with local training and engagement.",
+            "image": "products/mod-factory/impact-grid/impact-community.png"
+          },
+          {
+            "title": "Municipal Waste Hubs",
+            "description": "Process plastics at source to reduce landfill and logistics overheads.",
+            "image": "products/mod-factory/impact-grid/impact-municipal-waste-hubs.png"
+          }
+        ],
+        "bgType": "dark"
+      },
+      {
+        "__component": "products.deploy-steps",
+        "title": "Deploying Mod.factory at your location",
+        "intro": "A structured implementation pathway from feasibility through installation and first-day operation.",
+        "steps": [
+          {
+            "number": 1,
+            "title": "Feasibility",
+            "description": "We run a desktop review of your site, logistics and feedstock to confirm fit and produce a clear go/no-go recommendation.",
+            "icon": "products/mod-factory/deploy-steps/1.svg"
+          },
+          {
+            "number": 2,
+            "title": "Site preparation",
+            "description": "We prepare required documentation and support ground works so access and safety measures are ready before delivery.",
+            "icon": "products/mod-factory/deploy-steps/2.svg"
+          },
+          {
+            "number": 3,
+            "title": "Installation and turn on",
+            "description": "We manufacture, deliver, install and commission your Mod.factory so the plant can begin processing waste quickly.",
+            "icon": "products/mod-factory/deploy-steps/3.svg"
+          }
+        ],
+        "bottomCopyBlocks": [
+          {
+            "copy": "Deployment timelines vary by permitting and site readiness, with most projects moving from scoping to operation in a staged rollout."
+          },
+          {
+            "copy": "Pelagic teams work with councils, developers and operators to align local feedstock, demand and manufacturing requirements."
+          }
+        ],
+        "bottomCta": {
+          "label": "Book a feasibility call",
+          "href": "/preorders"
+        },
+        "bgType": "dark"
+      },
+      {
+        "__component": "products.technical-specs",
+        "label": "Technical brief",
+        "title": "Let's get technical.",
+        "intro": "Factory specifications and site requirements for deployment planning.",
+        "specs": [
+          {
+            "label": "Factory footprint",
+            "value": "4 tons, 40ft shipping container"
+          },
+          {
+            "label": "Electrical",
+            "value": "3-phase 400V supply. 325A minimum load, up to 625A at full processing capacity."
+          },
+          {
+            "label": "Footing",
+            "value": "Level, stable base. Concrete/asphalt preferred."
+          },
+          {
+            "label": "Site requirements",
+            "value": "500 m2 minimum for factory, storage and vehicle movements."
+          },
+          {
+            "label": "Water",
+            "value": "No mains water required."
+          }
+        ],
+        "diagramMode": "image",
+        "diagramImage": "products/mod-factory/technical/bg.png",
+        "downloadCta": {
+          "label": "Download the product sheet",
+          "href": "/preorders"
+        },
+        "backgroundImage": "products/mod-factory/technical/bg.png",
+        "bgType": "dark"
+      },
+      {
+        "__component": "products.global-scale",
+        "title": "Follow us as we scale globally",
+        "intro": "Our interactive microsite tracks mod.factory installations and explores the impact we can have together.",
+        "cta": {
+          "label": "Launch microsite",
+          "href": "/preorders"
+        },
+        "image": "products/mod-factory/global-scale/glob.png",
+        "bgType": "dark"
+      },
+      {
+        "__component": "products.factory-target",
+        "statement": "By 2028 we aim to have 30 Mod.factories sequestering a total of 15,000 tons of plastic out of our environment every single day.",
+        "desktopImage": "products/mod-factory/factory-target/bg.png",
+        "mobileImage": "products/mod-factory/factory-target/bg-mobile.png",
+        "bgType": "dark"
+      },
+      {
+        "__component": "products.featured-in",
+        "label": "As featured in",
+        "description": "Don't just take our word for it, see what media and institutions are saying.",
+        "mode": "logos",
+        "outlets": [
+          {
+            "name": "NGV",
+            "darkImage": "products/featured-in/ngv-dark.png",
+            "lightImage": "products/featured-in/ngv-light.png"
+          },
+          {
+            "name": "Landscape",
+            "darkImage": "products/featured-in/landscape-dark.png",
+            "lightImage": "products/featured-in/landscape-light.png"
+          },
+          {
+            "name": "Radio National",
+            "darkImage": "products/featured-in/radio-national-dark.png",
+            "lightImage": "products/featured-in/radio-national-light.png"
+          },
+          {
+            "name": "10",
+            "darkImage": "products/featured-in/ten-dark.png",
+            "lightImage": "products/featured-in/ten-light.png"
+          },
+          {
+            "name": "Regional Development",
+            "darkImage": "products/featured-in/regional-development-dark.png",
+            "lightImage": "products/featured-in/regional-development-light.png"
+          },
+          {
+            "name": "Milano Design Week",
+            "darkImage": "products/featured-in/milano-design-week-dark.png",
+            "lightImage": "products/featured-in/milano-design-week-light.png"
+          }
+        ],
+        "bgType": "dark"
+      },
+      {
+        "__component": "products.closing-quote-simple",
+        "quote": "Waste is in the eye of the beholder.",
+        "subcopy": "Localized infrastructure that turns discarded material into durable value.",
+        "bgType": "light"
+      },
+      {
+        "__component": "products.metrics-basic",
+        "eyebrow": "Key metrics",
+        "heading": "Built for measurable impact.",
+        "items": [
+          {
+            "value": "20+",
+            "label": "coastal sites assessed for rollout"
+          },
+          {
+            "value": "5+",
+            "label": "material outputs from one production line"
+          },
+          {
+            "value": "95%",
+            "label": "of feedstock processed on-site"
+          },
+          {
+            "value": "1 unit",
+            "label": "fits in a standard container footprint"
+          }
+        ],
+        "bgType": "dark"
+      }
+    ]
   }
 }

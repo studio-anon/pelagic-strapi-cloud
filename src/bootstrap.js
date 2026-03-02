@@ -9,6 +9,8 @@ const {
   journalPage,
   journalArticles,
   missionPage,
+  pavePage,
+  modFactoryPage,
 } = require('../data/data.json');
 
 /**
@@ -114,6 +116,21 @@ function parseFilePath(filePath) {
   return { dir, file };
 }
 
+/**
+ * Build a stable upload name from the full seed file path.
+ * Prevents collisions for common names like "bg.png" in different folders.
+ */
+function getUploadNameFromPath(filePathString) {
+  const { dir, file } = parseFilePath(filePathString);
+  const fileNameNoExtension = file.replace(/\..*$/, '');
+
+  if (!dir) {
+    return fileNameNoExtension;
+  }
+
+  return `${dir}-${fileNameNoExtension}`.replace(/[\\/]+/g, '-');
+}
+
 function getFileData(filePathString) {
   const { dir, file } = parseFilePath(filePathString);
   const fullPath = path.join('data', 'uploads', dir, file);
@@ -168,12 +185,12 @@ async function checkFileExistsBeforeUpload(filePaths) {
     if (!filePathString) continue; // Skip null/undefined
     
     const { file: fileName } = parseFilePath(filePathString);
-    const fileNameNoExtension = fileName.replace(/\..*$/, '');
+    const uploadName = getUploadNameFromPath(filePathString);
     
     // Check if the file already exists in Strapi
     const fileWhereName = await strapi.query('plugin::upload.file').findOne({
       where: {
-        name: fileNameNoExtension,
+        name: uploadName,
       },
     });
 
@@ -185,7 +202,7 @@ async function checkFileExistsBeforeUpload(filePaths) {
       // File doesn't exist, upload it
       try {
         const fileData = getFileData(filePathString);
-        const [file] = await uploadFile(fileData, fileNameNoExtension);
+        const [file] = await uploadFile(fileData, uploadName);
         uploadedFiles.push(file);
         console.log(`   ✓ Uploaded: ${fileName}`);
       } catch (error) {
@@ -506,6 +523,242 @@ async function processJournalContentBlock(block) {
 }
 
 /**
+ * Process a product section and upload any media files it references
+ */
+async function processProductSection(section) {
+  const sectionCopy = { ...section };
+  const component = section?.__component;
+
+  if (!component) {
+    return sectionCopy;
+  }
+
+  if (component === 'products.hero-configurator') {
+    if (Array.isArray(section.designs)) {
+      sectionCopy.designs = [];
+      for (const design of section.designs) {
+        const designCopy = { ...design };
+        if (design.icon) {
+          designCopy.icon = await checkFileExistsBeforeUpload(design.icon);
+        }
+        sectionCopy.designs.push(designCopy);
+      }
+    }
+
+    if (Array.isArray(section.colours)) {
+      sectionCopy.colours = [];
+      for (const colour of section.colours) {
+        const colourCopy = { ...colour };
+        if (colour.swatchImage) {
+          colourCopy.swatchImage = await checkFileExistsBeforeUpload(colour.swatchImage);
+        }
+        sectionCopy.colours.push(colourCopy);
+      }
+    }
+
+    if (Array.isArray(section.gallerySets)) {
+      sectionCopy.gallerySets = [];
+      for (const gallerySet of section.gallerySets) {
+        const gallerySetCopy = { ...gallerySet };
+        if (Array.isArray(gallerySet.images) && gallerySet.images.length > 0) {
+          gallerySetCopy.images = await checkFileExistsBeforeUpload(gallerySet.images);
+        }
+        sectionCopy.gallerySets.push(gallerySetCopy);
+      }
+    }
+
+    if (Array.isArray(section.gridImages) && section.gridImages.length > 0) {
+      sectionCopy.gridImages = await checkFileExistsBeforeUpload(section.gridImages);
+    }
+
+    return sectionCopy;
+  }
+
+  if (component === 'products.hero-standard') {
+    if (section.image) {
+      sectionCopy.image = await checkFileExistsBeforeUpload(section.image);
+    }
+    return sectionCopy;
+  }
+
+  if (component === 'products.technical-showcase') {
+    if (section.image) {
+      sectionCopy.image = await checkFileExistsBeforeUpload(section.image);
+    }
+    if (section.textureImage) {
+      sectionCopy.textureImage = await checkFileExistsBeforeUpload(section.textureImage);
+    }
+    return sectionCopy;
+  }
+
+  if (component === 'products.use-cases') {
+    if (Array.isArray(section.cards)) {
+      sectionCopy.cards = [];
+      for (const card of section.cards) {
+        const cardCopy = { ...card };
+        if (card.image) {
+          cardCopy.image = await checkFileExistsBeforeUpload(card.image);
+        }
+        sectionCopy.cards.push(cardCopy);
+      }
+    }
+    return sectionCopy;
+  }
+
+  if (component === 'products.closing-quote-impact-cta') {
+    if (section.primaryImage) {
+      sectionCopy.primaryImage = await checkFileExistsBeforeUpload(section.primaryImage);
+    }
+    if (section.secondaryImage) {
+      sectionCopy.secondaryImage = await checkFileExistsBeforeUpload(section.secondaryImage);
+    }
+    return sectionCopy;
+  }
+
+  if (component === 'products.voice-testimonial') {
+    if (section.portraitImage) {
+      sectionCopy.portraitImage = await checkFileExistsBeforeUpload(section.portraitImage);
+    }
+    if (section.supportImage) {
+      sectionCopy.supportImage = await checkFileExistsBeforeUpload(section.supportImage);
+    }
+    return sectionCopy;
+  }
+
+  if (component === 'products.featured-in') {
+    if (Array.isArray(section.outlets)) {
+      sectionCopy.outlets = [];
+      for (const outlet of section.outlets) {
+        const outletCopy = { ...outlet };
+        if (outlet.darkImage) {
+          outletCopy.darkImage = await checkFileExistsBeforeUpload(outlet.darkImage);
+        }
+        if (outlet.lightImage) {
+          outletCopy.lightImage = await checkFileExistsBeforeUpload(outlet.lightImage);
+        }
+        sectionCopy.outlets.push(outletCopy);
+      }
+    }
+    return sectionCopy;
+  }
+
+  if (component === 'products.metrics-suite') {
+    if (section.backgroundImage) {
+      sectionCopy.backgroundImage = await checkFileExistsBeforeUpload(section.backgroundImage);
+    }
+
+    if (section.techSpec && Array.isArray(section.techSpec.variants)) {
+      const techSpecCopy = { ...section.techSpec };
+      techSpecCopy.variants = [];
+      for (const variant of section.techSpec.variants) {
+        const variantCopy = { ...variant };
+        if (variant.productImageDesktop) {
+          variantCopy.productImageDesktop = await checkFileExistsBeforeUpload(
+            variant.productImageDesktop
+          );
+        }
+        if (variant.productImageMobile) {
+          variantCopy.productImageMobile = await checkFileExistsBeforeUpload(
+            variant.productImageMobile
+          );
+        }
+        techSpecCopy.variants.push(variantCopy);
+      }
+      sectionCopy.techSpec = techSpecCopy;
+    }
+
+    return sectionCopy;
+  }
+
+  if (component === 'products.mod-factory-hero') {
+    if (section.desktopHeroImage) {
+      sectionCopy.desktopHeroImage = await checkFileExistsBeforeUpload(section.desktopHeroImage);
+    }
+    if (section.mobileHeroImage) {
+      sectionCopy.mobileHeroImage = await checkFileExistsBeforeUpload(section.mobileHeroImage);
+    }
+    return sectionCopy;
+  }
+
+  if (component === 'products.container-statement') {
+    if (section.desktopMainImage) {
+      sectionCopy.desktopMainImage = await checkFileExistsBeforeUpload(section.desktopMainImage);
+    }
+    if (section.mobileMainImage) {
+      sectionCopy.mobileMainImage = await checkFileExistsBeforeUpload(section.mobileMainImage);
+    }
+    if (section.desktopSideImage) {
+      sectionCopy.desktopSideImage = await checkFileExistsBeforeUpload(section.desktopSideImage);
+    }
+    if (section.mobileSideImage) {
+      sectionCopy.mobileSideImage = await checkFileExistsBeforeUpload(section.mobileSideImage);
+    }
+    return sectionCopy;
+  }
+
+  if (component === 'products.impact-grid') {
+    if (Array.isArray(section.cards)) {
+      sectionCopy.cards = [];
+      for (const card of section.cards) {
+        const cardCopy = { ...card };
+        if (card.image) {
+          cardCopy.image = await checkFileExistsBeforeUpload(card.image);
+        }
+        sectionCopy.cards.push(cardCopy);
+      }
+    }
+    return sectionCopy;
+  }
+
+  if (component === 'products.deploy-steps') {
+    if (Array.isArray(section.steps)) {
+      sectionCopy.steps = [];
+      for (const step of section.steps) {
+        const stepCopy = { ...step };
+        if (step.icon) {
+          stepCopy.icon = await checkFileExistsBeforeUpload(step.icon);
+        }
+        sectionCopy.steps.push(stepCopy);
+      }
+    }
+    return sectionCopy;
+  }
+
+  if (component === 'products.technical-specs') {
+    if (section.diagramLottie) {
+      sectionCopy.diagramLottie = await checkFileExistsBeforeUpload(section.diagramLottie);
+    }
+    if (section.diagramImage) {
+      sectionCopy.diagramImage = await checkFileExistsBeforeUpload(section.diagramImage);
+    }
+    if (section.backgroundImage) {
+      sectionCopy.backgroundImage = await checkFileExistsBeforeUpload(section.backgroundImage);
+    }
+    return sectionCopy;
+  }
+
+  if (component === 'products.global-scale') {
+    if (section.image) {
+      sectionCopy.image = await checkFileExistsBeforeUpload(section.image);
+    }
+    return sectionCopy;
+  }
+
+  if (component === 'products.factory-target') {
+    if (section.desktopImage) {
+      sectionCopy.desktopImage = await checkFileExistsBeforeUpload(section.desktopImage);
+    }
+    if (section.mobileImage) {
+      sectionCopy.mobileImage = await checkFileExistsBeforeUpload(section.mobileImage);
+    }
+    return sectionCopy;
+  }
+
+  // products.closing-quote-simple and products.metrics-basic do not include media fields
+  return sectionCopy;
+}
+
+/**
  * Import Home Page content
  * Processes SEO, sections, and creates the home-page entry
  */
@@ -694,6 +947,80 @@ async function importMissionPage() {
     console.error('   ✗ Failed to import Mission Page:', error);
     throw error;
   }
+}
+
+/**
+ * Import product single type content
+ * Handles both pave-page and mod-factory-page schemas
+ */
+async function importProductPage(model, titleFallback, seedData) {
+  const pageLabel = model === 'pave-page' ? 'Pave Page' : 'Mod.factory Page';
+  console.log(`🧱 Importing ${pageLabel}...`);
+
+  try {
+    if (!seedData) {
+      console.log(`   No ${model} data found, skipping...`);
+      return;
+    }
+
+    const existingEntry = await strapi.db
+      .query(`api::${model}.${model}`)
+      .findOne({ where: {} });
+    const existingDocumentId = existingEntry?.documentId || existingEntry?.document_id;
+
+    let seoData = null;
+    if (seedData.seo) {
+      seoData = { ...seedData.seo };
+      if (seedData.seo.shareImage) {
+        seoData.shareImage = await checkFileExistsBeforeUpload(seedData.seo.shareImage);
+      } else {
+        delete seoData.shareImage;
+      }
+    }
+
+    const productSections = Array.isArray(seedData.sections) ? seedData.sections : [];
+    const processedSections = [];
+    for (let i = 0; i < productSections.length; i++) {
+      const section = productSections[i];
+      console.log(`   [${i + 1}/${productSections.length}] Processing ${section.__component}...`);
+      processedSections.push(await processProductSection(section));
+    }
+
+    const pageData = {
+      title: seedData.title || titleFallback,
+      seo: seoData,
+      sections: processedSections,
+    };
+
+    if (existingDocumentId) {
+      console.log(`   Updating ${model} entry...`);
+      await strapi.documents(`api::${model}.${model}`).update({
+        documentId: existingDocumentId,
+        data: pageData,
+        status: 'published',
+      });
+      console.log(`   ✓ ${pageLabel} updated successfully!`);
+      return;
+    }
+
+    console.log(`   Creating ${model} entry...`);
+    await strapi.documents(`api::${model}.${model}`).create({
+      data: pageData,
+      status: 'published',
+    });
+    console.log(`   ✓ ${pageLabel} created successfully!`);
+  } catch (error) {
+    console.error(`   ✗ Failed to import ${pageLabel}:`, error);
+    throw error;
+  }
+}
+
+async function importPavePage() {
+  await importProductPage('pave-page', 'Pave', pavePage);
+}
+
+async function importModFactoryPage() {
+  await importProductPage('mod-factory-page', 'Mod.factory', modFactoryPage);
 }
 
 /**
@@ -966,6 +1293,10 @@ async function importSeedData() {
 
   // Import mission page
   await importMissionPage();
+
+  // Import product pages
+  await importPavePage();
+  await importModFactoryPage();
 
   // Import journal page and articles
   await importJournalPage();
