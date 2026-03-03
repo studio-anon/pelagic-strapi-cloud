@@ -12,12 +12,22 @@
       "required": true
     },
     "leftValue": {
-      "type": "string",
-      "required": true
+      "type": "enumeration",
+      "enum": [
+        "check",
+        "cross"
+      ],
+      "required": true,
+      "default": "cross"
     },
     "rightValue": {
-      "type": "string",
-      "required": true
+      "type": "enumeration",
+      "enum": [
+        "check",
+        "cross"
+      ],
+      "required": true,
+      "default": "check"
     }
   }
 }

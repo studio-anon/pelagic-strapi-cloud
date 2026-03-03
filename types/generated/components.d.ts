@@ -361,8 +361,12 @@ export interface ProductsComparisonRow extends Struct.ComponentSchema {
   };
   attributes: {
     label: Schema.Attribute.String & Schema.Attribute.Required;
-    leftValue: Schema.Attribute.String & Schema.Attribute.Required;
-    rightValue: Schema.Attribute.String & Schema.Attribute.Required;
+    leftValue: Schema.Attribute.Enumeration<['check', 'cross']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'cross'>;
+    rightValue: Schema.Attribute.Enumeration<['check', 'cross']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'check'>;
   };
 }
 
