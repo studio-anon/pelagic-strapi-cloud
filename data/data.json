@@ -655,9 +655,6 @@
             ]
           }
         ],
-        "gridImages": [
-          "products/paver/pavers/grid-paver-01.jpg"
-        ],
         "calculator": {
           "modeLabel": "Paver type",
           "inputLabel": "Total area (m2)",

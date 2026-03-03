@@ -574,7 +574,6 @@ export interface ProductsHeroConfigurator extends Struct.ComponentSchema {
         },
         number
       >;
-    gridImages: Schema.Attribute.Media<'images', true>;
     learnMore: Schema.Attribute.Component<'shared.cta', false> &
       Schema.Attribute.Required;
     primaryCta: Schema.Attribute.Component<'shared.cta', false> &

@@ -74,13 +74,6 @@
       "required": true,
       "min": 1
     },
-    "gridImages": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "calculator": {
       "type": "component",
       "repeatable": false,

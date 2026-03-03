@@ -567,10 +567,6 @@ async function processProductSection(section) {
       }
     }
 
-    if (Array.isArray(section.gridImages) && section.gridImages.length > 0) {
-      sectionCopy.gridImages = await checkFileExistsBeforeUpload(section.gridImages);
-    }
-
     return sectionCopy;
   }
 
