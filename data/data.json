@@ -218,6 +218,75 @@
   },
   "journalArticles": [
     {
+      "slug": "layout-reference-test-article",
+      "title": "This is a very long title that may spill over two lines.",
+      "fullIntroduction": "A short article intro for layout verification. We are using this seeded entry to test every journal detail block across desktop and mobile breakpoints.",
+      "listingIntroduction": "Reference article used to test journal detail layout against design.",
+      "publishDate": "2026-03-04",
+      "readingTimeMinutes": 6,
+      "listingThumbnailDesktop": "hero/hero-02.jpg",
+      "listingThumbnailMobile": "hero/hero-02.jpg",
+      "heroImageDesktop": "hero/hero-02.jpg",
+      "heroImageMobile": "hero/hero-02.jpg",
+      "contentBlocks": [
+        {
+          "__component": "journal.breakout-text",
+          "copy": "This style can be used for a breakout block of text that might be a call out, quote or something similar."
+        },
+        {
+          "__component": "journal.full-width-image",
+          "desktopImage": "gallery/img_03.jpg",
+          "mobileImage": "gallery/img_03.jpg"
+        },
+        {
+          "__component": "journal.single-column",
+          "copy": "Contemporary building products and alternative manufacturing using ocean and landfill bound soft plastics through modular, localised infrastructure. This paragraph is intentionally long enough to verify spacing, rhythm and readable line-length in the single-column format."
+        },
+        {
+          "__component": "journal.text-image-pair-left",
+          "copy": "This block is used to test a left-copy and right-image pairing. It should align vertically in desktop view and stack naturally on mobile.",
+          "image": "journal-listing/2.png"
+        },
+        {
+          "__component": "journal.text-image-pair-right",
+          "copy": "A mirrored pair with the image on the left and the text on the right. Use this to verify alternating rhythm and section pacing through the article body.",
+          "image": "journal-listing/3.png"
+        },
+        {
+          "__component": "journal.single-column",
+          "copy": "The next section provides additional paragraph flow to validate typography scaling and spacing across breakpoints. This ensures that multi-paragraph copy remains legible and balanced between media-heavy modules."
+        },
+        {
+          "__component": "journal.full-width-image",
+          "desktopImage": "hero/hero-04.jpg",
+          "mobileImage": "hero/hero-04.jpg"
+        },
+        {
+          "__component": "journal.two-column",
+          "copy01": "Column one copy for layout testing. This verifies width, line breaks and spacing in a dual-column text section.",
+          "copy02": "Column two copy for layout testing. This helps validate balance between both columns on desktop and stacking behavior on mobile."
+        },
+        {
+          "__component": "journal.two-images",
+          "desktopImage01": "journal-listing/4.png",
+          "mobileImage01": "journal-listing/4.png",
+          "desktopImage02": "applications/desktop-02.jpg",
+          "mobileImage02": "applications/mobile-02.jpg"
+        },
+        {
+          "__component": "journal.two-column",
+          "copy01": "A second two-column section keeps the article structure close to the design reference and helps test repeated text modules.",
+          "copy02": "This paragraph confirms that spacing and rhythm remain consistent after a two-image block and before the video module."
+        },
+        {
+          "__component": "journal.video-embed",
+          "desktopImage": "applications/desktop-04.jpg",
+          "mobileImage": "applications/mobile-04.jpg",
+          "url": "https://explore.pelagic.earth"
+        }
+      ]
+    },
+    {
       "title": "Pelagic.Earth x Parley",
       "fullIntroduction": "We partnered with Parley to take bold steps toward building a better future for the ocean. This collaboration explores how material innovation can support coastal communities and circular construction.",
       "listingIntroduction": "We partnered with Parley to take bold steps towards building a better future for the ocean.",
