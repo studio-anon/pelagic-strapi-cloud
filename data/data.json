@@ -224,33 +224,33 @@
       "listingIntroduction": "Reference article used to test journal detail layout against design.",
       "publishDate": "2026-03-04",
       "readingTimeMinutes": 6,
-      "listingThumbnailDesktop": "hero/hero-02.jpg",
-      "listingThumbnailMobile": "hero/hero-02.jpg",
-      "heroImageDesktop": "hero/hero-02.jpg",
-      "heroImageMobile": "hero/hero-02.jpg",
+      "listingThumbnailDesktop": "journal-listing/example-hero.png",
+      "listingThumbnailMobile": "journal-listing/example-hero.png",
+      "heroImageDesktop": "journal-listing/example-hero.png",
+      "heroImageMobile": "journal-listing/example-hero.png",
       "contentBlocks": [
         {
           "__component": "journal.breakout-text",
-          "copy": "This style can be used for a breakout block of text that might be a call out, quote or something similar."
+          "copy": "This style can be used for a breakout block of text that might be a call out, quote or something similar. Contemporary building products and alternative manufacturing using ocean and landfill bound soft plastics through."
         },
         {
           "__component": "journal.full-width-image",
-          "desktopImage": "gallery/img_03.jpg",
-          "mobileImage": "gallery/img_03.jpg"
+          "desktopImage": "journal-listing/example-comp-01.png",
+          "mobileImage": "journal-listing/example-comp-01.png"
         },
         {
           "__component": "journal.single-column",
-          "copy": "Contemporary building products and alternative manufacturing using ocean and landfill bound soft plastics through modular, localised infrastructure. This paragraph is intentionally long enough to verify spacing, rhythm and readable line-length in the single-column format."
+          "copy": "**You can insert a title if you want, but it’s optional for your nose to your lover’s collar and been completely overcome by their smell? Your pulse quickens. You can’t get your words out**\n\nThis is a repeatable component of full width text. Use as many times as you like throughout a journal page. Let's give waste new meaning, connect communities, stabilise markets, and reorient our waste management and industrial systems. And let's do it at scale. Anchored in the idea that 'waste is in the eye of the beholder' — waste is a cultural proposition, an industrial byproduct, an ecosystem out of balance, a misalignment of design x [time + function]. \n\nAn installation using ocean plastics and other end-of-life plastic as an alternative to concrete. An immersive space to reflect on design, materiality, waste an external link explore what fundamentally matters in good design and how to apply it at scale within a rapidly changing world."
         },
         {
           "__component": "journal.text-image-pair-left",
           "copy": "This block is used to test a left-copy and right-image pairing. It should align vertically in desktop view and stack naturally on mobile.",
-          "image": "journal-listing/2.png"
+          "image": "journal-listing/text-image-pair-left.png"
         },
         {
           "__component": "journal.text-image-pair-right",
           "copy": "A mirrored pair with the image on the left and the text on the right. Use this to verify alternating rhythm and section pacing through the article body.",
-          "image": "journal-listing/3.png"
+          "image": "journal-listing/text-image-pair-right.png"
         },
         {
           "__component": "journal.single-column",
@@ -258,8 +258,8 @@
         },
         {
           "__component": "journal.full-width-image",
-          "desktopImage": "hero/hero-04.jpg",
-          "mobileImage": "hero/hero-04.jpg"
+          "desktopImage": "journal-listing/full-width-02.png",
+          "mobileImage": "journal-listing/full-width-02.png"
         },
         {
           "__component": "journal.two-column",
