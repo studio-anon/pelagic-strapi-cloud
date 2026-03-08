@@ -33,7 +33,7 @@ export interface JournalSingleColumn extends Struct.ComponentSchema {
     icon: 'alignLeft';
   };
   attributes: {
-    copy: Schema.Attribute.Text & Schema.Attribute.Required;
+    copy: Schema.Attribute.RichText & Schema.Attribute.Required;
   };
 }
 
@@ -45,7 +45,7 @@ export interface JournalTextImagePairLeft extends Struct.ComponentSchema {
     icon: 'picture';
   };
   attributes: {
-    copy: Schema.Attribute.RichText & Schema.Attribute.Required;
+    copy: Schema.Attribute.Text & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
   };
 }
@@ -58,7 +58,7 @@ export interface JournalTextImagePairRight extends Struct.ComponentSchema {
     icon: 'picture';
   };
   attributes: {
-    copy: Schema.Attribute.RichText & Schema.Attribute.Required;
+    copy: Schema.Attribute.Text & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
   };
 }
@@ -71,8 +71,8 @@ export interface JournalTwoColumn extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    copy01: Schema.Attribute.RichText & Schema.Attribute.Required;
-    copy02: Schema.Attribute.RichText & Schema.Attribute.Required;
+    copy01: Schema.Attribute.Text & Schema.Attribute.Required;
+    copy02: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
 
@@ -96,14 +96,35 @@ export interface JournalTwoImages extends Struct.ComponentSchema {
 export interface JournalVideoEmbed extends Struct.ComponentSchema {
   collectionName: 'components_journal_video_embeds';
   info: {
-    description: 'Embedded video URL with desktop/mobile poster images';
+    description: 'YouTube/Vimeo embed URL or direct uploaded video with optional poster images';
     displayName: 'Video embed';
     icon: 'play';
   };
   attributes: {
-    desktopImage: Schema.Attribute.Media<'images'>;
-    mobileImage: Schema.Attribute.Media<'images'>;
-    url: Schema.Attribute.String & Schema.Attribute.Required;
+    desktopImage: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        'content-manager': {
+          description: 'Optional desktop poster image. Used as fallback when the URL cannot be embedded or for direct-uploaded video poster.';
+        };
+      }>;
+    mobileImage: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        'content-manager': {
+          description: 'Optional mobile poster image. Leave empty to reuse desktop poster.';
+        };
+      }>;
+    url: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        'content-manager': {
+          description: 'Optional YouTube or Vimeo URL. Use this when not uploading a video file. Vimeo player is fully supported.';
+        };
+      }>;
+    videoFile: Schema.Attribute.Media<'videos'> &
+      Schema.Attribute.SetPluginOptions<{
+        'content-manager': {
+          description: 'Optional direct video upload from Strapi Media Library. If provided, this is used instead of URL embed.';
+        };
+      }>;
   };
 }
 

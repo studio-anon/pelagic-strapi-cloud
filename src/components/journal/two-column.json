@@ -8,11 +8,11 @@
   "options": {},
   "attributes": {
     "copy01": {
-      "type": "richtext",
+      "type": "text",
       "required": true
     },
     "copy02": {
-      "type": "richtext",
+      "type": "text",
       "required": true
     }
   }

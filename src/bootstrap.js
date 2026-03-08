@@ -515,6 +515,9 @@ async function processJournalContentBlock(block) {
     if (block.mobileImage) {
       blockCopy.mobileImage = await checkFileExistsBeforeUpload(block.mobileImage);
     }
+    if (block.videoFile) {
+      blockCopy.videoFile = await checkFileExistsBeforeUpload(block.videoFile);
+    }
     return blockCopy;
   }
 

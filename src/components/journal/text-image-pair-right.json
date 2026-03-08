@@ -8,7 +8,7 @@
   "options": {},
   "attributes": {
     "copy": {
-      "type": "richtext",
+      "type": "text",
       "required": true
     },
     "image": {

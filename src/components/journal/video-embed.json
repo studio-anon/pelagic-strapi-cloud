@@ -2,7 +2,7 @@
   "collectionName": "components_journal_video_embeds",
   "info": {
     "displayName": "Video embed",
-    "description": "Embedded video URL with desktop/mobile poster images",
+    "description": "YouTube/Vimeo embed URL or direct uploaded video with optional poster images",
     "icon": "play"
   },
   "options": {},
@@ -10,16 +10,40 @@
     "desktopImage": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": ["images"],
+      "pluginOptions": {
+        "content-manager": {
+          "description": "Optional desktop poster image. Used as fallback when the URL cannot be embedded or for direct-uploaded video poster."
+        }
+      }
     },
     "mobileImage": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": ["images"],
+      "pluginOptions": {
+        "content-manager": {
+          "description": "Optional mobile poster image. Leave empty to reuse desktop poster."
+        }
+      }
+    },
+    "videoFile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["videos"],
+      "pluginOptions": {
+        "content-manager": {
+          "description": "Optional direct video upload from Strapi Media Library. If provided, this is used instead of URL embed."
+        }
+      }
     },
     "url": {
       "type": "string",
-      "required": true
+      "pluginOptions": {
+        "content-manager": {
+          "description": "Optional YouTube or Vimeo URL. Use this when not uploading a video file. Vimeo player is fully supported."
+        }
+      }
     }
   }
 }
