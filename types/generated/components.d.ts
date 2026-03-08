@@ -8,7 +8,7 @@ export interface JournalBreakoutText extends Struct.ComponentSchema {
     icon: 'quote';
   };
   attributes: {
-    copy: Schema.Attribute.RichText & Schema.Attribute.Required;
+    copy: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
 
@@ -33,7 +33,7 @@ export interface JournalSingleColumn extends Struct.ComponentSchema {
     icon: 'alignLeft';
   };
   attributes: {
-    copy: Schema.Attribute.RichText & Schema.Attribute.Required;
+    copy: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
 
