@@ -11,6 +11,7 @@
       "type": "media",
       "multiple": false,
       "allowedTypes": ["images"],
+      "description": "Optional desktop poster image. Used as fallback when URL cannot be embedded or for direct-uploaded video poster.",
       "pluginOptions": {
         "content-manager": {
           "description": "Optional desktop poster image. Used as fallback when the URL cannot be embedded or for direct-uploaded video poster."
@@ -21,6 +22,7 @@
       "type": "media",
       "multiple": false,
       "allowedTypes": ["images"],
+      "description": "Optional mobile poster image. Leave empty to reuse desktop poster.",
       "pluginOptions": {
         "content-manager": {
           "description": "Optional mobile poster image. Leave empty to reuse desktop poster."
@@ -31,6 +33,7 @@
       "type": "media",
       "multiple": false,
       "allowedTypes": ["videos"],
+      "description": "Optional direct video upload from Strapi Media Library. If provided, this is used instead of URL embed.",
       "pluginOptions": {
         "content-manager": {
           "description": "Optional direct video upload from Strapi Media Library. If provided, this is used instead of URL embed."
@@ -39,6 +42,7 @@
     },
     "url": {
       "type": "string",
+      "description": "Optional YouTube or Vimeo URL. Use this when not uploading a video file. Vimeo player is fully supported.",
       "pluginOptions": {
         "content-manager": {
           "description": "Optional YouTube or Vimeo URL. Use this when not uploading a video file. Vimeo player is fully supported."
