@@ -1,5 +1,5 @@
 {
-  "name": "my-app-name",
+  "name": "pelagic-strapi",
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
@@ -13,16 +13,16 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "^5.9.0",
-    "@strapi/plugin-users-permissions": "^5.9.0",
-    "@strapi/strapi": "5.37.1",
-    "better-sqlite3": "11.3.0",
-    "fs-extra": "^10.0.0",
-    "mime-types": "^2.1.27",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-router-dom": "^6.0.0",
-    "styled-components": "^6.0.0"
+    "@strapi/plugin-cloud": "^5.39.0",
+    "@strapi/plugin-users-permissions": "^5.39.0",
+    "@strapi/strapi": "5.39.0",
+    "better-sqlite3": "12.8.0",
+    "fs-extra": "^11.3.4",
+    "mime-types": "^3.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.3",
+    "styled-components": "^6.3.11"
   },
   "engines": {
     "node": ">=18.0.0 <=22.x.x",
