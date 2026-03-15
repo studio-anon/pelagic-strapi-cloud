@@ -453,7 +453,6 @@ export interface ApiGlobalSettingGlobalSetting extends Struct.SingleTypeSchema {
       'api::global-setting.global-setting'
     > &
       Schema.Attribute.Private;
-    mainNavigation: Schema.Attribute.JSON;
     privacySlug: Schema.Attribute.UID;
     publishedAt: Schema.Attribute.DateTime;
     siteName: Schema.Attribute.String & Schema.Attribute.Required;

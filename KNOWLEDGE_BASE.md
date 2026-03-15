@@ -104,7 +104,6 @@ pelagic-strapi-cloud/
 - `socialLinks` (component, repeatable): Social media links (uses `shared.external-link`)
 - `privacySlug` (uid): Privacy policy page slug
 - `termsSlug` (uid): Terms of service page slug
-- `mainNavigation` (json): Main navigation structure
 
 **Access**: Single instance, no draft/publish (always published)
 

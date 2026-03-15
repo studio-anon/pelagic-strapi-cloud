@@ -32,10 +32,6 @@
     },
     "copyrightText": {
       "type": "string"
-    },
-    "mainNavigation": {
-      "type": "json"
     }
   }
 }
-
