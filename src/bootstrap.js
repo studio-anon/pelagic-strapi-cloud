@@ -5,6 +5,7 @@ const path = require('path');
 const mime = require('mime-types');
 const {
   homePage,
+  featuredInSection,
   globalSetting,
   journalPage,
   journalArticles,
@@ -893,6 +894,66 @@ async function importGlobalSetting() {
   }
 }
 
+async function importFeaturedInSection() {
+  console.log('⭐ Importing Featured in Section...');
+
+  try {
+    if (!featuredInSection) {
+      console.log('   No featured-in-section data found, skipping...');
+      return;
+    }
+
+    const existingEntry = await strapi.db
+      .query('api::featured-in-section.featured-in-section')
+      .findOne({ where: {} });
+    const existingDocumentId = existingEntry?.documentId || existingEntry?.document_id;
+
+    const logos = Array.isArray(featuredInSection.logos) ? featuredInSection.logos : [];
+    const processedLogos = [];
+
+    for (let i = 0; i < logos.length; i++) {
+      const logo = { ...logos[i] };
+      console.log(`   [${i + 1}/${logos.length}] Processing featured logo...`);
+
+      if (logo.logoImage) {
+        logo.logoImage = await checkFileExistsBeforeUpload(logo.logoImage);
+      }
+      if (logo.darkLogoImage) {
+        logo.darkLogoImage = await checkFileExistsBeforeUpload(logo.darkLogoImage);
+      }
+
+      processedLogos.push(logo);
+    }
+
+    const entryData = {
+      title: featuredInSection.title || 'As featured in',
+      subtitle: featuredInSection.subtitle || null,
+      logos: processedLogos,
+    };
+
+    if (existingDocumentId) {
+      console.log('   Updating featured-in-section entry...');
+      await strapi.documents('api::featured-in-section.featured-in-section').update({
+        documentId: existingDocumentId,
+        data: entryData,
+        status: 'published',
+      });
+      console.log('   ✓ Featured in Section updated successfully!');
+      return;
+    }
+
+    console.log('   Creating featured-in-section entry...');
+    await strapi.documents('api::featured-in-section.featured-in-section').create({
+      data: entryData,
+      status: 'published',
+    });
+    console.log('   ✓ Featured in Section created successfully!');
+  } catch (error) {
+    console.error('   ✗ Failed to import Featured in Section:', error);
+    throw error;
+  }
+}
+
 /**
  * Import Mission Page content
  * Processes mission sections and upserts the mission-page entry
@@ -1287,6 +1348,7 @@ async function importSeedData() {
   // Set public permissions for content types
   await setPublicPermissions({
     'home-page': ['find', 'findOne'],
+    'featured-in-section': ['find', 'findOne'],
     'global-setting': ['find', 'findOne'],
     'mission-page': ['find', 'findOne'],
     'journal-article': ['find', 'findOne'],
@@ -1300,6 +1362,9 @@ async function importSeedData() {
 
   // Import global settings
   await importGlobalSetting();
+
+  // Import shared featured-in section
+  await importFeaturedInSection();
 
   // Import mission page
   await importMissionPage();

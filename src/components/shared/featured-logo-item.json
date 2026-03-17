@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_featured_logo_items",
+  "info": {
+    "displayName": "Featured logo item",
+    "description": "Featured-in logo with light/dark treatments and optional link",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "logoImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "darkLogoImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

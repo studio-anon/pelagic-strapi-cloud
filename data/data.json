@@ -185,6 +185,42 @@
       }
     ]
   },
+  "featuredInSection": {
+    "title": "As featured in",
+    "subtitle": "Don't just take our word for it, see what media and institutions are saying.",
+    "logos": [
+      {
+        "logoImage": "products/featured-in/ngv-light.png",
+        "darkLogoImage": "products/featured-in/ngv-dark.png",
+        "link": ""
+      },
+      {
+        "logoImage": "products/featured-in/landscape-light.png",
+        "darkLogoImage": "products/featured-in/landscape-dark.png",
+        "link": ""
+      },
+      {
+        "logoImage": "products/featured-in/milano-design-week-light.png",
+        "darkLogoImage": "products/featured-in/milano-design-week-dark.png",
+        "link": ""
+      },
+      {
+        "logoImage": "products/featured-in/radio-national-light.png",
+        "darkLogoImage": "products/featured-in/radio-national-dark.png",
+        "link": ""
+      },
+      {
+        "logoImage": "products/featured-in/ten-light.png",
+        "darkLogoImage": "products/featured-in/ten-dark.png",
+        "link": ""
+      },
+      {
+        "logoImage": "products/featured-in/regional-development-light.png",
+        "darkLogoImage": "products/featured-in/regional-development-dark.png",
+        "link": ""
+      }
+    ]
+  },
   "journalPage": {
     "title": "Journal",
     "introText": "",
@@ -807,45 +843,6 @@
         "bgType": "light"
       },
       {
-        "__component": "products.featured-in",
-        "label": "As featured in",
-        "description": "Don't just take our word for it, read what others are saying about our approach and products.",
-        "mode": "logos",
-        "outlets": [
-          {
-            "name": "NGV",
-            "darkImage": "products/featured-in/ngv-dark.png",
-            "lightImage": "products/featured-in/ngv-light.png"
-          },
-          {
-            "name": "Landscape Australia",
-            "darkImage": "products/featured-in/landscape-dark.png",
-            "lightImage": "products/featured-in/landscape-light.png"
-          },
-          {
-            "name": "Milano Design Week",
-            "darkImage": "products/featured-in/milano-design-week-dark.png",
-            "lightImage": "products/featured-in/milano-design-week-light.png"
-          },
-          {
-            "name": "Radio National",
-            "darkImage": "products/featured-in/radio-national-dark.png",
-            "lightImage": "products/featured-in/radio-national-light.png"
-          },
-          {
-            "name": "10",
-            "darkImage": "products/featured-in/ten-dark.png",
-            "lightImage": "products/featured-in/ten-light.png"
-          },
-          {
-            "name": "Regional Development Australia",
-            "darkImage": "products/featured-in/regional-development-dark.png",
-            "lightImage": "products/featured-in/regional-development-light.png"
-          }
-        ],
-        "bgType": "light"
-      },
-      {
         "__component": "products.metrics-suite",
         "backgroundImage": "products/paver/metrics/bg.png",
         "bgType": "dark",
@@ -1170,45 +1167,6 @@
         "statement": "By 2028 we aim to have 30 Mod.factories sequestering a total of 15,000 tons of plastic out of our environment every single day.",
         "desktopImage": "products/mod-factory/factory-target/bg.png",
         "mobileImage": "products/mod-factory/factory-target/bg-mobile.png",
-        "bgType": "dark"
-      },
-      {
-        "__component": "products.featured-in",
-        "label": "As featured in",
-        "description": "Don't just take our word for it, see what media and institutions are saying.",
-        "mode": "logos",
-        "outlets": [
-          {
-            "name": "NGV",
-            "darkImage": "products/featured-in/ngv-dark.png",
-            "lightImage": "products/featured-in/ngv-light.png"
-          },
-          {
-            "name": "Landscape",
-            "darkImage": "products/featured-in/landscape-dark.png",
-            "lightImage": "products/featured-in/landscape-light.png"
-          },
-          {
-            "name": "Radio National",
-            "darkImage": "products/featured-in/radio-national-dark.png",
-            "lightImage": "products/featured-in/radio-national-light.png"
-          },
-          {
-            "name": "10",
-            "darkImage": "products/featured-in/ten-dark.png",
-            "lightImage": "products/featured-in/ten-light.png"
-          },
-          {
-            "name": "Regional Development",
-            "darkImage": "products/featured-in/regional-development-dark.png",
-            "lightImage": "products/featured-in/regional-development-light.png"
-          },
-          {
-            "name": "Milano Design Week",
-            "darkImage": "products/featured-in/milano-design-week-dark.png",
-            "lightImage": "products/featured-in/milano-design-week-light.png"
-          }
-        ],
         "bgType": "dark"
       },
       {

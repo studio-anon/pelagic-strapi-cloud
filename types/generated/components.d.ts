@@ -1290,6 +1290,20 @@ export interface SharedFaqItem extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFeaturedLogoItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_featured_logo_items';
+  info: {
+    description: 'Featured-in logo with light/dark treatments and optional link';
+    displayName: 'Featured logo item';
+    icon: 'picture';
+  };
+  attributes: {
+    darkLogoImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    link: Schema.Attribute.String;
+    logoImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedImagePair extends Struct.ComponentSchema {
   collectionName: 'components_shared_image_pairs';
   info: {
@@ -1515,6 +1529,7 @@ declare module '@strapi/strapi' {
       'shared.cta': SharedCta;
       'shared.external-link': SharedExternalLink;
       'shared.faq-item': SharedFaqItem;
+      'shared.featured-logo-item': SharedFeaturedLogoItem;
       'shared.image-pair': SharedImagePair;
       'shared.image-text': SharedImageText;
       'shared.journal-card-pattern': SharedJournalCardPattern;

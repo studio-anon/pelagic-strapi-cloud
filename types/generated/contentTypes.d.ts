@@ -430,6 +430,38 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFeaturedInSectionFeaturedInSection
+  extends Struct.SingleTypeSchema {
+  collectionName: 'featured_in_sections';
+  info: {
+    description: 'Shared featured-in logos content used across homepage and product pages';
+    displayName: 'Featured in Section';
+    pluralName: 'featured-in-sections';
+    singularName: 'featured-in-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::featured-in-section.featured-in-section'
+    > &
+      Schema.Attribute.Private;
+    logos: Schema.Attribute.Component<'shared.featured-logo-item', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    subtitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalSettingGlobalSetting extends Struct.SingleTypeSchema {
   collectionName: 'global_settings';
   info: {
@@ -695,7 +727,6 @@ export interface ApiModFactoryPageModFactoryPage
         'products.technical-specs',
         'products.global-scale',
         'products.factory-target',
-        'products.featured-in',
         'products.closing-quote-simple',
         'products.metrics-basic',
       ]
@@ -740,7 +771,6 @@ export interface ApiPavePagePavePage extends Struct.SingleTypeSchema {
         'products.closing-quote-impact-cta',
         'products.closing-quote-simple',
         'products.voice-testimonial',
-        'products.featured-in',
         'products.metrics-basic',
         'products.metrics-suite',
       ]
@@ -1265,6 +1295,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::featured-in-section.featured-in-section': ApiFeaturedInSectionFeaturedInSection;
       'api::global-setting.global-setting': ApiGlobalSettingGlobalSetting;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::journal-article.journal-article': ApiJournalArticleJournalArticle;

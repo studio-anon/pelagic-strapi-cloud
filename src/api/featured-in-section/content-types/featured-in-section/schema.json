@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "featured_in_sections",
+  "info": {
+    "singularName": "featured-in-section",
+    "pluralName": "featured-in-sections",
+    "displayName": "Featured in Section",
+    "description": "Shared featured-in logos content used across homepage and product pages"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "logos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.featured-logo-item"
+    }
+  }
+}
