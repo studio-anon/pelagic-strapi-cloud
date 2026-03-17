@@ -845,10 +845,6 @@ async function importGlobalSetting() {
     const existingGlobalSetting = await strapi.db
       .query('api::global-setting.global-setting')
       .findOne({ where: {} });
-    if (existingGlobalSetting) {
-      console.log('   Global settings already exists, skipping create...');
-      return;
-    }
 
     // Prepare global setting entry data
     const globalSettingData = {
@@ -857,12 +853,25 @@ async function importGlobalSetting() {
       copyrightText: globalSetting.copyrightText || null,
       privacySlug: globalSetting.privacySlug || null,
       termsSlug: globalSetting.termsSlug || null,
+      productGuideUrl: globalSetting.productGuideUrl || null,
       socialLinks: globalSetting.socialLinks || [],
     };
 
-    // Create global-setting entry (single type)
-    console.log('   Creating global-setting entry...');
+    const existingDocumentId =
+      existingGlobalSetting?.documentId || existingGlobalSetting?.document_id;
+
     try {
+      if (existingDocumentId) {
+        console.log('   Updating global-setting entry...');
+        await strapi.documents('api::global-setting.global-setting').update({
+          documentId: existingDocumentId,
+          data: globalSettingData,
+        });
+        console.log('   ✓ Global Settings updated successfully!');
+        return;
+      }
+
+      console.log('   Creating global-setting entry...');
       await strapi.documents('api::global-setting.global-setting').create({
         data: globalSettingData,
       });
@@ -870,8 +879,7 @@ async function importGlobalSetting() {
     } catch (error) {
       // If entry already exists (unlikely on first run, but handle gracefully)
       if (error.message && error.message.includes('already exists')) {
-        console.log('   Global settings already exists, updating...');
-        console.warn('   ⚠️  Global settings entry already exists. Clear database to reimport.');
+        console.warn('   ⚠️  Global settings entry already exists but could not be updated automatically.');
       } else {
         throw error;
       }

@@ -52,7 +52,7 @@
         "__component": "sections.product",
         "title": "Pelagic Pave",
         "description": "The first in Australia. Higher compression strength and flexural strength, designed to the highest quality and standard. 100% recycled content. Each metre of product removes over 30kgs of plastic from the environment",
-        "buttonLabel": "Enquire about preorder",
+        "buttonLabel": "Expressions of interest",
         "buttonAction": "openModal",
         "internalLink": null,
         "externalUrl": null
@@ -424,7 +424,8 @@
     ],
     "copyrightText": "© 2025 Pelagic Oceania Pty Ltd",
     "privacySlug": "privacy",
-    "termsSlug": "terms"
+    "termsSlug": "terms",
+    "productGuideUrl": ""
   },
   "missionPage": {
     "title": "Mission",

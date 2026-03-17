@@ -454,6 +454,7 @@ export interface ApiGlobalSettingGlobalSetting extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     privacySlug: Schema.Attribute.UID;
+    productGuideUrl: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     siteName: Schema.Attribute.String & Schema.Attribute.Required;
     socialLinks: Schema.Attribute.Component<'shared.external-link', true>;
