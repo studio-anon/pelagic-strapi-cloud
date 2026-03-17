@@ -55,7 +55,8 @@
         "buttonLabel": "Expressions of interest",
         "buttonAction": "openModal",
         "internalLink": null,
-        "externalUrl": null
+        "externalUrl": null,
+        "productGuideUrl": ""
       },
       {
         "__component": "sections.applications",
@@ -424,8 +425,7 @@
     ],
     "copyrightText": "© 2025 Pelagic Oceania Pty Ltd",
     "privacySlug": "privacy",
-    "termsSlug": "terms",
-    "productGuideUrl": ""
+    "termsSlug": "terms"
   },
   "missionPage": {
     "title": "Mission",

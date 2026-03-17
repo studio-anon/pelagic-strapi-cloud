@@ -1202,6 +1202,7 @@ export interface SectionsProduct extends Struct.ComponentSchema {
       'oneToOne',
       'api::journal-article.journal-article'
     >;
+    productGuideUrl: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }

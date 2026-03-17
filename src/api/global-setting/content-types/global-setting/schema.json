@@ -32,9 +32,6 @@
     },
     "copyrightText": {
       "type": "string"
-    },
-    "productGuideUrl": {
-      "type": "string"
     }
   }
 }

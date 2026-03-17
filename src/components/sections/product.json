@@ -30,7 +30,10 @@
     },
     "externalUrl": {
       "type": "string"
+    },
+    "productGuideUrl": {
+      "type": "string",
+      "description": "Optional URL for the secondary CTA shown in the homepage product section."
     }
   }
 }
-

@@ -768,10 +768,6 @@ async function importHomePage() {
     const existingHomePage = await strapi.db
       .query('api::home-page.home-page')
       .findOne({ where: {} });
-    if (existingHomePage) {
-      console.log('   Home page already exists, skipping create...');
-      return;
-    }
 
     // Process SEO component
     let seoData = null;
@@ -804,21 +800,29 @@ async function importHomePage() {
       sections: processedSections,
     };
 
-    // Create home-page entry (single type)
-    // Note: For single types in Strapi v5, create() will create or update
-    console.log('   Creating home-page entry...');
+    const existingDocumentId =
+      existingHomePage?.documentId || existingHomePage?.document_id;
+
     try {
+      if (existingDocumentId) {
+        console.log('   Updating home-page entry...');
+        await strapi.documents('api::home-page.home-page').update({
+          documentId: existingDocumentId,
+          data: homePageData,
+        });
+        console.log('   ✓ Home Page updated successfully!');
+        return;
+      }
+
+      console.log('   Creating home-page entry...');
       await strapi.documents('api::home-page.home-page').create({
         data: homePageData,
       });
       console.log('   ✓ Home Page created successfully!');
     } catch (error) {
-      // If entry already exists (unlikely on first run, but handle gracefully)
+      // Handle single-type collisions gracefully if Strapi rejects create/update.
       if (error.message && error.message.includes('already exists')) {
-        console.log('   Home page already exists, updating...');
-        // For single types, we'd need to find and update - but this shouldn't happen on first run
-        // For now, just log the error
-        console.warn('   ⚠️  Home page entry already exists. Clear database to reimport.');
+        console.warn('   ⚠️  Home page entry already exists but could not be updated automatically.');
       } else {
         throw error;
       }
@@ -853,7 +857,6 @@ async function importGlobalSetting() {
       copyrightText: globalSetting.copyrightText || null,
       privacySlug: globalSetting.privacySlug || null,
       termsSlug: globalSetting.termsSlug || null,
-      productGuideUrl: globalSetting.productGuideUrl || null,
       socialLinks: globalSetting.socialLinks || [],
     };
 
