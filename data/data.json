@@ -50,13 +50,12 @@
       },
       {
         "__component": "sections.product",
-        "title": "Pelagic Pave",
-        "description": "The first in Australia. Higher compression strength and flexural strength, designed to the highest quality and standard. 100% recycled content. Each metre of product removes over 30kgs of plastic from the environment",
-        "buttonLabel": "Expressions of interest",
-        "buttonAction": "openModal",
-        "internalLink": null,
-        "externalUrl": null,
-        "productGuideUrl": ""
+        "title": "Pelagic.Earth introduces Pave",
+        "description": "The first in Australia. Higher compression strength and flexural strength, designed to the highest quality and standard. 100% recycled content. Each metre of product removes over 30kgs of plastic from the environment.",
+        "primaryButtonLabel": "Expressions of interest",
+        "primaryButtonUrl": "",
+        "secondaryButtonLabel": "Download product guide",
+        "secondaryButtonUrl": "https://www.scribd.com/doc/203685158/Guide-Book-PDF"
       },
       {
         "__component": "sections.applications",

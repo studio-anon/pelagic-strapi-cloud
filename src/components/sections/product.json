@@ -1,8 +1,8 @@
 {
   "collectionName": "components_sections_products",
   "info": {
-    "displayName": "Product CTA",
-    "description": "Product call-to-action block",
+    "displayName": "Pave",
+    "description": "Pave call-to-action block",
     "icon": "cart"
   },
   "options": {},
@@ -14,26 +14,19 @@
     "description": {
       "type": "richtext"
     },
-    "buttonLabel": {
+    "primaryButtonLabel": {
       "type": "string",
       "required": true
     },
-    "buttonAction": {
-      "type": "enumeration",
-      "enum": ["openModal", "internalLink", "externalLink"],
-      "required": true
-    },
-    "internalLink": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::journal-article.journal-article"
-    },
-    "externalUrl": {
+    "primaryButtonUrl": {
       "type": "string"
     },
-    "productGuideUrl": {
+    "secondaryButtonLabel": {
+      "type": "string"
+    },
+    "secondaryButtonUrl": {
       "type": "string",
-      "description": "Optional URL for the secondary CTA shown in the homepage product section."
+      "description": "Optional URL for the secondary CTA shown in the Pave section."
     }
   }
 }

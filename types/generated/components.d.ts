@@ -1186,23 +1186,16 @@ export interface SectionsOverview extends Struct.ComponentSchema {
 export interface SectionsProduct extends Struct.ComponentSchema {
   collectionName: 'components_sections_products';
   info: {
-    description: 'Product call-to-action block';
-    displayName: 'Product CTA';
+    description: 'Pave call-to-action block';
+    displayName: 'Pave';
     icon: 'cart';
   };
   attributes: {
-    buttonAction: Schema.Attribute.Enumeration<
-      ['openModal', 'internalLink', 'externalLink']
-    > &
-      Schema.Attribute.Required;
-    buttonLabel: Schema.Attribute.String & Schema.Attribute.Required;
     description: Schema.Attribute.RichText;
-    externalUrl: Schema.Attribute.String;
-    internalLink: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::journal-article.journal-article'
-    >;
-    productGuideUrl: Schema.Attribute.String;
+    primaryButtonLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    primaryButtonUrl: Schema.Attribute.String;
+    secondaryButtonLabel: Schema.Attribute.String;
+    secondaryButtonUrl: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
