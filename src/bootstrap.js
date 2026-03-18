@@ -905,6 +905,7 @@ async function importGlobalSetting() {
       copyrightText: globalSetting.copyrightText || null,
       privacySlug: globalSetting.privacySlug || null,
       termsSlug: globalSetting.termsSlug || null,
+      footerButtons: globalSetting.footerButtons || [],
       socialLinks: globalSetting.socialLinks || [],
     };
 

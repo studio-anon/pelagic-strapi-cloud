@@ -24,6 +24,12 @@
       "repeatable": true,
       "component": "shared.external-link"
     },
+    "footerButtons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.external-link",
+      "max": 2
+    },
     "privacySlug": {
       "type": "uid"
     },

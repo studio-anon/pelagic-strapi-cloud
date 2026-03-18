@@ -460,6 +460,18 @@
   "globalSetting": {
     "siteName": "Pelagic Earth",
     "footerTagline": "Waste is in the eye of the beholder.",
+    "footerButtons": [
+      {
+        "label": "Download media release",
+        "url": "/documents/pelagic-media-release.pdf",
+        "openInNewTab": true
+      },
+      {
+        "label": "Download product guide",
+        "url": "/documents/pelagic-product-guide.pdf",
+        "openInNewTab": true
+      }
+    ],
     "socialLinks": [
       {
         "label": "LinkedIn",
