@@ -724,6 +724,19 @@ async function processProductSection(section) {
     if (section.mobileHeroImage) {
       sectionCopy.mobileHeroImage = await checkFileExistsBeforeUpload(section.mobileHeroImage);
     }
+    if (Array.isArray(section.locationTabs)) {
+      sectionCopy.locationTabs = [];
+      for (const tab of section.locationTabs) {
+        const tabCopy = { ...tab };
+        if (tab.desktopImage) {
+          tabCopy.desktopImage = await checkFileExistsBeforeUpload(tab.desktopImage);
+        }
+        if (tab.mobileImage) {
+          tabCopy.mobileImage = await checkFileExistsBeforeUpload(tab.mobileImage);
+        }
+        sectionCopy.locationTabs.push(tabCopy);
+      }
+    }
     return sectionCopy;
   }
 
@@ -777,6 +790,9 @@ async function processProductSection(section) {
     }
     if (section.diagramImage) {
       sectionCopy.diagramImage = await checkFileExistsBeforeUpload(section.diagramImage);
+    }
+    if (section.mobileDiagramImage) {
+      sectionCopy.mobileDiagramImage = await checkFileExistsBeforeUpload(section.mobileDiagramImage);
     }
     if (section.backgroundImage) {
       sectionCopy.backgroundImage = await checkFileExistsBeforeUpload(section.backgroundImage);

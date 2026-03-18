@@ -1034,17 +1034,23 @@
           {
             "tabKey": "coastal",
             "label": "Coastal deployment",
-            "shortLabel": "Coastal"
+            "shortLabel": "Coastal",
+            "desktopImage": "products/mod-factory/hero/factory-coastal.jpg",
+            "mobileImage": "products/mod-factory/hero/factory-coastal-mobile.jpg"
           },
           {
             "tabKey": "regional",
             "label": "Regional",
-            "shortLabel": "Regional"
+            "shortLabel": "Regional",
+            "desktopImage": "products/mod-factory/hero/factory-regional.jpg",
+            "mobileImage": "products/mod-factory/hero/factory-regional-mobile.jpg"
           },
           {
             "tabKey": "urban",
             "label": "Urban",
-            "shortLabel": "Urban"
+            "shortLabel": "Urban",
+            "desktopImage": "products/mod-factory/hero/factory-urban.jpg",
+            "mobileImage": "products/mod-factory/hero/factory-urban-mobile.jpg"
           }
         ],
         "defaultTabKey": "coastal",
@@ -1169,7 +1175,8 @@
           }
         ],
         "diagramMode": "image",
-        "diagramImage": "products/mod-factory/technical/bg.png",
+        "diagramImage": "products/mod-factory/technical/desktop-factory.png",
+        "mobileDiagramImage": "products/mod-factory/technical/mobile-factory.png",
         "downloadCta": {
           "label": "Download the product sheet",
           "href": "/preorders"

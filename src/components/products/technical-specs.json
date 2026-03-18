@@ -48,6 +48,13 @@
         "images"
       ]
     },
+    "mobileDiagramImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "downloadCta": {
       "type": "component",
       "repeatable": false,

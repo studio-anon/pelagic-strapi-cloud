@@ -678,7 +678,9 @@ export interface ProductsLocationTab extends Struct.ComponentSchema {
     icon: 'pinMap';
   };
   attributes: {
+    desktopImage: Schema.Attribute.Media<'images'>;
     label: Schema.Attribute.String & Schema.Attribute.Required;
+    mobileImage: Schema.Attribute.Media<'images'>;
     shortLabel: Schema.Attribute.String;
     tabKey: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -999,6 +1001,7 @@ export interface ProductsTechnicalSpecs extends Struct.ComponentSchema {
     intro: Schema.Attribute.Text;
     label: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Technical brief'>;
+    mobileDiagramImage: Schema.Attribute.Media<'images'>;
     specs: Schema.Attribute.Component<'shared.spec-item', true> &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMax<
