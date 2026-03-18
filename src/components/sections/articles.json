@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_sections_articles",
+  "info": {
+    "displayName": "Articles",
+    "description": "Homepage journal article highlights",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "viewAllLabel": {
+      "type": "string",
+      "required": true
+    },
+    "selectedArticles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::journal-article.journal-article"
+    }
+  }
+}

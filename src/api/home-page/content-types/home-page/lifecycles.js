@@ -31,6 +31,7 @@ async function validateSections(data, event) {
   const sectionTypes = new Map(); // Map to track first occurrence index
   const duplicates = [];
   const incompleteSections = [];
+  const sectionConfigErrors = [];
 
   for (let i = 0; i < data.sections.length; i++) {
     const section = data.sections[i];
@@ -64,6 +65,16 @@ async function validateSections(data, event) {
         missingField: 'heroCopy',
       });
     }
+
+    if (componentType === 'sections.articles') {
+      const articleCount = getSelectedArticlesCount(section.selectedArticles);
+
+      if (articleCount > 2) {
+        sectionConfigErrors.push(
+          `Articles section at position ${i + 1} has ${articleCount} selected articles. Homepage Articles supports a maximum of 2 articles.`
+        );
+      }
+    }
   }
 
   // Format section names for user-friendly display
@@ -84,6 +95,10 @@ async function validateSections(data, event) {
     errorMessages.push(`Duplicate sections found: ${duplicateMessages}. Each section type can only appear once on the homepage. Please remove the duplicate sections.`);
   }
 
+  if (sectionConfigErrors.length > 0) {
+    errorMessages.push(sectionConfigErrors.join(' '));
+  }
+
   // If there are duplicates AND incomplete sections, suggest removing duplicates first
   if (duplicates.length > 0 && incompleteSections.length > 0) {
     const incompleteInDuplicates = incompleteSections.filter(inc => 
@@ -102,4 +117,22 @@ async function validateSections(data, event) {
     // This ensures the error is properly displayed in the Strapi admin panel
     throw new ApplicationError(errorMessage);
   }
+}
+
+function getSelectedArticlesCount(selectedArticles) {
+  if (!selectedArticles) return 0;
+
+  if (Array.isArray(selectedArticles)) {
+    return selectedArticles.length;
+  }
+
+  if (Array.isArray(selectedArticles.connect)) {
+    return selectedArticles.connect.length;
+  }
+
+  if (Array.isArray(selectedArticles.data)) {
+    return selectedArticles.data.length;
+  }
+
+  return 0;
 }

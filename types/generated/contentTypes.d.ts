@@ -526,6 +526,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         'sections.applications',
         'sections.product',
         'sections.impact',
+        'sections.articles',
         'sections.milan-design-week',
         'sections.faqs',
         'sections.contact',

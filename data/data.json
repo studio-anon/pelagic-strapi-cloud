@@ -107,6 +107,15 @@
         "statistic02SmallLabel": "TONS"
       },
       {
+        "__component": "sections.articles",
+        "title": "Our impact in the world",
+        "viewAllLabel": "View all articles",
+        "articleSlugs": [
+          "pelagic-earth-x-parley",
+          "mod-factory-in-the-kimberly"
+        ]
+      },
+      {
         "__component": "sections.milan-design-week",
         "title": "Milan Design Week 2025",
         "description": "In 2025 we exhibited at Milan Design Week. Alongside our physical exhibition we launched a digital companion—conceived as both exhibit and experiment, the platform invites visitors to reframe discarded plastics as a potential vast commodity; a story of hope and growth.",

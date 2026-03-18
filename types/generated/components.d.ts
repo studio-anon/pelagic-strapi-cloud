@@ -1080,6 +1080,23 @@ export interface SectionsApplications extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsArticles extends Struct.ComponentSchema {
+  collectionName: 'components_sections_articles';
+  info: {
+    description: 'Homepage journal article highlights';
+    displayName: 'Articles';
+    icon: 'book';
+  };
+  attributes: {
+    selectedArticles: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::journal-article.journal-article'
+    >;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    viewAllLabel: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SectionsContact extends Struct.ComponentSchema {
   collectionName: 'components_sections_contacts';
   info: {
@@ -1521,6 +1538,7 @@ declare module '@strapi/strapi' {
       'products.use-cases': ProductsUseCases;
       'products.voice-testimonial': ProductsVoiceTestimonial;
       'sections.applications': SectionsApplications;
+      'sections.articles': SectionsArticles;
       'sections.contact': SectionsContact;
       'sections.faqs': SectionsFaqs;
       'sections.hero': SectionsHero;

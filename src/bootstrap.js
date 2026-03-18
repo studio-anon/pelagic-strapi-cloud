@@ -344,6 +344,40 @@ async function processSection(section) {
       sectionCopy.mobileChart = await checkFileExistsBeforeUpload(section.mobileChart);
     }
   }
+
+  else if (section.__component === 'sections.articles') {
+    console.log('   Processing Articles section...');
+
+    const articleSlugs = Array.isArray(section.articleSlugs) ? section.articleSlugs.slice(0, 2) : [];
+    const articleRelations = [];
+
+    for (const articleSlug of articleSlugs) {
+      if (typeof articleSlug !== 'string' || !articleSlug.trim()) {
+        continue;
+      }
+
+      const article = await strapi.db
+        .query('api::journal-article.journal-article')
+        .findOne({
+          where: { slug: articleSlug.trim() },
+        });
+
+      const documentId = article?.documentId || article?.document_id;
+
+      if (!documentId) {
+        console.warn(`   ⚠️  Homepage article "${articleSlug}" not found, skipping relation...`);
+        continue;
+      }
+
+      articleRelations.push({ documentId });
+    }
+
+    sectionCopy.selectedArticles = {
+      connect: articleRelations,
+    };
+
+    delete sectionCopy.articleSlugs;
+  }
   
   // Mission and other text-only sections - no media fields
   else {
@@ -1370,6 +1404,10 @@ async function importSeedData() {
     'mod-factory-page': ['find', 'findOne'],
   });
 
+  // Import journal page and articles
+  await importJournalPage();
+  await importJournalArticles();
+
   // Import homepage content
   await importHomePage();
 
@@ -1385,10 +1423,6 @@ async function importSeedData() {
   // Import product pages
   await importPavePage();
   await importModFactoryPage();
-
-  // Import journal page and articles
-  await importJournalPage();
-  await importJournalArticles();
 
   console.log('✅ Seed data import complete');
 }
