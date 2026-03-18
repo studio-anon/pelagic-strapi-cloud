@@ -1126,16 +1126,22 @@ export interface SectionsHero extends Struct.ComponentSchema {
 export interface SectionsImpact extends Struct.ComponentSchema {
   collectionName: 'components_sections_impacts';
   info: {
-    description: 'Impact callout and testimonial';
+    description: 'Homepage impact section with chart and key statistics';
     displayName: 'Impact';
     icon: 'chart';
   };
   attributes: {
-    calloutLabel: Schema.Attribute.String;
-    calloutNumber: Schema.Attribute.String;
-    description: Schema.Attribute.RichText;
-    testimonialName: Schema.Attribute.String;
-    testimonialQuote: Schema.Attribute.RichText;
+    buttonLabel: Schema.Attribute.String;
+    buttonUrl: Schema.Attribute.String;
+    copy: Schema.Attribute.RichText & Schema.Attribute.Required;
+    desktopChart: Schema.Attribute.Media<'files' | 'images'>;
+    mobileChart: Schema.Attribute.Media<'files' | 'images'>;
+    statistic01Copy: Schema.Attribute.Text & Schema.Attribute.Required;
+    statistic01LargeNumber: Schema.Attribute.String & Schema.Attribute.Required;
+    statistic01SmallLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    statistic02Copy: Schema.Attribute.Text & Schema.Attribute.Required;
+    statistic02LargeNumber: Schema.Attribute.String & Schema.Attribute.Required;
+    statistic02SmallLabel: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }

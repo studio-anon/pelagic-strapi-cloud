@@ -2,7 +2,7 @@
   "collectionName": "components_sections_impacts",
   "info": {
     "displayName": "Impact",
-    "description": "Impact callout and testimonial",
+    "description": "Homepage impact section with chart and key statistics",
     "icon": "chart"
   },
   "options": {},
@@ -11,11 +11,55 @@
       "type": "string",
       "required": true
     },
-    "description": { "type": "richtext" },
-    "calloutNumber": { "type": "string" },
-    "calloutLabel": { "type": "string" },
-    "testimonialQuote": { "type": "richtext" },
-    "testimonialName": { "type": "string" }
+    "copy": {
+      "type": "richtext",
+      "required": true
+    },
+    "buttonLabel": {
+      "type": "string"
+    },
+    "buttonUrl": {
+      "type": "string"
+    },
+    "desktopChart": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    },
+    "mobileChart": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    },
+    "statistic01Copy": {
+      "type": "text",
+      "required": true
+    },
+    "statistic01LargeNumber": {
+      "type": "string",
+      "required": true
+    },
+    "statistic01SmallLabel": {
+      "type": "string",
+      "required": true
+    },
+    "statistic02Copy": {
+      "type": "text",
+      "required": true
+    },
+    "statistic02LargeNumber": {
+      "type": "string",
+      "required": true
+    },
+    "statistic02SmallLabel": {
+      "type": "string",
+      "required": true
+    }
   }
 }
-

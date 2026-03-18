@@ -331,8 +331,21 @@ async function processSection(section) {
       }
     }
   }
+
+  // Impact section - handle desktop and mobile chart media
+  else if (section.__component === 'sections.impact') {
+    console.log('   Processing Impact section...');
+
+    if (section.desktopChart) {
+      sectionCopy.desktopChart = await checkFileExistsBeforeUpload(section.desktopChart);
+    }
+
+    if (section.mobileChart) {
+      sectionCopy.mobileChart = await checkFileExistsBeforeUpload(section.mobileChart);
+    }
+  }
   
-  // Mission, Impact sections - no media fields
+  // Mission and other text-only sections - no media fields
   else {
     console.log(`   Processing ${section.__component} section...`);
     // No media fields to process for these sections

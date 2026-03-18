@@ -94,11 +94,17 @@
       {
         "__component": "sections.impact",
         "title": "Act locally, impact globally",
-        "description": "From our first installations in 2025 to more than 20 mod.factories worldwide by 2029, Pelagic is on track to upcycle thousands of tons of plastic waste into building products scaling local impact into a global circular system.",
-        "calloutNumber": "30+",
-        "calloutLabel": "kilograms of plastic is intercepted each time we deploy a single m2 of product.",
-        "testimonialQuote": "\"Waste is a cultural proposition, industrial byproduct, an ecosystem out of balance, and misalignment of design.\"",
-        "testimonialName": "Philippa Abbott, Founder"
+        "copy": "From our first installations in 2025 to more than 20 mod.factories worldwide by 2029, Pelagic is on track to upcycle 250,000 tons of plastic waste into building products scaling local impact into a global circular system.",
+        "buttonLabel": "Our impact statement",
+        "buttonUrl": "",
+        "desktopChart": "impact/desktop-graph.svg",
+        "mobileChart": "impact/mobile-graph.svg",
+        "statistic01Copy": "Each time we deploy a single m2 of Pelagic pavers, we sequester over 30kg of landfill/ocean plastic from the environment.",
+        "statistic01LargeNumber": "30",
+        "statistic01SmallLabel": "KILOGRAMS",
+        "statistic02Copy": "Each Mod.factory processes 500 tonnes per year of soft plastic",
+        "statistic02LargeNumber": "500",
+        "statistic02SmallLabel": "TONS"
       },
       {
         "__component": "sections.milan-design-week",
