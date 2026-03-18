@@ -1174,7 +1174,6 @@ export interface SectionsMilanDesignWeek extends Struct.ComponentSchema {
     buttonLabel: Schema.Attribute.String & Schema.Attribute.Required;
     buttonUrl: Schema.Attribute.String & Schema.Attribute.Required;
     description: Schema.Attribute.RichText;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
     video: Schema.Attribute.Media<'videos'>;
   };
 }

@@ -7,10 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
     "description": {
       "type": "richtext"
     },
@@ -29,4 +25,3 @@
     }
   }
 }
-
