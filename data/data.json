@@ -359,10 +359,10 @@
         },
         {
           "__component": "journal.two-images",
-          "desktopImage01": "gallery/img_01.jpg",
-          "mobileImage01": "gallery/img_01.jpg",
-          "desktopImage02": "gallery/img_02.jpg",
-          "mobileImage02": "gallery/img_02.jpg"
+          "desktopImage01": "applications/desktop-01.jpg",
+          "mobileImage01": "applications/mobile-01.jpg",
+          "desktopImage02": "applications/desktop-02.jpg",
+          "mobileImage02": "applications/mobile-02.jpg"
         },
         {
           "__component": "journal.single-column",
@@ -441,10 +441,10 @@
       "listingIntroduction": "How invisible waste is reshaping the oceans we still think of as pristine.",
       "publishDate": "2025-06-01",
       "readingTimeMinutes": 4,
-      "listingThumbnailDesktop": "gallery/img_01.jpg",
-      "listingThumbnailMobile": "gallery/img_01.jpg",
-      "heroImageDesktop": "gallery/img_01.jpg",
-      "heroImageMobile": "gallery/img_01.jpg"
+      "listingThumbnailDesktop": "hero/hero-03.jpg",
+      "listingThumbnailMobile": "hero/hero-03.jpg",
+      "heroImageDesktop": "hero/hero-03.jpg",
+      "heroImageMobile": "hero/hero-03.jpg"
     },
     {
       "title": "Why go modular?",
@@ -452,10 +452,10 @@
       "listingIntroduction": "Systems design has directed the Pelagic strategy from the very beginning.",
       "publishDate": "2025-03-01",
       "readingTimeMinutes": 4,
-      "listingThumbnailDesktop": "gallery/img_02.jpg",
-      "listingThumbnailMobile": "gallery/img_02.jpg",
-      "heroImageDesktop": "gallery/img_02.jpg",
-      "heroImageMobile": "gallery/img_02.jpg"
+      "listingThumbnailDesktop": "applications/desktop-03.jpg",
+      "listingThumbnailMobile": "applications/mobile-03.jpg",
+      "heroImageDesktop": "applications/desktop-03.jpg",
+      "heroImageMobile": "applications/mobile-03.jpg"
     }
   ],
   "globalSetting": {
