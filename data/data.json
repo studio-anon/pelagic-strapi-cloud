@@ -117,9 +117,9 @@
       },
       {
         "__component": "sections.milan-design-week",
-        "title": "Milan Design Week 2025",
+        "title": "Milan Design Week",
         "description": "In 2025 we exhibited at Milan Design Week. Alongside our physical exhibition we launched a digital companion—conceived as both exhibit and experiment, the platform invites visitors to reframe discarded plastics as a potential vast commodity; a story of hope and growth.",
-        "buttonLabel": "Launch the MDW experience",
+        "buttonLabel": "Launch the experience",
         "buttonUrl": "https://explore.pelagic.earth",
         "video": "milan-design-week/video.mp4"
       },
@@ -185,16 +185,16 @@
         "__component": "sections.small-gallery",
         "items": [
           {
-            "desktopImage": "gallery/img_01.jpg",
-            "mobileImage": "gallery/img_01.jpg"
+            "desktopImage": "gallery/homepage-desktop-01.jpg",
+            "mobileImage": "gallery/homepage-mobile-01.jpg"
           },
           {
-            "desktopImage": "gallery/img_02.jpg",
-            "mobileImage": "gallery/img_02.jpg"
+            "desktopImage": "gallery/homepage-desktop-02.jpg",
+            "mobileImage": "gallery/homepage-mobile-02.jpg"
           },
           {
-            "desktopImage": "gallery/img_03.jpg",
-            "mobileImage": "gallery/img_03.jpg"
+            "desktopImage": "gallery/homepage-desktop-03.jpg",
+            "mobileImage": "gallery/homepage-mobile-03.jpg"
           }
         ]
       }
