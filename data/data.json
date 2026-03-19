@@ -787,15 +787,23 @@
           }
         ],
         "calculator": {
+          "title": "What is the total area of your site?",
           "modeLabel": "Paver type",
+          "widthLabel": "Width in meters",
+          "lengthLabel": "Length in meters",
+          "carbonLabel": "Carbon sequestered",
           "inputLabel": "Total area (m2)",
           "outputLabel": "Estimated pavers",
+          "togglePaveLabel": "PAVE",
+          "toggleGridLabel": "GRID",
           "unitLabel": "pavers",
+          "carbonKgPerM2": 8,
           "minimumValue": 1,
           "maximumValue": 10000,
           "stepValue": 1,
           "defaultValue": 60,
-          "multiplier": 42
+          "multiplier": 42,
+          "gridMultiplier": 9
         },
         "defaults": {
           "designId": "textured",

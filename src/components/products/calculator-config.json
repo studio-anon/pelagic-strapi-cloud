@@ -7,7 +7,19 @@
   },
   "options": {},
   "attributes": {
+    "title": {
+      "type": "string"
+    },
     "modeLabel": {
+      "type": "string"
+    },
+    "widthLabel": {
+      "type": "string"
+    },
+    "lengthLabel": {
+      "type": "string"
+    },
+    "carbonLabel": {
       "type": "string"
     },
     "inputLabel": {
@@ -16,8 +28,17 @@
     "outputLabel": {
       "type": "string"
     },
+    "togglePaveLabel": {
+      "type": "string"
+    },
+    "toggleGridLabel": {
+      "type": "string"
+    },
     "unitLabel": {
       "type": "string"
+    },
+    "carbonKgPerM2": {
+      "type": "decimal"
     },
     "minimumValue": {
       "type": "decimal"
@@ -32,6 +53,9 @@
       "type": "decimal"
     },
     "multiplier": {
+      "type": "decimal"
+    },
+    "gridMultiplier": {
       "type": "decimal"
     }
   }

@@ -327,15 +327,23 @@ export interface ProductsCalculatorConfig extends Struct.ComponentSchema {
     icon: 'calculator';
   };
   attributes: {
+    carbonKgPerM2: Schema.Attribute.Decimal;
+    carbonLabel: Schema.Attribute.String;
     defaultValue: Schema.Attribute.Decimal;
+    gridMultiplier: Schema.Attribute.Decimal;
     inputLabel: Schema.Attribute.String;
+    lengthLabel: Schema.Attribute.String;
     maximumValue: Schema.Attribute.Decimal;
     minimumValue: Schema.Attribute.Decimal;
     modeLabel: Schema.Attribute.String;
     multiplier: Schema.Attribute.Decimal;
     outputLabel: Schema.Attribute.String;
     stepValue: Schema.Attribute.Decimal;
+    title: Schema.Attribute.String;
+    toggleGridLabel: Schema.Attribute.String;
+    togglePaveLabel: Schema.Attribute.String;
     unitLabel: Schema.Attribute.String;
+    widthLabel: Schema.Attribute.String;
   };
 }
 
