@@ -31,9 +31,7 @@
         "products.deploy-steps",
         "products.technical-specs",
         "products.global-scale",
-        "products.factory-target",
-        "products.closing-quote-simple",
-        "products.metrics-basic"
+        "products.factory-target"
       ]
     }
   }

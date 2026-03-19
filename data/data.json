@@ -1209,36 +1209,6 @@
         "desktopImage": "products/mod-factory/factory-target/bg.png",
         "mobileImage": "products/mod-factory/factory-target/bg-mobile.png",
         "bgType": "dark"
-      },
-      {
-        "__component": "products.closing-quote-simple",
-        "quote": "Waste is in the eye of the beholder.",
-        "subcopy": "Localized infrastructure that turns discarded material into durable value.",
-        "bgType": "light"
-      },
-      {
-        "__component": "products.metrics-basic",
-        "eyebrow": "Key metrics",
-        "heading": "Built for measurable impact.",
-        "items": [
-          {
-            "value": "20+",
-            "label": "coastal sites assessed for rollout"
-          },
-          {
-            "value": "5+",
-            "label": "material outputs from one production line"
-          },
-          {
-            "value": "95%",
-            "label": "of feedstock processed on-site"
-          },
-          {
-            "value": "1 unit",
-            "label": "fits in a standard container footprint"
-          }
-        ],
-        "bgType": "dark"
       }
     ]
   }
