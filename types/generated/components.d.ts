@@ -1012,8 +1012,6 @@ export interface ProductsTechnicalSpecs extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     downloadCta: Schema.Attribute.Component<'shared.cta', false>;
     intro: Schema.Attribute.Text;
-    label: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Technical brief'>;
     mobileDiagramImage: Schema.Attribute.Media<'images'>;
     specs: Schema.Attribute.Component<'shared.spec-item', true> &
       Schema.Attribute.Required &

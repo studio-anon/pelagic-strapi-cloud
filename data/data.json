@@ -1164,7 +1164,6 @@
       },
       {
         "__component": "products.technical-specs",
-        "label": "Technical brief",
         "title": "Let's get technical.",
         "intro": "Factory specifications and site requirements for deployment planning.",
         "specs": [
