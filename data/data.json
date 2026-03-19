@@ -1198,7 +1198,7 @@
         "intro": "Our interactive microsite tracks mod.factory installations and explores the impact we can have together.",
         "cta": {
           "label": "Launch microsite",
-          "href": "/preorders"
+          "href": "https://explore.pelagic.earth"
         },
         "bgType": "dark"
       },
