@@ -801,7 +801,11 @@ export interface ProductsOptionDesign extends Struct.ComponentSchema {
     icon: 'paint';
   };
   attributes: {
+    defaultColourId: Schema.Attribute.String;
+    defaultSizeId: Schema.Attribute.String;
     designId: Schema.Attribute.String & Schema.Attribute.Required;
+    hideColourSelection: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     icon: Schema.Attribute.Media<'images'>;
     kind: Schema.Attribute.String;
     label: Schema.Attribute.String & Schema.Attribute.Required;
@@ -816,6 +820,8 @@ export interface ProductsOptionSize extends Struct.ComponentSchema {
     icon: 'resize';
   };
   attributes: {
+    designCompatibility: Schema.Attribute.Enumeration<['all', 'pave', 'grid']> &
+      Schema.Attribute.DefaultTo<'all'>;
     dimensionsText: Schema.Attribute.String;
     helperText: Schema.Attribute.String;
     label: Schema.Attribute.String & Schema.Attribute.Required;

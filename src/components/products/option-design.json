@@ -18,6 +18,16 @@
     "kind": {
       "type": "string"
     },
+    "hideColourSelection": {
+      "type": "boolean",
+      "default": false
+    },
+    "defaultColourId": {
+      "type": "string"
+    },
+    "defaultSizeId": {
+      "type": "string"
+    },
     "icon": {
       "type": "media",
       "multiple": false,

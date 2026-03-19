@@ -20,6 +20,11 @@
     },
     "helperText": {
       "type": "string"
+    },
+    "designCompatibility": {
+      "type": "enumeration",
+      "enum": ["all", "pave", "grid"],
+      "default": "all"
     }
   }
 }

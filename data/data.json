@@ -675,6 +675,9 @@
             "designId": "grid",
             "label": "Grid",
             "kind": "grid",
+            "hideColourSelection": true,
+            "defaultColourId": "calcium",
+            "defaultSizeId": "grid",
             "icon": "products/paver/icons/grid-icon.jpg"
           }
         ],
@@ -720,25 +723,29 @@
             "sizeId": "standard",
             "label": "Standard",
             "dimensionsText": "230 x 114 x 50mm",
-            "helperText": "For pedestrian and light traffic"
+            "helperText": "For pedestrian and light traffic",
+            "designCompatibility": "pave"
           },
           {
             "sizeId": "thinline",
             "label": "Thinline",
             "dimensionsText": "230 x 114 x 25mm",
-            "helperText": "Aesthetic, light or surface use"
+            "helperText": "Aesthetic, light or surface use",
+            "designCompatibility": "pave"
           },
           {
             "sizeId": "deep",
             "label": "Deep",
             "dimensionsText": "230 x 114 x 65mm",
-            "helperText": "Heavy vehicles and traffic"
+            "helperText": "Heavy vehicles and traffic",
+            "designCompatibility": "pave"
           },
           {
             "sizeId": "grid",
             "label": "Grid",
             "dimensionsText": "230 x 114 x 65mm",
-            "helperText": "Permeable and drainage-friendly layouts"
+            "helperText": "Permeable and drainage-friendly layouts",
+            "designCompatibility": "grid"
           }
         ],
         "gallerySets": [
