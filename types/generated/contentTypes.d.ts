@@ -735,8 +735,6 @@ export interface ApiModFactoryPageModFactoryPage
         'products.technical-specs',
         'products.global-scale',
         'products.factory-target',
-        'products.closing-quote-simple',
-        'products.metrics-basic',
       ]
     > &
       Schema.Attribute.Required;
