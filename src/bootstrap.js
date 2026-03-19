@@ -801,9 +801,6 @@ async function processProductSection(section) {
   }
 
   if (component === 'products.global-scale') {
-    if (section.image) {
-      sectionCopy.image = await checkFileExistsBeforeUpload(section.image);
-    }
     return sectionCopy;
   }
 

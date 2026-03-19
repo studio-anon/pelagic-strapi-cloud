@@ -548,7 +548,6 @@ export interface ProductsGlobalScale extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     cta: Schema.Attribute.Component<'shared.cta', false> &
       Schema.Attribute.Required;
-    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     intro: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
