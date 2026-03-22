@@ -1091,8 +1091,8 @@
       },
       {
         "__component": "products.container-statement",
-        "desktopMainImage": "products/mod-factory/container-statement/container-statement-main-image.png",
-        "mobileMainImage": "products/mod-factory/container-statement/container-statement-main-image-mobile.png",
+        "desktopMainImage": "products/mod-factory/container-statement/container-statement-main-image.jpg",
+        "mobileMainImage": "products/mod-factory/container-statement/container-statement-main-image-mobile.jpg",
         "desktopSideImage": "products/mod-factory/container-statement/container-statement-side-image.png",
         "mobileSideImage": "products/mod-factory/container-statement/container-statement-side-image-mobile.png"
       },
