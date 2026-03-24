@@ -768,6 +768,51 @@
             ]
           },
           {
+            "designId": "textured",
+            "colourId": "terracotta",
+            "images": [
+              "products/paver/pavers/textured-terracotta-01.jpg",
+              "products/paver/pavers/textured-terracotta-02.jpg",
+              "products/paver/pavers/textured-terracotta-03.jpg"
+            ]
+          },
+          {
+            "designId": "textured",
+            "colourId": "calcium",
+            "images": [
+              "products/paver/pavers/textured-calcium-01.jpg",
+              "products/paver/pavers/textured-calcium-02.jpg",
+              "products/paver/pavers/textured-calcium-03.jpg"
+            ]
+          },
+          {
+            "designId": "textured",
+            "colourId": "sandstone",
+            "images": [
+              "products/paver/pavers/textured-sandstone-01.jpg",
+              "products/paver/pavers/textured-sandstone-02.jpg",
+              "products/paver/pavers/textured-sandstone-03.jpg"
+            ]
+          },
+          {
+            "designId": "smooth",
+            "colourId": "dark-marble",
+            "images": [
+              "products/paver/pavers/smooth-dark-marble-01.jpg",
+              "products/paver/pavers/smooth-dark-marble-02.jpg",
+              "products/paver/pavers/smooth-dark-marble-03.jpg"
+            ]
+          },
+          {
+            "designId": "smooth",
+            "colourId": "light-marble",
+            "images": [
+              "products/paver/pavers/smooth-light-marble-01.jpg",
+              "products/paver/pavers/smooth-light-marble-02.jpg",
+              "products/paver/pavers/smooth-light-marble-03.jpg"
+            ]
+          },
+          {
             "designId": "smooth",
             "colourId": "sandstone",
             "images": [
@@ -783,6 +828,15 @@
               "products/paver/pavers/smooth-terracotta-01.jpg",
               "products/paver/pavers/smooth-terracotta-02.jpg",
               "products/paver/pavers/smooth-terracotta-03.jpg"
+            ]
+          },
+          {
+            "designId": "smooth",
+            "colourId": "calcium",
+            "images": [
+              "products/paver/pavers/smooth-calcium-01.jpg",
+              "products/paver/pavers/smooth-calcium-02.jpg",
+              "products/paver/pavers/smooth-calcium-03.jpg"
             ]
           },
           {
