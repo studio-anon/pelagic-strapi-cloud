@@ -320,8 +320,8 @@
           "__component": "journal.two-images",
           "desktopImage01": "journal-listing/4.png",
           "mobileImage01": "journal-listing/4.png",
-          "desktopImage02": "applications/desktop-02.jpg",
-          "mobileImage02": "applications/mobile-02.jpg"
+          "desktopImage02": "journal-listing/2.png",
+          "mobileImage02": "journal-listing/2.png"
         },
         {
           "__component": "journal.two-column",
@@ -330,9 +330,9 @@
         },
         {
           "__component": "journal.video-embed",
-          "desktopImage": "applications/desktop-04.jpg",
-          "mobileImage": "applications/mobile-04.jpg",
-          "url": "https://explore.pelagic.earth"
+          "desktopImage": "hero/hero-04.jpg",
+          "mobileImage": "hero/hero-05.jpg",
+          "url": "https://www.youtube.com/watch?v=_9prH7NFmLI"
         }
       ]
     },
