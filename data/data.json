@@ -274,10 +274,10 @@
       "listingIntroduction": "Reference article used to test journal detail layout against design.",
       "publishDate": "2026-03-04",
       "readingTimeMinutes": 6,
-      "listingThumbnailDesktop": "journal-listing/example-hero.png",
-      "listingThumbnailMobile": "journal-listing/example-hero.png",
-      "heroImageDesktop": "journal-listing/example-hero.png",
-      "heroImageMobile": "journal-listing/example-hero.png",
+      "listingThumbnailDesktop": "journal-listing/example-comp-01.png",
+      "listingThumbnailMobile": "hero/hero-02.jpg",
+      "heroImageDesktop": "journal-listing/example-comp-01.png",
+      "heroImageMobile": "hero/hero-02.jpg",
       "contentBlocks": [
         {
           "__component": "journal.breakout-text",
@@ -396,10 +396,10 @@
       "listingIntroduction": "Inside the modular factories where recycled plastic becomes building materials both beautiful and useful.",
       "publishDate": "2026-01-01",
       "readingTimeMinutes": 5,
-      "listingThumbnailDesktop": "applications/desktop-01.jpg",
-      "listingThumbnailMobile": "applications/mobile-01.jpg",
-      "heroImageDesktop": "applications/desktop-01.jpg",
-      "heroImageMobile": "applications/mobile-01.jpg"
+      "listingThumbnailDesktop": "journal-listing/full-width-02.png",
+      "listingThumbnailMobile": "hero/hero-03.jpg",
+      "heroImageDesktop": "journal-listing/full-width-02.png",
+      "heroImageMobile": "hero/hero-03.jpg"
     },
     {
       "title": "Mod.factory in the Kimberly",
@@ -407,10 +407,10 @@
       "listingIntroduction": "Our latest deployment is in the outback of Australia taking the solution right to the problem.",
       "publishDate": "2025-12-01",
       "readingTimeMinutes": 4,
-      "listingThumbnailDesktop": "applications/desktop-02.jpg",
-      "listingThumbnailMobile": "applications/mobile-02.jpg",
-      "heroImageDesktop": "applications/desktop-02.jpg",
-      "heroImageMobile": "applications/mobile-02.jpg"
+      "listingThumbnailDesktop": "journal-listing/text-image-pair-left.png",
+      "listingThumbnailMobile": "hero/hero-04.jpg",
+      "heroImageDesktop": "journal-listing/text-image-pair-left.png",
+      "heroImageMobile": "hero/hero-04.jpg"
     },
     {
       "title": "Our founder speaks at NGV Making Good",
@@ -418,10 +418,10 @@
       "listingIntroduction": "Watch the video.",
       "publishDate": "2025-10-01",
       "readingTimeMinutes": 3,
-      "listingThumbnailDesktop": "applications/desktop-03.jpg",
-      "listingThumbnailMobile": "applications/mobile-03.jpg",
-      "heroImageDesktop": "applications/desktop-03.jpg",
-      "heroImageMobile": "applications/mobile-03.jpg"
+      "listingThumbnailDesktop": "journal-listing/text-image-pair-right.png",
+      "listingThumbnailMobile": "hero/hero-05.jpg",
+      "heroImageDesktop": "journal-listing/text-image-pair-right.png",
+      "heroImageMobile": "hero/hero-05.jpg"
     },
     {
       "title": "Milan Design Week digital companion",
@@ -429,10 +429,10 @@
       "listingIntroduction": "Check out the digital companion we launched alongside our physical exhibition at Milan Design Week.",
       "publishDate": "2025-09-01",
       "readingTimeMinutes": 5,
-      "listingThumbnailDesktop": "applications/desktop-04.jpg",
-      "listingThumbnailMobile": "applications/mobile-04.jpg",
-      "heroImageDesktop": "applications/desktop-04.jpg",
-      "heroImageMobile": "applications/mobile-04.jpg"
+      "listingThumbnailDesktop": "hero/hero-01.jpg",
+      "listingThumbnailMobile": "hero/hero-02.jpg",
+      "heroImageDesktop": "hero/hero-01.jpg",
+      "heroImageMobile": "hero/hero-02.jpg"
     },
     {
       "title": "The quiet weight of plastic",
@@ -451,10 +451,10 @@
       "listingIntroduction": "Systems design has directed the Pelagic strategy from the very beginning.",
       "publishDate": "2025-03-01",
       "readingTimeMinutes": 4,
-      "listingThumbnailDesktop": "applications/desktop-03.jpg",
-      "listingThumbnailMobile": "applications/mobile-03.jpg",
-      "heroImageDesktop": "applications/desktop-03.jpg",
-      "heroImageMobile": "applications/mobile-03.jpg"
+      "listingThumbnailDesktop": "journal-listing/example-comp-01.png",
+      "listingThumbnailMobile": "hero/hero-03.jpg",
+      "heroImageDesktop": "journal-listing/example-comp-01.png",
+      "heroImageMobile": "hero/hero-03.jpg"
     }
   ],
   "globalSetting": {
