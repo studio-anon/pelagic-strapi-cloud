@@ -36,15 +36,15 @@
         "items": [
           {
             "title": "Infrastructure",
-            "description": "Pelagic create decentralised infrastructure - production hubs colocated with soft plastic processing and modular deployable factories. Portable Pelagic mod.factories, each in a 40-foot container, can be air-lifted, trucked, or transported directly to plastic waste, whether a remote beach or a building site."
+            "description": "Portable Pelagic mod.factories, each in a 40-foot container, can be air-lifted, trucked, or transported directly to plastic waste, whether a remote beach or a building site."
           },
           {
             "title": "Scaled",
-            "description": "This forms a decentralised and independent network of production, connected and dynamic; to elastically meet demand and supply with real-time carbon reporting and impact measurement"
+            "description": "This forms a decentralised and independent network of production, connected and dynamic; to elastically meet demand and supply with real-time carbon reporting and impact measurement."
           },
           {
             "title": "Product",
-            "description": "The output—a contemporary, functional product for sale or immediate use, even on the site it is produced."
+            "description": "The output is a contemporary, functional product for sale or immediate use—even on the site it is produced."
           }
         ]
       },
@@ -63,14 +63,14 @@
         "applications": [
           {
             "title": "Public space",
-            "description": "Commercial projects from buildings to large scale civil engineering.",
+            "description": "The public realm redefined one paver at at time. Council and commercial projects to reimagine our shared spaces.",
             "imageMobile": "applications/mobile-01.jpg",
             "imageDesktop": "applications/desktop-01.jpg",
             "alt": "Commercial building with sustainable materials"
           },
           {
             "title": "Remote & regional",
-            "description": "Local partnerships, generating regional resilience economies through capability building and purpose.",
+            "description": "Local partnerships, generating regional resilience economies through capability building.",
             "imageMobile": "applications/mobile-02.jpg",
             "imageDesktop": "applications/desktop-02.jpg",
             "alt": "Community engagement and local partnerships"
@@ -84,7 +84,7 @@
           },
           {
             "title": "Construction",
-            "description": "On-site conversion transforms waste streams into usable materials, cutting logistics and landfill cost and emissions.",
+            "description": "Deploy Mod.Factory on-site to transform plastic waste into site specific pavers and other materials; cutting logistics, landfill cost and emissions.",
             "imageMobile": "applications/mobile-04.jpg",
             "imageDesktop": "applications/desktop-04.jpg",
             "alt": "Modern public building facade with blue panels"
@@ -94,7 +94,7 @@
       {
         "__component": "sections.impact",
         "title": "Act locally, impact globally",
-        "copy": "From our first installations in 2025 to more than 20 mod.factories worldwide by 2029, Pelagic is on track to upcycle 250,000 tons of plastic waste into building products scaling local impact into a global circular system.",
+        "copy": "From our first installations in 2025 to more than 20 mod.factories worldwide by 2029, Pelagic is on track to upcycle 250,000 of tons of plastic waste into building products scaling local impact into a global circular system.",
         "buttonLabel": "Our impact statement",
         "buttonUrl": "",
         "desktopChart": "impact/desktop-graph.svg",
@@ -117,7 +117,7 @@
       },
       {
         "__component": "sections.milan-design-week",
-        "description": "In 2025 we exhibited at Milan Design Week. Alongside our physical exhibition we launched a digital companion—conceived as both exhibit and experiment, the platform invites visitors to reframe discarded plastics as a potential vast commodity; a story of hope and growth.",
+        "description": "In 2025 we exhibited at Milan Design Week. Alongside our physical exhibition we launched a digital companion–conceived as both exhibit and experiment, the platform invites visitors reframe discarded plastics as a potential vast commodity; a story of hope and growth.",
         "buttonLabel": "Launch the experience",
         "buttonUrl": "https://explore.pelagic.earth",
         "video": "milan-design-week/video.mp4"
@@ -644,7 +644,7 @@
       {
         "__component": "products.hero-configurator",
         "title": "Pave",
-        "description": "Pelagic structural pavers are engineered from upcycled plastics. Contemporary designed, extremely durable, unique textures, built for demanding public and commercial environments.",
+        "description": "Pelagic structural pavers are engineered from upcycled plastics. Contemporary designed, extremely durable, unique textures - they out perform other materials.",
         "learnMore": {
           "label": "Find out more",
           "href": "#products-pave-technical"
@@ -743,7 +743,7 @@
           {
             "sizeId": "grid",
             "label": "Grid",
-            "dimensionsText": "230 x 114 x 65mm",
+            "dimensionsText": "330 x 330 x 65mm",
             "helperText": "Permeable and drainage-friendly layouts",
             "designCompatibility": "grid"
           }
@@ -902,7 +902,7 @@
       {
         "__component": "products.use-cases",
         "title": "Designed to live in the world",
-        "intro": "Designed to perform across everyday and demanding settings, from residential outdoor living to large scale commercial and civic projects.",
+        "intro": "DDesigned to perform across everyday and demanding settings our pavers work in residential outdoor living to large scale commercial and public spaces. Use them for terraces, walkways and driveways or specify them for retail precincts, hotel forecourts, campuses and civic landscapes.",
         "cards": [
           {
             "title": "Public space",
@@ -1025,7 +1025,7 @@
               "specItems": [
                 {
                   "title": "Weight & size",
-                  "description": "2.4kg  230mm x 114mm x 65mm"
+                  "description": "2.4kg  330mm x 330mm x 65mm"
                 },
                 {
                   "title": "Easy install",
@@ -1153,7 +1153,7 @@
       {
         "__component": "products.impact-grid",
         "title": "Bringing production to the source of the plastic waste.",
-        "intro": "Resulting from an extensive systems design process, Mod.factory offers flexibility, localised efficiencies and modularity for distributed manufacturing.",
+        "intro": "Resulting from an extensive systems design process, considering a broad range of applications and contexts, Mod.factory is a production capability that offers flexibility, localised efficiencies and modularity.",
         "cards": [
           {
             "title": "Waste diversion",
@@ -1186,32 +1186,32 @@
           {
             "number": 1,
             "title": "Feasibility",
-            "description": "We run a desktop review of your site, logistics and feedstock to confirm fit and produce a clear go/no-go recommendation.",
+            "description": "We run a desktop review of your site, logistics and feedstock to confirm a Mod.factory is the right fit. You get a short report with key risks, constraints and a clear go/no-go for the next step.",
             "icon": "products/mod-factory/deploy-steps/1.svg"
           },
           {
             "number": 2,
             "title": "Site preparation",
-            "description": "We prepare required documentation and support ground works so access and safety measures are ready before delivery.",
+            "description": "We prepare all required documentation for submission and support on the ground works so access is easy and safety measures are in place before delivery.",
             "icon": "products/mod-factory/deploy-steps/2.svg"
           },
           {
             "number": 3,
             "title": "Installation and turn on",
-            "description": "We manufacture, deliver, install and commission your Mod.factory so the plant can begin processing waste quickly.",
+            "description": "We manufacture and assemble your Mod.factory and the work with you on delivery day to install and commission so the plant can start processing waste that day.",
             "icon": "products/mod-factory/deploy-steps/3.svg"
           }
         ],
         "bottomCopyBlocks": [
           {
-            "copy": "Deployment timelines vary by permitting and site readiness, with most projects moving from scoping to operation in a staged rollout."
+            "copy": "Every deployment is site specific, considering variables such as location, waste streams, funding type, community and more."
           },
           {
-            "copy": "Pelagic teams work with councils, developers and operators to align local feedstock, demand and manufacturing requirements."
+            "copy": "We work with you to shape the right licensing, partnership arrangements and installation process."
           }
         ],
         "bottomCta": {
-          "label": "Book a feasibility call",
+          "label": "Enquire about Mod.factory",
           "href": "/preorders"
         },
         "bgType": "dark"
@@ -1255,7 +1255,7 @@
       {
         "__component": "products.global-scale",
         "title": "Follow us as we scale globally",
-        "intro": "Our interactive microsite tracks mod.factory installations and explores the impact we can have together.",
+        "intro": "Our interactive microsite tracks mod.factory installations, explores the plastic waste problem and the impact we can have together.",
         "cta": {
           "label": "Launch microsite",
           "href": "https://explore.pelagic.earth"
