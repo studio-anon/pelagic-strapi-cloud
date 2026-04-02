@@ -1,5 +1,6 @@
 'use strict';
 
+const crypto = require('crypto');
 const fs = require('fs-extra');
 const path = require('path');
 const mime = require('mime-types');
@@ -118,18 +119,47 @@ function parseFilePath(filePath) {
 }
 
 /**
- * Build a stable upload name from the full seed file path.
- * Prevents collisions for common names like "bg.png" in different folders.
+ * Build a stable upload name from the full seed file path, optionally versioned
+ * by the current file contents. Prevents collisions for common names like
+ * "bg.png" in different folders and lets FORCE_SEED pick up same-name media changes.
  */
-function getUploadNameFromPath(filePathString) {
+function getUploadNameFromPath(filePathString, versionSuffix) {
   const { dir, file } = parseFilePath(filePathString);
   const fileNameNoExtension = file.replace(/\..*$/, '');
 
-  if (!dir) {
-    return fileNameNoExtension;
+  const baseName = !dir
+    ? fileNameNoExtension
+    : `${dir}-${fileNameNoExtension}`.replace(/[\\/]+/g, '-');
+
+  if (!versionSuffix) {
+    return baseName;
   }
 
-  return `${dir}-${fileNameNoExtension}`.replace(/[\\/]+/g, '-');
+  return `${baseName}-${versionSuffix}`;
+}
+
+function getSeedFileHash(filePath) {
+  return crypto
+    .createHash('sha1')
+    .update(fs.readFileSync(filePath))
+    .digest('hex')
+    .slice(0, 10);
+}
+
+function isForceSeedEnabled() {
+  return process.env.FORCE_SEED === 'true';
+}
+
+function getVersionedUploadName(filePathString) {
+  const fileData = getFileData(filePathString);
+  const fileHash = getSeedFileHash(fileData.filepath);
+  const legacyUploadName = getUploadNameFromPath(filePathString);
+
+  return {
+    fileData,
+    legacyUploadName,
+    versionedUploadName: getUploadNameFromPath(filePathString, fileHash),
+  };
 }
 
 function getFileData(filePathString) {
@@ -186,30 +216,44 @@ async function checkFileExistsBeforeUpload(filePaths) {
     if (!filePathString) continue; // Skip null/undefined
     
     const { file: fileName } = parseFilePath(filePathString);
-    const uploadName = getUploadNameFromPath(filePathString);
+    const { fileData, legacyUploadName, versionedUploadName } =
+      getVersionedUploadName(filePathString);
     
-    // Check if the file already exists in Strapi
-    const fileWhereName = await strapi.query('plugin::upload.file').findOne({
+    const fileWhereVersionedName = await strapi.query('plugin::upload.file').findOne({
       where: {
-        name: uploadName,
+        name: versionedUploadName,
       },
     });
 
-    if (fileWhereName) {
-      // File exists, don't upload it
-      existingFiles.push(fileWhereName);
+    if (fileWhereVersionedName) {
+      existingFiles.push(fileWhereVersionedName);
       console.log(`   ✓ File already exists: ${fileName}`);
-    } else {
-      // File doesn't exist, upload it
-      try {
-        const fileData = getFileData(filePathString);
-        const [file] = await uploadFile(fileData, uploadName);
-        uploadedFiles.push(file);
-        console.log(`   ✓ Uploaded: ${fileName}`);
-      } catch (error) {
-        console.error(`   ✗ Failed to upload ${filePathString}:`, error.message);
-        throw error; // Re-throw to stop process on critical failures
+      continue;
+    }
+
+    const fileWhereLegacyName = await strapi.query('plugin::upload.file').findOne({
+      where: {
+        name: legacyUploadName,
+      },
+    });
+
+    if (fileWhereLegacyName && !isForceSeedEnabled()) {
+      existingFiles.push(fileWhereLegacyName);
+      console.log(`   ✓ File already exists: ${fileName}`);
+      continue;
+    }
+
+    try {
+      if (fileWhereLegacyName) {
+        console.log(`   ↻ File changed, uploading refreshed seed media: ${fileName}`);
       }
+
+      const [file] = await uploadFile(fileData, versionedUploadName);
+      uploadedFiles.push(file);
+      console.log(`   ✓ Uploaded: ${fileName}`);
+    } catch (error) {
+      console.error(`   ✗ Failed to upload ${filePathString}:`, error.message);
+      throw error; // Re-throw to stop process on critical failures
     }
   }
   
