@@ -1228,6 +1228,7 @@ export interface SectionsProduct extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.RichText;
+    introLabel: Schema.Attribute.String;
     primaryButtonLabel: Schema.Attribute.String & Schema.Attribute.Required;
     primaryButtonUrl: Schema.Attribute.String;
     secondaryButtonLabel: Schema.Attribute.String;

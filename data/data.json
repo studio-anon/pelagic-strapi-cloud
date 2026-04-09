@@ -50,7 +50,8 @@
       },
       {
         "__component": "sections.product",
-        "title": "Pelagic.Earth introduces Pave",
+        "introLabel": "Pelagic.Earth introduces",
+        "title": "Pave",
         "description": "The first in Australia. Higher compression strength and flexural strength, designed to the highest quality and standard. 100% recycled content. Each metre of product removes over 30kgs of plastic from the environment.",
         "primaryButtonLabel": "Expressions of interest",
         "primaryButtonUrl": "",
@@ -651,7 +652,7 @@
         },
         "primaryCta": {
           "label": "Enquire now",
-          "href": "/preorders"
+          "href": "#enquiry"
         },
         "designHeading": "Design",
         "designContextLabel": "Pattern paver",
@@ -922,7 +923,7 @@
         "headline": "Every 1000m2 of pavers diverts 70+ tons of CO2 and 40+ tons of plastic waste out of the environment.",
         "cta": {
           "label": "Enquire today",
-          "href": "/preorders"
+          "href": "#enquiry"
         },
         "primaryImage": "products/paver/closing-qoute/under-water.png",
         "secondaryImage": "products/paver/closing-qoute/paver.png",
@@ -946,7 +947,7 @@
           "dropdownLabel": "Paver variant",
           "downloadCta": {
             "label": "Download the product sheet",
-            "href": "/preorders"
+            "href": "#enquiry"
           },
           "variants": [
             {
@@ -1212,7 +1213,7 @@
         ],
         "bottomCta": {
           "label": "Enquire about Mod.factory",
-          "href": "/preorders"
+          "href": "#enquiry"
         },
         "bgType": "dark"
       },
@@ -1247,7 +1248,7 @@
         "mobileDiagramImage": "products/mod-factory/technical/mobile-factory.png",
         "downloadCta": {
           "label": "Download the product sheet",
-          "href": "/preorders"
+          "href": "#enquiry"
         },
         "backgroundImage": "products/mod-factory/technical/bg.png",
         "bgType": "dark"
