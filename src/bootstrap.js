@@ -15,12 +15,35 @@ const {
   modFactoryPage,
 } = require('../data/data.json');
 
+const CMS_PUBLIC_PERMISSIONS = {
+  'home-page': ['find', 'findOne'],
+  'featured-in-section': ['find', 'findOne'],
+  'global-setting': ['find', 'findOne'],
+  'mission-page': ['find', 'findOne'],
+  'journal-article': ['find', 'findOne'],
+  'journal-page': ['find', 'findOne'],
+  'pave-page': ['find', 'findOne'],
+  'mod-factory-page': ['find', 'findOne'],
+};
+
 /**
  * Bootstrap function to seed initial content into Strapi
- * Runs once on first startup after database initialization
+ * Seeds content only when explicitly enabled.
  */
 async function seedPelagicApp() {
-  const forceSeed = process.env.FORCE_SEED === 'true';
+  await setPublicPermissions(CMS_PUBLIC_PERMISSIONS);
+
+  const seedEnabled = isSeedingEnabled();
+  const forceSeed = isForceSeedEnabled();
+
+  if (!seedEnabled) {
+    if (forceSeed) {
+      console.log('ℹ️  FORCE_SEED ignored because ENABLE_SEEDING is not true.');
+    }
+    console.log('ℹ️  Seed data import is disabled. Set ENABLE_SEEDING=true to allow bootstrap seeding.');
+    return;
+  }
+
   const shouldImportSeedData = forceSeed || (await isFirstRun());
 
   if (shouldImportSeedData) {
@@ -37,7 +60,7 @@ async function seedPelagicApp() {
     }
   } else {
     console.log(
-      'ℹ️  Seed data has already been imported. Clear database or run with FORCE_SEED=true to reimport idempotently.'
+      'ℹ️  Seed data has already been imported. Use ENABLE_SEEDING=true FORCE_SEED=true to reimport idempotently.'
     );
   }
 }
@@ -74,21 +97,39 @@ async function setPublicPermissions(newPermissions) {
     return;
   }
 
-  // Create the new permissions and link them to the public role
+  const existingPermissions = await strapi.query('plugin::users-permissions.permission').findMany({
+    where: {
+      role: publicRole.id,
+    },
+  });
+  const existingActions = new Set(existingPermissions.map((permission) => permission.action));
+
+  // Create only missing permissions and link them to the public role
   const allPermissionsToCreate = [];
   Object.keys(newPermissions).forEach((controller) => {
     const actions = newPermissions[controller];
     const permissionsToCreate = actions.map((action) => {
+      const permissionAction = `api::${controller}.${controller}.${action}`;
+
+      if (existingActions.has(permissionAction)) {
+        return null;
+      }
+
       return strapi.query('plugin::users-permissions.permission').create({
         data: {
-          action: `api::${controller}.${controller}.${action}`,
+          action: permissionAction,
           role: publicRole.id,
         },
       });
     });
-    allPermissionsToCreate.push(...permissionsToCreate);
+    allPermissionsToCreate.push(...permissionsToCreate.filter(Boolean));
   });
-  
+
+  if (allPermissionsToCreate.length === 0) {
+    console.log('✅ Public permissions already configured');
+    return;
+  }
+
   await Promise.all(allPermissionsToCreate);
   console.log('✅ Public permissions configured');
 }
@@ -148,6 +189,10 @@ function getSeedFileHash(filePath) {
 
 function isForceSeedEnabled() {
   return process.env.FORCE_SEED === 'true';
+}
+
+function isSeedingEnabled() {
+  return process.env.ENABLE_SEEDING === 'true';
 }
 
 function getVersionedUploadName(filePathString) {
@@ -1449,18 +1494,6 @@ async function importJournalArticles() {
  */
 async function importSeedData() {
   console.log('📦 Starting seed data import...');
-
-  // Set public permissions for content types
-  await setPublicPermissions({
-    'home-page': ['find', 'findOne'],
-    'featured-in-section': ['find', 'findOne'],
-    'global-setting': ['find', 'findOne'],
-    'mission-page': ['find', 'findOne'],
-    'journal-article': ['find', 'findOne'],
-    'journal-page': ['find', 'findOne'],
-    'pave-page': ['find', 'findOne'],
-    'mod-factory-page': ['find', 'findOne'],
-  });
 
   // Import journal page and articles
   await importJournalPage();

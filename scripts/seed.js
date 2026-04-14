@@ -20,7 +20,13 @@ const { createStrapi, compileStrapi } = require('@strapi/strapi');
 
 async function main() {
   try {
+    process.env.ENABLE_SEEDING = process.env.ENABLE_SEEDING || 'true';
+    process.env.FORCE_SEED = process.env.FORCE_SEED || 'true';
+
     console.log('🌊 Starting Pelagic CMS seed script...');
+    console.log(
+      `⚙️  Seed flags: ENABLE_SEEDING=${process.env.ENABLE_SEEDING} FORCE_SEED=${process.env.FORCE_SEED}`
+    );
     console.log('📦 Compiling Strapi...');
 
     // Compile Strapi application
