@@ -22,9 +22,6 @@
     "carbonLabel": {
       "type": "string"
     },
-    "inputLabel": {
-      "type": "string"
-    },
     "outputLabel": {
       "type": "string"
     },
@@ -34,22 +31,13 @@
     "toggleGridLabel": {
       "type": "string"
     },
-    "unitLabel": {
-      "type": "string"
-    },
     "carbonKgPerM2": {
-      "type": "decimal"
-    },
-    "minimumValue": {
       "type": "decimal"
     },
     "maximumValue": {
       "type": "decimal"
     },
-    "stepValue": {
-      "type": "decimal"
-    },
-    "defaultValue": {
+    "maximumMeterValue": {
       "type": "decimal"
     },
     "multiplier": {
