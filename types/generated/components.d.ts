@@ -216,7 +216,7 @@ export interface MissionMissionPaverPanel extends Struct.ComponentSchema {
 export interface MissionMissionProcessPanel extends Struct.ComponentSchema {
   collectionName: 'components_mission_mission_process_panels';
   info: {
-    description: 'Mission process panel with copy and three images';
+    description: 'Mission process panel with copy, desktop images, and mobile image';
     displayName: 'Mission Process Panel';
     icon: 'apps';
   };
@@ -225,6 +225,7 @@ export interface MissionMissionProcessPanel extends Struct.ComponentSchema {
     image01: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     image02: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     image03: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    mobileImage: Schema.Attribute.Media<'images'>;
   };
 }
 

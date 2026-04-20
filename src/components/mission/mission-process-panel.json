@@ -2,7 +2,7 @@
   "collectionName": "components_mission_mission_process_panels",
   "info": {
     "displayName": "Mission Process Panel",
-    "description": "Mission process panel with copy and three images",
+    "description": "Mission process panel with copy, desktop images, and mobile image",
     "icon": "apps"
   },
   "options": {},
@@ -27,6 +27,11 @@
       "type": "media",
       "multiple": false,
       "required": true,
+      "allowedTypes": ["images"]
+    },
+    "mobileImage": {
+      "type": "media",
+      "multiple": false,
       "allowedTypes": ["images"]
     }
   }

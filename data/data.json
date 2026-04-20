@@ -539,11 +539,12 @@
       },
       {
         "__component": "mission.mission-process-panel",
-        "copy": "We've built a process and technology, driven by this vision, transforming waste into a valuable commodity.",
-        "image01": "mission/drone-image.webp",
-        "image02": "mission/factory.webp",
-        "image03": "mission/pavers.webp"
-      },
+          "copy": "We've built a process and technology, driven by this vision, transforming waste into a valuable commodity.",
+          "image01": "mission/drone-image.webp",
+          "image02": "mission/factory.webp",
+          "image03": "mission/pavers.webp",
+          "mobileImage": "mission/mobile-mission.jpg"
+        },
       {
         "__component": "mission.mission-close-panel",
         "copy": "By 2029, Pelagic aims to be converting 100,000 tons of discarded soft plastics into premium structural products that create profit, employment and relief for our environment.\n\nThat's our why.",

@@ -535,6 +535,9 @@ async function processMissionSection(section) {
     if (section.image03) {
       sectionCopy.image03 = await checkFileExistsBeforeUpload(section.image03);
     }
+    if (section.mobileImage) {
+      sectionCopy.mobileImage = await checkFileExistsBeforeUpload(section.mobileImage);
+    }
     return sectionCopy;
   }
 
