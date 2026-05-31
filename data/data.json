@@ -646,11 +646,6 @@
       {
         "__component": "products.hero-configurator",
         "title": "Pave",
-        "description": "Pelagic structural pavers are engineered from upcycled plastics. Contemporary designed, extremely durable, unique textures - they out perform other materials.",
-        "learnMore": {
-          "label": "Find out more",
-          "href": "#products-pave-technical"
-        },
         "primaryCta": {
           "label": "Enquire now",
           "href": "#enquiry"
@@ -664,18 +659,24 @@
           {
             "designId": "textured",
             "label": "Textured",
+            "title": "Pattern",
+            "description": "Pelagic structural pattern pavers are engineered from upcycled plastics. Contemporary designed, extremely durable, unique textures - they out perform other materials.",
             "kind": "textured",
             "icon": "products/paver/icons/textured-icon.jpg"
           },
           {
             "designId": "smooth",
             "label": "Smooth",
+            "title": "Smooth",
+            "description": "Pelagic structural smooth pavers are engineered from upcycled plastics. Contemporary designed, extremely durable, unique textures - they out perform other materials.",
             "kind": "smooth",
             "icon": "products/paver/icons/smooth-icon.jpg"
           },
           {
             "designId": "grid",
             "label": "Grid",
+            "title": "Grid",
+            "description": "Pelagic structural grid pavers are made from upcycled plastics. Contemporary designed, extremely durable, unique textures - they out perform other materials.",
             "kind": "grid",
             "hideColourSelection": true,
             "defaultColourId": "calcium",

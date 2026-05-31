@@ -580,7 +580,6 @@ export interface ProductsHeroConfigurator extends Struct.ComponentSchema {
       false
     > &
       Schema.Attribute.Required;
-    description: Schema.Attribute.Text & Schema.Attribute.Required;
     designContextLabel: Schema.Attribute.String & Schema.Attribute.Required;
     designHeading: Schema.Attribute.String & Schema.Attribute.Required;
     designs: Schema.Attribute.Component<'products.option-design', true> &
@@ -599,8 +598,6 @@ export interface ProductsHeroConfigurator extends Struct.ComponentSchema {
         },
         number
       >;
-    learnMore: Schema.Attribute.Component<'shared.cta', false> &
-      Schema.Attribute.Required;
     primaryCta: Schema.Attribute.Component<'shared.cta', false> &
       Schema.Attribute.Required;
     sizes: Schema.Attribute.Component<'products.option-size', true> &
@@ -800,12 +797,14 @@ export interface ProductsOptionDesign extends Struct.ComponentSchema {
   attributes: {
     defaultColourId: Schema.Attribute.String;
     defaultSizeId: Schema.Attribute.String;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
     designId: Schema.Attribute.String & Schema.Attribute.Required;
     hideColourSelection: Schema.Attribute.Boolean &
       Schema.Attribute.DefaultTo<false>;
     icon: Schema.Attribute.Media<'images'>;
     kind: Schema.Attribute.String;
     label: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
