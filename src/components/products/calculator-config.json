@@ -31,7 +31,10 @@
     "toggleGridLabel": {
       "type": "string"
     },
-    "carbonKgPerM2": {
+    "carbonKgPerPaver": {
+      "type": "decimal"
+    },
+    "gridCarbonKgPerPaver": {
       "type": "decimal"
     },
     "maximumValue": {
@@ -44,6 +47,9 @@
       "type": "decimal"
     },
     "gridMultiplier": {
+      "type": "decimal"
+    },
+    "carbonKgPerM2": {
       "type": "decimal"
     }
   }
