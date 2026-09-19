@@ -48,9 +48,6 @@
     },
     "gridMultiplier": {
       "type": "decimal"
-    },
-    "carbonKgPerM2": {
-      "type": "decimal"
     }
   }
 }

@@ -328,7 +328,6 @@ export interface ProductsCalculatorConfig extends Struct.ComponentSchema {
     icon: 'calculator';
   };
   attributes: {
-    carbonKgPerM2: Schema.Attribute.Decimal;
     carbonKgPerPaver: Schema.Attribute.Decimal;
     carbonLabel: Schema.Attribute.String;
     gridCarbonKgPerPaver: Schema.Attribute.Decimal;
