@@ -508,6 +508,7 @@ export interface ApiGlobalSettingGlobalSetting extends Struct.SingleTypeSchema {
     socialLinks: Schema.Attribute.Component<'shared.external-link', true>;
     termsSlug: Schema.Attribute.UID;
     updatedAt: Schema.Attribute.DateTime;
+    whatsappContact: Schema.Attribute.Component<'shared.external-link', false>;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
   };

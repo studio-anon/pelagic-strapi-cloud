@@ -30,6 +30,11 @@
       "component": "shared.external-link",
       "max": 2
     },
+    "whatsappContact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.external-link"
+    },
     "privacySlug": {
       "type": "uid"
     },
